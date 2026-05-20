@@ -1,1556 +1,2352 @@
-<!DOCTYPE html>
+﻿
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Paleo-Wildfire Database</title>
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossorigin=""/>
-    <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-            crossorigin=""></script>
-    <!-- Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>GPPD · Global Phanerozoic Paleowildfire Database</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 添加火焰图标作为favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, sans-serif;
         }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a5f7a 0%, #2c3e50 100%);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .map-section {
-            flex: 3;
-            min-width: 300px;
-        }
-        
-        .controls-section {
-            flex: 1;
-            min-width: 250px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        .section-title {
-            color: #1a5f7a;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        #map {
+        .page {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 600px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background-color: #e6f2f9;
+            height: 100%;
+            overflow-y: auto;
+            background: #f5f7fb;
+            z-index: 10;
+        }
+        .page-hidden { display: none; }
+
+        /* ============ 首页样式 - 深色科技感玻璃态 ============ */
+        .home-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('figure/cover.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 0;
+        }
+        .home-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(5,12,30,0.55) 0%, rgba(2,5,18,0.82) 100%);
+            z-index: 1;
+        }
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8rem 2rem 2rem 2rem;
+        }
+
+        /* 右侧垂直导航 */
+        .vertical-nav {
+            position: fixed;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            gap: 84px;
+        }
+        .nav-glass-btn {
+            background: linear-gradient(180deg, rgba(14, 30, 55, 0.78) 0%, rgba(8, 18, 38, 0.88) 40%, rgba(4, 10, 22, 0.92) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(0, 200, 240, 0.35);
+            border-left: 1px solid rgba(0, 180, 220, 0.3);
+            border-right: 1px solid rgba(0, 140, 180, 0.18);
+            border-bottom: 1px solid rgba(0, 80, 120, 0.4);
+            border-radius: 18px;
+            padding: 24px 44px;
+            font-weight: 600;
+            font-size: 1.4rem;
+            color: rgba(210, 225, 245, 0.92);
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            cursor: pointer;
+            text-align: center;
+            white-space: nowrap;
+            transition: all 0.25s ease;
+            box-shadow:
+                0 8px 0 rgba(0, 70, 110, 0.5),
+                0 12px 24px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -3px 0 rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(0, 160, 210, 0.2);
+            min-width: 230px;
+            letter-spacing: 1px;
+            position: relative;
+            transform: translateY(0);
+        }
+        .nav-glass-btn::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            right: 4px;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 100%);
+            border-radius: 14px;
+            pointer-events: none;
+        }
+        .nav-glass-btn:hover {
+            color: #ffffff;
+            background: linear-gradient(180deg, rgba(0, 160, 220, 0.5) 0%, rgba(0, 130, 190, 0.55) 40%, rgba(0, 90, 140, 0.6) 100%);
+            border-top-color: rgba(0, 220, 255, 0.6);
+            border-left-color: rgba(0, 200, 240, 0.5);
+            border-right-color: rgba(0, 160, 210, 0.35);
+            border-bottom-color: rgba(0, 100, 150, 0.5);
+            box-shadow:
+                0 4px 0 rgba(0, 130, 180, 0.5),
+                0 12px 24px rgba(0, 0, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2),
+                0 0 28px rgba(0, 190, 240, 0.35),
+                0 0 8px rgba(212, 175, 55, 0.25);
+            transform: translateY(-3px);
+        }
+        .nav-glass-btn:active {
+            transform: translateY(3px);
+            box-shadow:
+                0 1px 0 rgba(0, 90, 130, 0.35),
+                0 3px 6px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+                0 0 8px rgba(0, 160, 210, 0.08);
+        }
+
+        /* 主内容区域 */
+        .hero-content {
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            padding: 0 6rem 0 6rem;
+        }
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 2rem;
+            }
+        }
+
+        /* LOGO */
+        .home-logo-wrapper {
+            flex-shrink: 0;
             position: relative;
         }
-        
-        .file-legend {
-            margin-top: 20px;
-            max-height: 400px;
-            overflow-y: auto;
+        .home-logo-wrapper img {
+            height: 20rem;
+            filter: drop-shadow(0 0 28px rgba(0, 200, 240, 0.45)) drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+            transition: filter 0.3s;
         }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            padding: 8px;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-            cursor: pointer;
+        .home-logo-wrapper img:hover {
+            filter: drop-shadow(0 0 40px rgba(0, 220, 255, 0.65)) drop-shadow(0 6px 16px rgba(0,0,0,0.7));
         }
-        
-        .legend-item:hover {
-            background-color: #f0f8ff;
+
+        /* 标题文字区 */
+        .home-title-block {
+            flex: 1;
+            min-width: 280px;
         }
-        
-        .legend-item.active {
-            background-color: #e6f2ff;
-            border-left: 4px solid #1a5f7a;
+        .home-main-title {
+            font-size: 3.6rem;
+            font-weight: 700;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: #ffffff;
+            text-shadow: 0 0 32px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.45), 0 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+            letter-spacing: 1px;
         }
-        
-        .color-box {
-            width: 20px;
-            height: 20px;
-            border-radius: 3px;
-            margin-right: 10px;
-            border: 1px solid #ddd;
+        .home-subtitle {
+            font-size: 1.3rem;
+            font-weight: 400;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: #d4af6a;
+            text-shadow: 0 0 14px rgba(212, 175, 85, 0.5), 0 1px 4px rgba(0,0,0,0.6);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
         }
-        
-        .file-name {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .point-count {
-            margin-left: auto;
-            font-size: 0.8rem;
-            color: #666;
-            background-color: #f0f0f0;
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
-        
-        .info-window {
-            max-width: 250px;
-            padding: 10px;
-        }
-        
-        .info-window h3 {
-            margin-bottom: 5px;
-            color: #1a5f7a;
-        }
-        
-        .note-text {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
-            padding: 5px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            cursor: text;
-            user-select: text;
-        }
-        
-        .copy-hint {
-            font-size: 0.8rem;
-            color: #888;
+        .home-db-description {
+            font-size: 4.5rem;
+            font-weight: 400;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', 'Segoe UI', sans-serif;
+            color: rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 2px 6px rgba(0,0,0,0.5);
+            margin-top: 0.4rem;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
             font-style: italic;
         }
-        
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+        @media (max-width: 1000px) {
+            .home-main-title { font-size: 2.4rem; }
+            .home-logo-wrapper img { height: 14rem; }
         }
-        
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        @media (max-width: 720px) {
+            .home-main-title { font-size: 1.8rem; }
+            .home-subtitle { font-size: 1rem; }
+            .home-logo-wrapper img { height: 11rem; }
+        }
+
+        /* 文献列表区 */
+        .literature-panel {
+            position: fixed;
+            right: 28px;
+            bottom: 90px;
+            z-index: 20;
+            width: 360px;
+            max-height: 280px;
+            overflow-y: auto;
+            background: rgba(8, 20, 40, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 180, 220, 0.2);
+            border-radius: 16px;
+            padding: 0.7rem 0.8rem;
+            box-shadow: 0 0 20px rgba(0, 140, 200, 0.1), 0 0 6px rgba(212, 175, 55, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .literature-panel-title {
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: rgba(180, 200, 220, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(0, 180, 220, 0.15);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+        }
+        .lit-item {
+            cursor: pointer;
+            padding: 5px 7px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            background: rgba(255,255,255,0.02);
+        }
+        .lit-item:hover {
+            background: rgba(0, 160, 210, 0.12);
+            border-color: rgba(0, 200, 240, 0.3);
+            box-shadow: 0 0 12px rgba(0, 180, 220, 0.12);
+        }
+        .lit-item .lit-title {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(130, 195, 220, 0.95);
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.45;
+            margin-bottom: 3px;
+        }
+        .lit-item .lit-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .lit-item .lit-title a:hover {
+            color: #60d8ff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .lit-item .lit-link {
+            font-size: 0.7rem;
+            color: rgba(212, 175, 85, 0.7);
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            margin-top: 4px;
+        }
+        .lit-item .lit-link a {
+            color: #d4af6a;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .lit-item .lit-link a:hover {
+            color: #f0d080;
+            text-decoration: underline;
+        }
+        .lit-item .lit-meta {
+            font-size: 0.7rem;
+            color: rgba(150, 170, 190, 0.7);
             display: flex;
+            justify-content: space-between;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+        @media (max-width: 900px) {
+            .literature-panel {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                width: 92%;
+                max-width: 460px;
+                max-height: 320px;
+                margin: 1rem auto;
+            }
+            .vertical-nav {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                margin: 1rem 0;
+            }
+            .nav-glass-btn {
+                min-width: auto;
+            padding: 12px 24px;
+            font-size: 1rem;
+            }
+        }
+
+        /* 团队按钮 */
+        .team-btn-wrapper {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+        .team-btn {
+            background: rgba(8, 20, 40, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 180, 220, 0.3);
+            border-radius: 40px;
+            padding: 0.7rem 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: rgba(200, 215, 235, 0.9);
+            cursor: pointer;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 14px rgba(0, 140, 200, 0.1), 0 0 4px rgba(212, 175, 55, 0.06);
+            letter-spacing: 0.5px;
         }
-        
-        .btn-primary {
-            background-color: #1a5f7a;
+        .team-btn:hover {
+            color: #ffffff;
+            background: rgba(0, 140, 200, 0.28);
+            border-color: rgba(0, 200, 240, 0.5);
+            box-shadow: 0 0 24px rgba(0, 180, 230, 0.22), 0 0 8px rgba(212, 175, 55, 0.12);
+            transform: translateY(-2px);
+        }
+        .team-btn:active { transform: scale(0.97); }
+
+        /* 页脚 */
+        .home-footer {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 15;
+            color: rgba(200, 215, 235, 0.65);
+            font-size: 0.8rem;
+            text-align: center;
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
+        .home-footer a { color: #d4af6a; text-decoration: none; font-weight: 500; }
+        .home-footer a:hover { color: #f0d080; text-decoration: underline; }
+
+        /* Data 页面 */
+        #data-page {
+            background: #f5f7fb;
+        }
+
+        /* 内页头部通用 */
+        .inner-header {
+            position: relative;
+            background: transparent;
+            padding: 0.6rem 2rem;
             color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
         }
-        
-        .btn-primary:hover {
-            background-color: #144b62;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(26, 95, 122, 0.3);
+        .inner-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('figure/cover.jpg') no-repeat center 20%;
+            background-size: cover;
+            filter: brightness(0.65);
+            z-index: -1;
+            transform: scale(1.02);
         }
-        
-        .btn-secondary {
-            background-color: #f0f0f0;
-            color: #333;
+        .inner-header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: -1;
         }
-        
-        .btn-secondary:hover {
-            background-color: #e0e0e0;
-            transform: translateY(-2px);
-        }
-        
-        .btn-geological {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 5px;
-            color: white !important;
-        }
-        
-        .btn-geological:hover {
-            transform: scale(1.05);
-        }
-        
-        /* 古地理复原页面样式 */
-        #reconstruction-page {
-            display: none;
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .reconstruction-header {
+        .header-top {
+            position: relative;
+            z-index: 2;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
-        
-        .reconstruction-container {
+        .inner-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .inner-header-left img { height: 3.5rem; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));}
+        .inner-header-left h1 { font-size: 1.3rem; text-shadow: 0 1px 4px rgba(0,0,0,0.3);}
+        .right-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-btn {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(6px);
+            border-radius: 40px;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.1s;
+            white-space: nowrap;
+        }
+        .back-home-btn {
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(6px);
+            border-radius: 40px;
+            padding: 6px 16px;
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.1s;
+            white-space: nowrap;
+        }
+        .nav-btn:active, .back-home-btn:active { transform: scale(0.96); background: rgba(0,0,0,0.6); }
+
+        /* 现代投图布局 (Data 页面) */
+        .modern-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 20px auto;
+            padding: 0 20px 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .left-panel-wrapper {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: calc(100vh - 100px);
+            position: sticky;
+            top: 80px;
+        }
+        .left-panel {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+        }
+        .strata-header {
+            padding: 1rem;
+            background: #f0f6fc;
+            border-bottom: 1px solid #e2edf2;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .strata-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+        .period-group {
+            margin-bottom: 12px;
+            border-radius: 16px;
+            background: #fefefe;
+            border: 1px solid #e2edf2;
+        }
+        .period-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            background: #f5f9fd;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e3a4d;
+            transition: 0.1s;
+        }
+        .period-header:hover { background: #e9f0f5; }
+        .period-name { display: flex; align-items: center; gap: 8px; }
+        .period-count { background: #d9e4ec; padding: 2px 10px; border-radius: 30px; font-size: 0.75rem; }
+        .toggle-icon { font-size: 0.8rem; transition: transform 0.2s; }
+        .epoch-list {
+            padding: 0 0 6px 20px;
+            display: none;
+            list-style: none;
+        }
+        .epoch-list.open { display: block; }
+        .epoch-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            margin: 4px 0;
+            border-radius: 40px;
+            cursor: pointer;
+            border: 1px solid #e2edf2;
+            background: #ffffff;
+            transition: 0.1s;
+            font-size: 0.85rem;
+        }
+        .epoch-item.active {
+            background: #eef6fc;
+            border-left: 5px solid #155f7a;
+        }
+        .epoch-name { font-weight: 500; }
+        .epoch-count { background: #eef3f7; padding: 2px 8px; border-radius: 20px; font-size: 0.7rem; }
+        .right-area {
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        #modern-map {
+            height: 55vh;
+            min-height: 400px;
+            border-radius: 28px;
+            background: #cde3ef;
+            z-index: 1;
+        }
+        .map-toolbar {
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .map-btn {
+            background: white;
+            border-radius: 32px;
+            padding: 6px 18px;
+            border: 1px solid #cfdfe8;
+            cursor: pointer;
+        }
+        .table-wrapper {
+            background: white;
+            border-radius: 28px;
+            padding: 1rem 1rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow-y: auto;
+            max-height: 400px;
+            border-bottom: 2px solid #e2edf2;
+        }
+        .table-wrapper h4 {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #1e3a4d;
+            border-left: 4px solid #1a5f7a;
+            padding-left: 12px;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 2;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+        }
+        .data-table th, .data-table td {
+            padding: 8px 6px;
+            text-align: left;
+            border-bottom: 1px solid #e2edf2;
+        }
+        .data-table tr:hover { background: #f0f6fa; cursor: pointer; }
+        @media (max-width: 900px) {
+            .modern-container { flex-direction: column; padding-bottom: 20px; }
+            .left-panel-wrapper { width: 100%; height: auto; position: static; margin-bottom: 20px; }
+            .left-panel { width: 100%; height: auto; position: static; }
+            .right-area { width: 100%; }
+            #modern-map { height: 40vh; }
+        }
+
+        /* 古地理复原 (Evolution 页面样式) */
+        .recon-layout {
+            background: white;
+            border-radius: 40px;
+            padding: 28px;
+            margin: 20px;
+        }
+        .geo-buttons {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            margin: 20px 0;
+            margin: 30px 0 15px 0;
         }
-        
-        .palaeo-section {
-            flex: 2;
-            min-width: 300px;
+        .btn-geo {
+            border: none;
+            border-radius: 60px;
+            padding: 0.7rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.05s linear;
         }
-        
-        .recent-section {
-            flex: 1;
-            min-width: 250px;
+        .btn-geo:active { transform: scale(0.96); }
+        .btn-all {
+            background: #2c5a6e;
+            border: none;
+            border-radius: 60px;
+            padding: 0.7rem 1.8rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        
-        .palaeo-image-container {
+        .img-container {
             width: 100%;
-            height: 500px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            height: 55vh;
+            min-height: 450px;
+            background: #eef2f6;
+            border-radius: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             position: relative;
-            border: 1px solid #ddd;
         }
-        
-        .recent-image-container {
-            width: 100%;
-            height: 300px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px solid #ddd;
-        }
-        
-        .palaeo-image {
+        #recon-main-image {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            display: none;
-        }
-        
-        .palaeo-image.active {
             display: block;
         }
-        
-        .recent-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .image-caption {
-            text-align: center;
-            font-style: italic;
-            color: #555;
-            min-height: 24px;
-            margin-bottom: 15px;
-        }
-        
         .palaeo-controls {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 18px;
             flex-wrap: wrap;
+            margin: 10px 0;
         }
-        
         .palaeo-btn {
-            padding: 8px 15px;
-            background-color: #1a5f7a;
-            color: white;
+            background: #1a5f7a;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            border-radius: 40px;
+            padding: 6px 18px;
+            color: white;
             font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .palaeo-btn:active:not(:disabled) { transform: scale(0.96); }
+        .palaeo-btn:disabled { background: #b9cee0; cursor: not-allowed; }
+        .time-slider {
+            width: 160px;
+            height: 6px;
+            border-radius: 10px;
+            background: #cfdee8;
+            cursor: pointer;
+        }
+        .time-display {
+            background: #eef3f7;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            color: #1a5f7a;
+        }
+        /* 统计页面 */
+        .stats-dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e8edf2;
+        }
+        .stats-card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3a4d;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: background-color 0.2s;
+            gap: 12px;
+            border-left: 5px solid #1a5f7a;
+            padding-left: 18px;
         }
-        
-        .palaeo-btn:hover {
-            background-color: #144b62;
+        .chart-duo-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
         }
-        
-        .palaeo-btn:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-        
-        .time-slider-container {
-            flex-grow: 1;
-            max-width: 300px;
-        }
-        
-        .time-slider {
-            width: 100%;
-            height: 10px;
-            border-radius: 5px;
-            background: #ddd;
-            outline: none;
-            -webkit-appearance: none;
-        }
-        
-        .time-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #1a5f7a;
-            cursor: pointer;
-        }
-        
-        .time-slider::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #1a5f7a;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .time-display {
-            font-weight: bold;
-            color: #1a5f7a;
-            min-width: 100px;
+        .chart-box {
+            flex: 1;
+            min-width: 260px;
+            max-width: 500px;
+            margin: 0 auto;
             text-align: center;
+            height: 260px;
         }
-        
-        .period-info {
-            background-color: #f0f8ff;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-left: 4px solid #1a5f7a;
-        }
-        
-        .period-title {
-            color: #1a5f7a;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .period-description {
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .geological-buttons {
+        .evidence-gallery-modern {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin: 25px 0;
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
-        
-        .back-button {
-            background-color: #6c757d;
-            color: white;
-        }
-        
-        .back-button:hover {
-            background-color: #5a6268;
-        }
-        
-        .map-controls {
-            margin-top: 10px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .map-btn {
-            padding: 8px 15px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .map-btn:hover {
-            background-color: #f0f0f0;
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            #map {
-                height: 400px;
-            }
-            
-            .btn-geological {
-                width: 50px;
-                height: 50px;
-                font-size: 1rem;
-            }
-            
-            .reconstruction-container {
-                flex-direction: column;
-            }
-            
-            .palaeo-image-container {
-                height: 300px;
-            }
-        }
-        
-        .loading {
-            color: #888;
-            font-style: italic;
-        }
-        
-        .no-image {
-            color: #888;
+        .evidence-card-modern {
             text-align: center;
-            padding: 20px;
+            background: #fafeff;
+            border-radius: 28px;
+            padding: 1rem 0.8rem;
+            width: 180px;
+            border: 1px solid #e2edf2;
+        }
+        .evidence-card-modern img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 24px;
+            background: #ffffff;
+            padding: 8px;
+        }
+        /* 团队页面 */
+        .team-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .team-member {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2edf2;
+        }
+        .team-member:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .member-photo {
+            flex-shrink: 0;
+            width: 160px;
+            text-align: center;
+        }
+        .member-photo img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #155f7a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .member-photo h3 { margin-top: 0.5rem; font-size: 1.2rem; color: #1e3a4d; }
+        .member-intro {
+            flex: 1;
+            background: #f5f9fc;
+            padding: 1rem 1.5rem;
+            border-radius: 24px;
+            line-height: 1.5;
+        }
+        .group-photo {
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 1px solid #e2edf2;
+            padding-bottom: 30px;
+        }
+        .group-photo img {
+            max-width: 80%;
+            border-radius: 24px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            border: 1px solid #dce5ec;
+        }
+        @media (max-width: 700px) {
+            .team-member { flex-direction: column; align-items: center; text-align: center; }
+            .member-intro { width: 100%; }
+            .group-photo img { max-width: 100%; }
         }
         
-        .no-image i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            display: block;
-            color: #ccc;
+        /* 下载按钮样式 */
+        .download-section {
+            margin-top: 20px;
+            text-align: left;
+            background: #f8fafc;
+            border-radius: 28px;
+            padding: 1rem 1.5rem;
+            border: 1px solid #e2edf2;
         }
-        
-        .map-fallback {
+        .btn-download {
+            background: #1e5f7a;
+            border: none;
+            border-radius: 60px;
+            padding: 12px 32px;
+            font-weight: 700;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.1s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-download:active { transform: scale(0.97); background: #0f4a60; }
+        .download-note {
+            font-size: 0.8rem;
+            color: #5f7f9a;
+            margin-top: 0.6rem;
+        }
+        /* 3D Reconstruction Globe — full page */
+        #recon-globe-container {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+        .recon-layout-wrap {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 64px);
+            margin: 0;
+            padding: 0;
+        }
+        .recon-left-panel {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            z-index: 10;
+            width: 300px;
+            max-height: calc(100% - 32px);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            pointer-events: auto;
+        }
+        .recon-strata-panel {
+            flex: 1;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+        }
+        .recon-strata-header {
+            padding: 1rem;
+            background: #f0f6fc;
+            border-bottom: 1px solid #e2edf2;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .recon-strata-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+        .recon-period-group {
+            margin-bottom: 12px;
+            border-radius: 16px;
+            background: #fefefe;
+            border: 1px solid #e2edf2;
+        }
+        .recon-period-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            background: #f5f9fd;
+            border-bottom: 1px solid #e2edf2;
+            cursor: pointer;
+            border-radius: 16px 16px 0 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .recon-period-header .badge {
+            background: #eef3f7;
+            padding: 2px 10px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #5f7f9a;
+        }
+        .recon-point-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f4f8;
+            font-size: 0.82rem;
+            transition: background 0.1s;
+        }
+        .recon-point-item:hover { background: #f0f6fc; }
+        .recon-point-item.active { background: #d0e6f8; }
+        .recon-point-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .recon-point-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .recon-point-id {
+            font-weight: 700;
+            color: #1e3a4d;
+        }
+        .recon-point-time {
+            font-size: 0.7rem;
+            color: #8899aa;
+        }
+        .recon-epoch-points {
+            display: none;
+            background: #fafcfe;
+        }
+        .recon-epoch-points.open { display: block; }
+        .recon-epoch-group {
+            border-bottom: 1px solid #f0f4f8;
+        }
+        .recon-epoch-group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 14px;
+            background: #f0f4f8;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4a6a8a;
+            cursor: pointer;
+            user-select: none;
+        }
+        .recon-epoch-group-header:hover { background: #e5ecf2; }
+        .recon-epoch-group-header .toggle-icon {
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+        }
+        .recon-epoch-point-items {
+            display: none;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #fdfdfe;
+        }
+        .recon-epoch-point-items.open { display: block; }
+        .blank-recon {
+            background: white;
+            border-radius: 40px;
+            margin: 20px;
+            padding: 80px 20px;
+            text-align: center;
+            color: #6c8da3;
+            font-size: 1.2rem;
+        }
+        /* 3D Globe loading overlay */
+        #recon-loading-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(5,5,20,0.92);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #e6f2f9;
-            border-radius: 10px;
-            color: #1a5f7a;
-            text-align: center;
-            padding: 20px;
+            color: #fff;
+            z-index: 30;
+            font-size: 16px;
+            gap: 12px;
         }
-        
-        .map-fallback i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #1a5f7a;
-        }
-        
-        .map-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            background-color: rgba(255,255,255,0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .map-loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #1a5f7a;
+        .recon-spinner {
+            width: 40px; height: 40px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-top-color: #ff6600;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px auto;
+            animation: reconSpin 0.8s linear infinite;
         }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Leaflet 控件样式 */
-        .leaflet-container {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .leaflet-control-layers {
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            background: white;
-        }
-        
-        .leaflet-control-layers-toggle {
-            background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/layers.png');
-            width: 36px;
-            height: 36px;
-        }
-        
-        .leaflet-control-attribution {
-            font-size: 11px;
-            background-color: rgba(255,255,255,0.8);
-            padding: 2px 5px;
+        @keyframes reconSpin { to { transform: rotate(360deg); } }
+        .recon-progress {
+            width: 260px; height: 6px;
+            background: rgba(255,255,255,0.15);
             border-radius: 3px;
+            overflow: hidden;
         }
+        .recon-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4a90d9, #ff6600);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        /* Reconstruction popup */
+        #reconPopup {
+            position: absolute;
+            background: rgba(15,15,45,0.96);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            padding: 14px;
+            color: #fff;
+            z-index: 20;
+            pointer-events: none;
+            opacity: 0;
+            transform: translate(-50%, -110%);
+            transition: opacity 0.2s;
+            max-width: 340px;
+            font-size: 13px;
+            line-height: 1.5;
+            backdrop-filter: blur(10px);
+        }
+        #reconPopup.active { opacity: 1; }
+        #reconPopup h3 { margin: 0 0 8px; font-size: 14px; color: #ff6600; }
+        #reconPopup .row { display: flex; justify-content: space-between; margin: 2px 0; }
+        #reconPopup .label { color: #aaa; }
+        #reconPopup .value { color: #fff; font-weight: bold; }
+        /* Recon controls bar */
+        #reconControls {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 12px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 380px;
+            text-align: center;
+        }
+        #reconTimeDisplay {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        #reconEraDisplay {
+            font-size: 13px;
+            color: #aaa;
+        }
+        #reconTimeProgressBarWrap {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        #reconTimeProgressBar {
+            height: 100%;
+            background: linear-gradient(90deg, #4a90d9, #e74c3c);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        #reconDatasetInfo {
+            font-size: 10px;
+            color: #777;
+            margin-top: 2px;
+        }
+        #recon-button-row {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+        #recon-button-row button {
+            background: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        #recon-button-row button:hover { background: #ff8833; }
+        #recon-button-row button:disabled { background: #555; cursor: not-allowed; }
+        #reconSpeedDisplay { line-height: 30px; min-width: 30px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1><i class="fas fa-fire"></i> Global Paleo-Wildfire Database</h1>
-        <p>Interactive map of paleo-wildfire evidence across geological periods</p>
-    </header>
-    
-    <div class="container">
-        <!-- 主页面：地图和数据点 -->
-        <div id="main-page">
-            <div class="main-content">
-                <div class="map-section">
-                    <h2 class="section-title">Global Distribution of Paleo-Wildfire Evidence</h2>
-                    <div id="map">
-                        <div class="map-loading" id="map-loading">
-                            <div class="map-loading-spinner"></div>
-                            <p>正在加载地图...</p>
-                        </div>
-                    </div>
-                    
-                    <div class="map-controls">
-                        <div class="map-btn" id="reset-view">
-                            <i class="fas fa-globe-americas"></i> Reset View
-                        </div>
-                        <div class="map-btn" id="toggle-all">
-                            <i class="fas fa-eye"></i> Show/Hide All
-                        </div>
-                    </div>
-                    
-                    <div class="action-buttons">
-                        <button class="btn btn-primary" id="reconstruction-btn">
-                            <i class="fas fa-history"></i> Paleogeographic Reconstruction
-                        </button>
-                        <button class="btn btn-secondary" id="export-data-btn">
-                            <i class="fas fa-download"></i> Export Data
-                        </button>
-                    </div>
+
+<!-- 首页 -->
+<div id="home-page" class="page">
+    <div class="home-bg"></div>
+    <div class="hero-section">
+        <div class="hero-overlay">
+
+            <!-- 右侧垂直导航 -->
+            <nav class="vertical-nav">
+                <button class="nav-glass-btn" id="home-goto-data">Data</button>
+                <button class="nav-glass-btn" id="home-goto-reconstruction">Reconstruction</button>
+                <button class="nav-glass-btn" id="home-goto-evolution">Evolution</button>
+                <button class="nav-glass-btn" id="home-goto-stats">Statistics</button>
+            </nav>
+
+            <!-- 主内容：LOGO + 标题 -->
+            <div class="hero-content">
+                <div class="home-logo-wrapper">
+                    <img src="figure/f1.png" alt="GPPD Logo" onerror="this.style.display='none'">
                 </div>
-                
-                <div class="controls-section">
-                    <h2 class="section-title">Data Files Legend</h2>
-                    <div class="file-legend" id="file-legend">
-                        <!-- 图例将通过JavaScript动态生成 -->
-                    </div>
-                    
-                    <div style="margin-top: 30px;">
-                        <h3 class="section-title">Data Information</h3>
-                        <p>This database contains paleo-wildfire evidence from different geological periods. Click on any marker to view details.</p>
-                        <p>Total data files: <span id="file-count">0</span></p>
-                        <p>Total markers: <span id="marker-count">0</span></p>
-                        <p>Visible markers: <span id="visible-marker-count">0</span></p>
-                    </div>
+                <div class="home-title-block">
+                    <div class="home-subtitle">GLOBAL INSIGHTS &nbsp;|&nbsp; INNOVATION</div>
+                    <div class="home-main-title">Global Phanerozoic Paleowildfire Database</div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 古地理复原页面 -->
-        <div id="reconstruction-page">
-            <div class="reconstruction-header">
-                <h2 class="section-title">Paleogeographic Reconstruction</h2>
-                <button class="btn btn-secondary back-button" id="back-btn">
-                    <i class="fas fa-arrow-left"></i> Back to Map
-                </button>
-            </div>
-            
-            <p>Select a geological period to view its paleogeographic reconstruction:</p>
-            
-            <div class="geological-buttons" id="geological-buttons">
-                <!-- 地质时期按钮将通过JavaScript动态生成 -->
-            </div>
-            
-            <div id="period-content" style="display: none;">
-                <div class="period-info">
-                    <div class="period-title" id="period-title">Geological Period</div>
-                    <div class="period-description" id="period-description">
-                        Click on a geological period button above to view paleogeographic reconstructions.
-                    </div>
+
+            <!-- 右侧文献列表 -->
+            <div class="literature-panel">
+                <div class="literature-panel-title">Featured Research</div>
+                <div class="lit-item">
+                    <div class="lit-title"><a href="#" title="Read full paper (link to be updated)">Phanerozoic global paleowildfire database (GPPD): advances, spatio-temporal evolution, and driving mechanisms</a></div>
+                    <div class="lit-meta"><span>Hui Ma, Yini Wang, Xiaolong Yang, Zaizheng Zhou, Feng Wang, Lin Xia</span><span></span></div>
+                    <div class="lit-link"><a href="#" title="DOI/URL placeholder">🔗 <em>DOI / Link — to be updated</em></a></div>
                 </div>
-                
-                <div class="reconstruction-container">
-                    <div class="palaeo-section">
-                        <h3 class="section-title">Paleogeographic Reconstruction</h3>
-                        <div class="palaeo-image-container" id="palaeo-image-container">
-                            <div class="no-image" id="palaeo-no-image">
-                                <i class="fas fa-image"></i>
-                                <p>No paleogeographic reconstruction selected</p>
-                                <p>Click on a geological period button above</p>
-                            </div>
-                            <!-- 古地理图将通过JavaScript动态加载 -->
-                        </div>
-                        <div class="image-caption" id="palaeo-caption">Select a geological period to view reconstructions</div>
-                        
-                        <div class="palaeo-controls">
-                            <button class="palaeo-btn" id="prev-btn" disabled>
-                                <i class="fas fa-backward"></i> Previous
-                            </button>
-                            <button class="palaeo-btn" id="play-pause-btn">
-                                <i class="fas fa-play"></i> Play
-                            </button>
-                            <button class="palaeo-btn" id="next-btn" disabled>
-                                <i class="fas fa-forward"></i> Next
-                            </button>
-                            
-                            <div class="time-slider-container">
-                                <input type="range" min="0" max="100" value="0" class="time-slider" id="time-slider" disabled>
-                            </div>
-                            
-                            <div class="time-display" id="time-display">-- Ma</div>
-                        </div>
-                    </div>
-                    
-                    <div class="recent-section">
-                        <h3 class="section-title">Modern Reference Map</h3>
-                        <div class="recent-image-container" id="recent-image-container">
-                            <div class="no-image" id="recent-no-image">
-                                <i class="fas fa-map"></i>
-                                <p>No modern reference map selected</p>
-                                <p>Click on a geological period button above</p>
-                            </div>
-                            <!-- 现代图将通过JavaScript动态加载 -->
-                        </div>
-                        <div class="image-caption" id="recent-caption">Modern reference map for comparison</div>
-                    </div>
-                </div>
+            </div>
+
+            <!-- 团队按钮 -->
+            <div class="team-btn-wrapper">
+                <button class="team-btn" id="home-goto-team"><i class="fas fa-users"></i> Work Team</button>
+            </div>
+
+            <!-- 页脚 -->
+            <div class="home-footer">
+                <i class="fas fa-envelope"></i> Feel free to contact: <a href="mailto:wyn27@jlu.edu.cn">wyn27@jlu.edu.cn</a>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        // 颜色映射 - 使用大写文件名
-        const colorMap = {
-            "C1.xlsx": "#679B66",
-            "C2.xlsx": "#99C2B5",
-            "D1.xlsx": "#E5AC4D",
-            "D2.xlsx": "#F1C868",
-            "D3.xlsx": "#F1E19D",
-            "E1.xlsx": "#FDA75F",
-            "E2.xlsx": "#FDB46C",
-            "E3.xlsx": "#FDC07A",
-            "J1.xlsx": "#42AED0",
-            "J2.xlsx": "#80CFD8",
-            "J3.xlsx": "#B3E3EE",
-            "K1.xlsx": "#8CCD51",
-            "K2.xlsx": "#A6D84A",
-            "N1.xlsx": "#FFFF00",
-            "N2.xlsx": "#FFFF99",
-            "P1.xlsx": "#EF5845",
-            "P2.xlsx": "#FB745C",
-            "P3.xlsx": "#FBA794",
-            "S1.xlsx": "#99D7B3",
-            "S2.xlsx": "#B3E1C2",
-            "S3.xlsx": "#BFE6CF",
-            "S4.xlsx": "#E6F5E1",
-            "T1.xlsx": "#983999",
-            "T2.xlsx": "#B168B1",
-            "T3.xlsx": "#BD8CC3"
+<!-- 团队页面 -->
+<div id="team-page" class="page page-hidden">
+    <div class="inner-header"><div class="header-top"><div class="inner-header-left"><img src="figure/f1.png" alt="GPPD"><h1>Work Team</h1></div><div class="right-buttons"><button class="nav-btn" data-page="data">Data</button><button class="nav-btn" data-page="reconstruction">Reconstruction</button><button class="nav-btn" data-page="evolution">Evolution</button><button class="nav-btn" data-page="stats">Statistics</button><button class="back-home-btn" id="back-home-team"><i class="fas fa-arrow-left"></i> Back to Home</button></div></div></div>
+    <div class="team-container">
+        <div class="group-photo"><img src="figure/all.jpg" alt="Team group photo" onerror="this.src='https://placehold.co/800x400?text=Group+Photo'"><p style="margin-top: 12px; color: #4f6f8a;">GPPD research team field workshop, 2025</p></div>
+        <div class="team-member"><div class="member-photo"><img src="figure/ma.JPG" alt="Ma Hui" onerror="this.src='https://placehold.co/140x140?text=Ma+Hui'"><h3>Ma Hui</h3></div><div class="member-intro"><p> PhD student at the College of Earth Sciences, Jilin University, focusing on paleoenvironment and paleoclimatology, and is responsible for literature data extraction and database construction.</p></div></div>
+        <div class="team-member"><div class="member-photo"><img src="figure/yang.JPG" alt="Yang" onerror="this.src='https://placehold.co/140x140?text=Yang'"><h3>Xiaolong Yang</h3></div><div class="member-intro"><p>Master's student at the College of Earth Sciences, Jilin University, specializing in paleoenvironment and paleoclimatology, and is responsible for website coding, database integration, and data visualization.</p></div></div>
+        <div class="team-member"><div class="member-photo"><img src="figure/lin.JPG" alt="Lin" onerror="this.src='https://placehold.co/140x140?text=Lin'"><h3>Xia Lin</h3></div><div class="member-intro"><p>Master's student at the College of Earth Sciences, Jilin University, researching paleontology and paleoenvironment, and is responsible for data entry, cleaning, and verification.</p></div></div>
+        <div class="team-member"><div class="member-photo"><img src="figure/wang.JPG" alt="Wang" onerror="this.src='https://placehold.co/140x140?text=Wang'"><h3>Yini Wang</h3></div><div class="member-intro"><p>Professor at the College of Earth Sciences, Jilin University, specializing in paleontology and paleoenvironment, and is responsible for overall website design, research logic, and module integration.</p></div></div>
+    </div>
+</div>
+
+<!-- Data 页面（原 Geographic Reconstructions，地图+表格+下载） -->
+<div id="data-page" class="page page-hidden">
+    <div class="inner-header"><div class="header-top"><div class="inner-header-left"><img src="figure/f1.png" alt="GPPD"><h1>Data · Global Occurrences</h1></div><div class="right-buttons"><button class="nav-btn" data-page="data">Data</button><button class="nav-btn" data-page="reconstruction">Reconstruction</button><button class="nav-btn" data-page="evolution">Evolution</button><button class="nav-btn" data-page="stats">Statistics</button><button class="back-home-btn" id="back-home-data"><i class="fas fa-arrow-left"></i> Back to Home</button></div></div></div>
+    <div class="modern-container"><div class="left-panel-wrapper"><div class="left-panel"><div class="strata-header" id="selected-strata-title">Select a epoch</div><div class="strata-list" id="strata-list"></div></div>
+        <!-- 文件下载位于地质时代选择下方 -->
+        <div class="download-section"><button id="download-xlsx-btn-data" class="btn-download">Download Full Dataset (.xlsx)</button><div class="download-note"></div></div>
+    </div><div class="right-area"><div><div id="modern-map"></div><div class="map-toolbar"><button class="map-btn" id="reset-map-view"><i class="fas fa-globe-americas"></i> Reset View</button><button class="map-btn" id="toggle-all-layers"><i class="fas fa-eye"></i> Show All</button></div></div><div class="table-wrapper"><h4 id="table-title">📍 Data points of selected stratum</h4><div style="overflow-x: auto;"><table class="data-table" id="points-table"><thead><tr><th>ID</th><th>Evidence type (full names)</th><th>Latitude/Longitude</th><th>Reference</th></tr></thead><tbody id="table-body"></tbody></table></div></div>
+    </div></div>
+</div>
+
+<!-- Reconstruction 页面（3D古地理地球） -->
+<div id="reconstruction-page" class="page page-hidden">
+    <div class="inner-header"><div class="header-top"><div class="inner-header-left"><img src="figure/f1.png" alt="GPPD"><h1>Reconstruction · Paleogeographic Globe</h1></div><div class="right-buttons"><button class="nav-btn" data-page="data">Data</button><button class="nav-btn" data-page="reconstruction">Reconstruction</button><button class="nav-btn" data-page="evolution">Evolution</button><button class="nav-btn" data-page="stats">Statistics</button><button class="back-home-btn" id="back-home-reconstr"><i class="fas fa-arrow-left"></i> Back to Home</button></div></div></div>
+    <div class="recon-layout-wrap">
+      <div class="recon-left-panel">
+        <div class="recon-strata-panel">
+          <div class="recon-strata-header" id="recon-strata-title">Select a epoch</div>
+          <div class="recon-strata-list" id="recon-strata-list"></div>
+        </div>
+      </div>
+      <div id="recon-globe-container">
+        <div id="recon-loading-overlay">
+          <div class="recon-spinner"></div>
+          <div>Loading paleogeography data...</div>
+          <div class="recon-progress"><div class="recon-progress-bar" id="reconProgressBar"></div></div>
+          <div id="reconLoadingText" style="font-size:12px;color:#aaa;margin-top:8px;"></div>
+        </div>
+        <div id="reconPopup"></div>
+        <div id="reconControls">
+          <div id="reconTimeDisplay">0 Ma</div>
+          <div id="reconEraDisplay">Present</div>
+          <input type="range" id="reconTimeSlider" min="0" max="430" value="0" step="1">
+          <div id="reconTimeProgressBarWrap"><div id="reconTimeProgressBar"></div></div>
+          <div id="recon-button-row">
+            <button id="reconBtnPlay">▶ Play</button>
+            <button id="reconBtnPause" disabled>⏸ Pause</button>
+            <button id="reconBtnReset">↺ Reset</button>
+            <button id="reconBtnSpeedDown">−</button>
+            <span id="reconSpeedDisplay">1x</span>
+            <button id="reconBtnSpeedUp">+</button>
+          </div>
+          <div id="reconDatasetInfo">Dataset: Scotese PaleoAtlas_v3 | Loading...</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Evolution 页面（原 Paleogeographic Reconstructions 完整播放器） -->
+<div id="evolution-page" class="page page-hidden">
+    <div class="inner-header"><div class="header-top"><div class="inner-header-left"><img src="figure/f1.png" alt="GPPD"><h1>Evolution · Deep‑Time Animations</h1></div><div class="right-buttons"><button class="nav-btn" data-page="data">Data</button><button class="nav-btn" data-page="reconstruction">Reconstruction</button><button class="nav-btn" data-page="evolution">Evolution</button><button class="nav-btn" data-page="stats">Statistics</button><button class="back-home-btn" id="back-home-evolution"><i class="fas fa-arrow-left"></i> Back to Home</button></div></div></div>
+    <div class="recon-layout">
+        <div class="period-info" style="background:#eef6fc; border-radius: 28px; padding: 18px;">
+            <div class="period-title" id="recon-period-title" style="font-size:1.5rem; font-weight:700;">⏳ Select a Period</div>
+            <div id="recon-period-desc">Click the buttons below to explore reconstructions.</div>
+        </div>
+        <div class="img-container">
+            <img id="recon-main-image" style="display: none;" alt="Paleogeographic reconstruction">
+        </div>
+        <div class="image-caption" id="recon-caption" style="text-align:center; margin:12px 0;">Awaiting selection</div>
+        <div class="palaeo-controls">
+            <button class="palaeo-btn" id="recon-prev" disabled><i class="fas fa-backward-step"></i> Previous</button>
+            <button class="palaeo-btn" id="recon-play" disabled><i class="fas fa-play"></i> Play</button>
+            <button class="palaeo-btn" id="recon-next" disabled><i class="fas fa-forward-step"></i> Next</button>
+            <div><input type="range" id="recon-slider" min="0" max="100" value="0" disabled class="time-slider"></div>
+            <div class="time-display" id="recon-time">-- Ma</div>
+        </div>
+        <div class="geo-buttons" id="recon-geo-buttons"></div>
+    </div>
+</div>
+
+<!-- 数据统计页面（新增 Fire scar 证据卡片） -->
+<div id="stats-page" class="page page-hidden">
+    <div class="inner-header"><div class="header-top"><div class="inner-header-left"><img src="figure/f1.png" alt="GPPD"><h1>Statistics · Paleowildfire Insights</h1></div><div class="right-buttons"><button class="nav-btn" data-page="data">Data</button><button class="nav-btn" data-page="reconstruction">Reconstruction</button><button class="nav-btn" data-page="evolution">Evolution</button><button class="nav-btn" data-page="stats">Statistics</button><button class="back-home-btn" id="back-home-stats"><i class="fas fa-arrow-left"></i> Back to Home</button></div></div></div>
+    <div class="stats-dashboard">
+        <div class="stats-card"><h2><i class="fas fa-chart-bar"></i> Wildfire Records by Geological Stage (Epoch)</h2><div class="chart-duo-row"><div class="chart-box"><canvas id="period-bar-chart"></canvas></div><div class="chart-box"><canvas id="period-pie-chart"></canvas></div></div></div>
+        <div class="stats-card"><h2><i class="fas fa-microscope"></i> Paleowildfire Evidence Types</h2><div class="chart-duo-row"><div class="chart-box"><canvas id="evidence-bar-chart"></canvas></div><div class="chart-box"><canvas id="evidence-pie-chart"></canvas></div></div><div class="evidence-gallery-modern"><div class="evidence-card-modern"><img src="figure/Inertinite.png" alt="Inertinite"><p>Inertinite (Inert)</p></div><div class="evidence-card-modern"><img src="figure/Fossil charcoal.png" alt="Fossil charcoal"><p>Fossil Charcoal (FC)</p></div><div class="evidence-card-modern"><img src="figure/PAHs.png" alt="PAHs"><p>Polycyclic aromatic hydrocarbons (PAHs)</p></div><div class="evidence-card-modern"><img src="figure/Natural char.png" alt="Natural char"><p>Natural Char</p></div><div class="evidence-card-modern"><img src="figure/Fire scar.png" alt="Fire scar" onerror="this.style.opacity=0.5"><p>Fire Scar</p></div></div></div>
+    </div>
+</div>
+
+<script>
+    // ================= 全局数据与颜色映射 =================
+    window.EPOCH_COLOR_MAP = {
+        "c1": "#679B66", "c2": "#99C2B5", "d1": "#E5AC4D", "d2": "#F1C868", "d3": "#F1E19D",
+        "e1": "#FDA75F", "e2": "#FDB46C", "e3": "#FDC07A", "j1": "#42AED0", "j2": "#80CFD8",
+        "j3": "#B3E3EE", "k1": "#8CCD51", "k2": "#A6D84A", "n1": "#FFFF00", "n2": "#FFFF99",
+        "p1": "#EF5845", "p2": "#FB745C", "p3": "#FBA794", "s1": "#99D7B3", "s2": "#B3E1C2",
+        "s3": "#BFE6CF", "s4": "#E6F5E1", "t1": "#983999", "t2": "#B168B1", "t3": "#BD8CC3"
+    };
+    window.globalJson = null;
+    let evidenceRawCounts = { "Inertinite/Charcoal":0, "Fossil Charcoal (FC)":0, "Natural char":0, "Polycyclic aromatic hydrocarbons":0, "Fire Scar":0 };
+    let epochCounts = {};
+    window.PERIOD_ORDER = ["S","D","C","P","T","J","K","E","N"];
+    const SILURIAN_AGES = [];
+    for (let age = 430; age >= 420; age--) { SILURIAN_AGES.push(`S_${age}.00Ma.jpg`); }
+    window.PERIOD_DATA = {
+        "S": { name: "Silurian", fullName: "Silurian", color: "#B3FFBF", description: "Silurian (443.8–419.2 Ma)", images: SILURIAN_AGES },
+        "D": { name: "Devonian", fullName: "Devonian", color: "#F1C868", description: "Devonian (419.2–358.9 Ma)", images: Array.from({length:419-359+1},(_,i)=>`D_${359+i}.00Ma.jpg`) },
+        "C": { name: "Carboniferous", fullName: "Carboniferous", color: "#99C2B5", description: "Carboniferous (358.9–298.9 Ma)", images: Array.from({length:358-299+1},(_,i)=>`C_${299+i}.00Ma.jpg`) },
+        "P": { name: "Permian", fullName: "Permian", color: "#FDB46C", description: "Permian (298.9–252.2 Ma)", images: Array.from({length:298-252+1},(_,i)=>`P_${252+i}.00Ma.jpg`) },
+        "T": { name: "Triassic", fullName: "Triassic", color: "#B168B1", description: "Triassic (252.2–201.3 Ma)", images: Array.from({length:251-202+1},(_,i)=>`T_${202+i}.00Ma.jpg`) },
+        "J": { name: "Jurassic", fullName: "Jurassic", color: "#80CFD8", description: "Jurassic (201.3–145 Ma)", images: Array.from({length:201-146+1},(_,i)=>`J_${146+i}.00Ma.jpg`) },
+        "K": { name: "Cretaceous", fullName: "Cretaceous", color: "#A6D84A", description: "Cretaceous (145–66 Ma)", images: Array.from({length:145-67+1},(_,i)=>`K_${67+i}.00Ma.jpg`) },
+        "E": { name: "Paleogene", fullName: "Paleogene", color: "#FDA75F", description: "Paleogene (66–23 Ma)", images: Array.from({length:66-24+1},(_,i)=>`E_${24+i}.00Ma.jpg`) },
+        "N": { name: "Neogene", fullName: "Neogene", color: "#FFFF00", description: "Neogene (23–2.6 Ma)", images: Array.from({length:23-5+1},(_,i)=>`N_${5+i}.00Ma.jpg`) }
+    };
+    window.strataMapping = {
+        "s2": { name_en: "Wenlock", short: "S2", periodCode: "S", baseAge: 430.6 }, "s3": { name_en: "Ludlow", short: "S3", periodCode: "S", baseAge: 426.7 }, "s4": { name_en: "Pridoli", short: "S4", periodCode: "S", baseAge: 422.7 }, "s1": { name_en: "Llandovery", short: "S1", periodCode: "S", baseAge: 441 },
+        "d1": { name_en: "Early Devonian", short: "D1", periodCode: "D", baseAge: 419.62 }, "d2": { name_en: "Middle Devonian", short: "D2", periodCode: "D", baseAge: 393.47 }, "d3": { name_en: "Late Devonian", short: "D3", periodCode: "D", baseAge: 382.31 },
+        "c1": { name_en: "Early Carboniferous", short: "C1", periodCode: "C", baseAge: 358.86 }, "c2": { name_en: "Late Carboniferous", short: "C2", periodCode: "C", baseAge: 323.4 },
+        "p1": { name_en: "Cisuralian", short: "P1", periodCode: "P", baseAge: 298.9 }, "p2": { name_en: "Guadalupian", short: "P2", periodCode: "P", baseAge: 274.4 }, "p3": { name_en: "Lopingian", short: "P3", periodCode: "P", baseAge: 259.51 },
+        "t1": { name_en: "Early Triassic", short: "T1", periodCode: "T", baseAge: 251.9 }, "t2": { name_en: "Middle Triassic", short: "T2", periodCode: "T", baseAge: 241.464 }, "t3": { name_en: "Late Triassic", short: "T3", periodCode: "T", baseAge: 227.3 },
+        "j1": { name_en: "Early Jurassic", short: "J1", periodCode: "J", baseAge: 201.4 }, "j2": { name_en: "Middle Jurassic", short: "J2", periodCode: "J", baseAge: 170.3 }, "j3": { name_en: "Late Jurassic", short: "J3", periodCode: "J", baseAge: 149.2 },
+        "k1": { name_en: "Early Cretaceous", short: "K1", periodCode: "K", baseAge: 143.1 }, "k2": { name_en: "Late Cretaceous", short: "K2", periodCode: "K", baseAge: 100.5 },
+        "e1": { name_en: "Paleocene", short: "E1", periodCode: "E", baseAge: 66.0 }, "e2": { name_en: "Eocene", short: "E2", periodCode: "E", baseAge: 56.0 }, "e3": { name_en: "Oligocene", short: "E3", periodCode: "E", baseAge: 33.9 },
+        "n1": { name_en: "Miocene", short: "N1", periodCode: "N", baseAge: 23.04 }, "n2": { name_en: "Pliocene", short: "N2", periodCode: "N", baseAge: 5.33 }
+    };
+    window.normalizeEvidenceFullName = function(raw) { if (!raw) return "Unspecified"; const parts = raw.split(/[\/,;]+/).map(s => s.trim().toLowerCase()); const map = { "fc":"Fossil Charcoal", "fossil charcoal":"Fossil Charcoal", "pah":"Polycyclic aromatic hydrocarbons", "pahs":"Polycyclic aromatic hydrocarbons", "inertinite":"Inertinite", "inert":"Inertinite", "charcoal":"Inertinite", "natural char":"Natural Char", "natural charcoal":"Natural Char" }; const fulls = parts.map(p => map[p] || (p.length>2 ? p.charAt(0).toUpperCase()+p.slice(1) : p.toUpperCase())); return [...new Set(fulls)].join(" / "); }
+    async function loadData() { try { const res = await fetch('paleo_data.json?t='+Date.now()); if(!res.ok) throw new Error(); const data = await res.json(); globalJson = data; for(let k in evidenceRawCounts) evidenceRawCounts[k]=0; epochCounts = {}; for(let key in strataMapping) epochCounts[key] = 0; for(let [fkey, fcont] of Object.entries(data)) { if(!fcont.data) continue; const epochKey = fkey.toLowerCase(); if(epochCounts[epochKey] === undefined) epochCounts[epochKey] = 0; for(let pt of fcont.data) { epochCounts[epochKey]++; let evRaw = pt['Wildfire evidence type'] || ""; let lower = evRaw.toLowerCase(); if(/(inert|inertinite|charcoal)/i.test(lower) && !/fossil\s*charcoal/i.test(lower)) evidenceRawCounts["Inertinite/Charcoal"]++; if(/\b(fc|fossil\s*charcoal)\b/i.test(lower)) evidenceRawCounts["Fossil Charcoal (FC)"]++; if(/\b(natural\s*char)\b/i.test(lower)) evidenceRawCounts["Natural char"]++; if(/\b(pah|pahs|polycyclic aromatic hydrocarbons)\b/i.test(lower)) evidenceRawCounts["Polycyclic aromatic hydrocarbons"]++; if(/\b(fire\s*scar)\b/i.test(lower)) evidenceRawCounts["Fire Scar"]++; } } return true; } catch(e) { console.error(e); return false; } }
+    // 地图与树
+    let modernMap = null, layerGroups = {}, allVisible = true, currentSelectedStrata = null, markersMap = new Map();
+    function buildStrataTree() { const container = document.getElementById('strata-list'); if(!container) return; container.innerHTML = ''; const groups = new Map(); for (let [key, info] of Object.entries(strataMapping)) { if(!globalJson[key]) continue; const period = info.periodCode; if(!groups.has(period)) groups.set(period, []); groups.get(period).push({ key, epochName: info.name_en, short: info.short, count: globalJson[key].data.length, baseAge: info.baseAge }); } for(let period of PERIOD_ORDER) { const epochList = groups.get(period) || []; epochList.sort((a,b)=>b.baseAge - a.baseAge); const periodTotal = epochList.reduce((s,e)=>s+e.count,0); const periodDiv = document.createElement('div'); periodDiv.className = 'period-group'; const header = document.createElement('div'); header.className = 'period-header'; header.innerHTML = `<div class="period-name"><i class="fas fa-layer-group"></i> ${PERIOD_DATA[period].name}</div><div><span class="period-count">${periodTotal}</span> <i class="fas fa-chevron-right toggle-icon"></i></div>`; const epochUl = document.createElement('ul'); epochUl.className = 'epoch-list'; epochList.forEach(epoch => { const li = document.createElement('li'); li.className = 'epoch-item'; li.dataset.key = epoch.key; li.innerHTML = `<span class="epoch-name">${epoch.epochName} (${epoch.short})</span><span class="epoch-count">${epoch.count}</span>`; li.addEventListener('click', (e) => { e.stopPropagation(); document.querySelectorAll('.epoch-item').forEach(el=>el.classList.remove('active')); li.classList.add('active'); currentSelectedStrata = epoch.key; document.getElementById('selected-strata-title').innerHTML = `📍 Current: ${PERIOD_DATA[period].name} - ${epoch.epochName} (${epoch.count} records)`; updatePointsTable(epoch.key); for(let k in layerGroups) { if(k === epoch.key) layerGroups[k].addTo(modernMap); else modernMap.removeLayer(layerGroups[k]); } allVisible = false; document.getElementById('toggle-all-layers').innerHTML = '<i class="fas fa-eye"></i> Show All'; }); epochUl.appendChild(li); }); periodDiv.appendChild(header); periodDiv.appendChild(epochUl); container.appendChild(periodDiv); header.addEventListener('click', () => { epochUl.classList.toggle('open'); const icon = header.querySelector('.toggle-icon'); if(epochUl.classList.contains('open')) { icon.classList.remove('fa-chevron-right'); icon.classList.add('fa-chevron-down'); } else { icon.classList.remove('fa-chevron-down'); icon.classList.add('fa-chevron-right'); } }); } }
+    function updatePointsTable(strataKey) { const tbody = document.getElementById('table-body'); if(!tbody) return; tbody.innerHTML = ''; const points = globalJson[strataKey]?.data || []; points.forEach(pt => { const row = tbody.insertRow(); row.insertCell(0).innerText = pt.id ?? '-'; row.insertCell(1).innerText = normalizeEvidenceFullName(pt['Wildfire evidence type']); row.insertCell(2).innerText = `${pt.lat.toFixed(2)}, ${pt.lng.toFixed(2)}`; row.insertCell(3).innerText = (pt['Reference'] || '-').substring(0, 60); row.addEventListener('click', () => { const marker = markersMap.get(pt.id); if(marker) { marker.openPopup(); modernMap.setView([pt.lat, pt.lng], 8); } }); }); }
+    async function initModernMap() { if(modernMap) return; await loadData(); modernMap = L.map('modern-map', { maxBounds: [[-85,-180],[85,180]], maxBoundsViscosity: 0.9 }).setView([30,0],2); const baseMaps = { "🗺️ CartoDB Voyager": L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© CARTO', subdomains: 'abcd' }), "🌍 OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OSM' }), "🛰️ Satellite Imagery": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: '© Esri' }) }; baseMaps["🗺️ CartoDB Voyager"].addTo(modernMap); L.control.layers(baseMaps).addTo(modernMap); layerGroups = {}; markersMap.clear(); for(let [fkey, fcont] of Object.entries(globalJson)) { if(!fcont.data?.length) continue; const epochKey = fkey.toLowerCase(); const color = EPOCH_COLOR_MAP[epochKey] || "#aaa"; const group = L.layerGroup(); fcont.data.forEach(pt => { const marker = L.circleMarker([pt.lat, pt.lng], { radius: 6, fillColor: color, color: '#2c3e33', weight: 1, fillOpacity: 0.85 }); const epochInfo = strataMapping[epochKey]; const fullStrata = `${epochInfo?.name_en || epochKey} (${epochInfo?.short || epochKey})`; const evFull = normalizeEvidenceFullName(pt['Wildfire evidence type']); marker.bindPopup(`<strong>Period (Epoch):</strong> ${fullStrata}<br><strong>Coordinates:</strong> ${pt.lat.toFixed(2)}°, ${pt.lng.toFixed(2)}°<br><strong>Proxy Type:</strong> ${evFull}<br><strong>Reference:</strong> ${pt['Reference'] || 'N/A'}`); marker.addTo(group); markersMap.set(pt.id, marker); }); layerGroups[fkey] = group; if(allVisible) group.addTo(modernMap); } buildStrataTree(); document.getElementById('reset-map-view').onclick = () => modernMap.setView([30,0],2); document.getElementById('toggle-all-layers').onclick = () => { allVisible = !allVisible; for(let k in layerGroups) allVisible ? layerGroups[k].addTo(modernMap) : modernMap.removeLayer(layerGroups[k]); document.getElementById('toggle-all-layers').innerHTML = allVisible ? '<i class="fas fa-eye-slash"></i> Hide All' : '<i class="fas fa-eye"></i> Show All'; }; }
+    // 统计图表
+    let epochBarChart, epochPieChart, evBarChart, evPieChart;
+    async function renderStatsCharts() { await loadData(); const epochItems = []; for(let [key, info] of Object.entries(strataMapping)) { if(epochCounts[key] && epochCounts[key] > 0) { epochItems.push({ short: info.short, count: epochCounts[key], baseAge: info.baseAge, epochKey: key }); } } epochItems.sort((a,b)=>b.baseAge - a.baseAge); const labels = epochItems.map(e => e.short); const data = epochItems.map(e => e.count); const barColors = epochItems.map(e => EPOCH_COLOR_MAP[e.epochKey] || "#7f8c8d"); if(epochBarChart) epochBarChart.destroy(); epochBarChart = new Chart(document.getElementById('period-bar-chart'), { type:'bar', data:{ labels, datasets:[{ label:'Wildfire records', data, backgroundColor:barColors, borderRadius:0 }] }, options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true } }, plugins:{ legend:{ display:false }, tooltip:{ enabled:true } } } }); if(epochPieChart) epochPieChart.destroy(); epochPieChart = new Chart(document.getElementById('period-pie-chart'), { type:'pie', data:{ labels, datasets:[{ data, backgroundColor:barColors }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false }, tooltip:{ enabled:true } } } }); const evLabels = ["Inertinite (Inert)","Fossil Charcoal (FC)","PAHs","Natural Char","Fire Scar"]; const evVals = [evidenceRawCounts["Inertinite/Charcoal"], evidenceRawCounts["Fossil Charcoal (FC)"], evidenceRawCounts["Polycyclic aromatic hydrocarbons"], evidenceRawCounts["Natural char"], evidenceRawCounts["Fire Scar"]]; if(evBarChart) evBarChart.destroy(); evBarChart = new Chart(document.getElementById('evidence-bar-chart'), { type:'bar', data:{ labels:evLabels, datasets:[{ label:'Occurrences', data:evVals, backgroundColor:['#6c757d','#868e96','#4e6b7a','#adb5bd','#e07b39'], borderRadius:0 }] }, options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true } }, plugins:{ legend:{ display:false }, tooltip:{ enabled:true } } } }); if(evPieChart) evPieChart.destroy(); evPieChart = new Chart(document.getElementById('evidence-pie-chart'), { type:'pie', data:{ labels:evLabels, datasets:[{ data:evVals, backgroundColor:['#6c757d','#868e96','#4e6b7a','#adb5bd','#e07b39'] }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false }, tooltip:{ enabled:true } } } }); }
+    // 下载功能 (Data页面)
+    function setupDataDownload() { const btn = document.getElementById('download-xlsx-btn-data'); if(!btn) return; btn.addEventListener('click', () => { const fileUrl = 'data/Records of Global Phanerozoic Paleowildfire.xlsx'; btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Checking...'; btn.disabled = true; fetch(fileUrl, { method: 'HEAD' }).then(res => { if (!res.ok) throw new Error(`HTTP ${res.status}`); return fetch(fileUrl); }).then(res => res.blob()).then(blob => { const a = document.createElement('a'); const url = URL.createObjectURL(blob); a.href = url; a.download = 'Records_of_Global_Phanerozoic_Paleowildfire.xlsx'; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); }).catch(err => { alert(`❌ Download failed: ${err.message}\nPlease ensure file exists at ${fileUrl}`); }).finally(() => { btn.innerHTML = 'Download Full Dataset (.xlsx)'; btn.disabled = false; }); }); }
+    // Evolution 播放器逻辑
+    let currentImageList = [], currentListType = 'period', currentPeriodCode = 'S', currentIdx = 0, playerTimer = null, isPlaying = false;
+    function buildAllImageList() { const list = []; for (let code of PERIOD_ORDER) { const period = PERIOD_DATA[code]; for (let img of period.images) { const age = parseFloat(img.match(/_(\d+\.?\d*)/)?.[1] || 0); if (age <= 430) { list.push({ src: "palaeo/" + img, age, caption: `${period.fullName} · ${age.toFixed(2)} Ma`, periodName: period.fullName }); } } } list.sort((a,b) => b.age - a.age); return list; }
+    function buildPeriodImageList(code) { const period = PERIOD_DATA[code]; const list = []; for (let img of period.images) { const age = parseFloat(img.match(/_(\d+\.?\d*)/)?.[1] || 0); if (age <= 430) { list.push({ src: "palaeo/" + img, age, caption: `${period.fullName} · ${age.toFixed(2)} Ma` }); } } list.sort((a,b) => b.age - a.age); return list; }
+    function updateEvolutionDisplay() { const img = document.getElementById('recon-main-image'); const timeLabel = document.getElementById('recon-time'); const captionDiv = document.getElementById('recon-caption'); const slider = document.getElementById('recon-slider'); const prevBtn = document.getElementById('recon-prev'); const nextBtn = document.getElementById('recon-next'); const periodTitle = document.getElementById('recon-period-title'); const periodDesc = document.getElementById('recon-period-desc'); if (!currentImageList.length) { img.style.display = 'none'; timeLabel.innerHTML = '-- Ma'; captionDiv.innerHTML = 'No data available'; slider.disabled = true; prevBtn.disabled = true; nextBtn.disabled = true; return; } const item = currentImageList[currentIdx]; img.src = item.src; img.style.display = 'block'; timeLabel.innerHTML = item.age.toFixed(2) + ' Ma'; captionDiv.innerHTML = item.caption; slider.max = currentImageList.length - 1; slider.value = currentIdx; slider.disabled = (currentImageList.length <= 1); prevBtn.disabled = (currentIdx === 0); nextBtn.disabled = (currentIdx === currentImageList.length - 1); if (currentListType === 'period') { const period = PERIOD_DATA[currentPeriodCode]; periodTitle.innerHTML = period.fullName; periodDesc.innerHTML = period.description; } else { periodTitle.innerHTML = 'Full Phanerozoic'; periodDesc.innerHTML = 'Deep‑time animation (all periods)'; } }
+    function stopPlayer() { if (playerTimer) { clearInterval(playerTimer); playerTimer = null; } isPlaying = false; document.getElementById('recon-play').innerHTML = `<i class="fas fa-play"></i> Play`; }
+    function startPlayer() { if (currentImageList.length <= 1) return; if (playerTimer) stopPlayer(); isPlaying = true; playerTimer = setInterval(() => { if (!isPlaying) return; currentIdx = (currentIdx + 1) % currentImageList.length; updateEvolutionDisplay(); }, 1400); document.getElementById('recon-play').innerHTML = `<i class="fas fa-pause"></i> Play`; }
+    function togglePlay() { if (isPlaying) stopPlayer(); else startPlayer(); }
+    function prevImage() { if (currentIdx > 0) { currentIdx--; updateEvolutionDisplay(); if (isPlaying) { stopPlayer(); startPlayer(); } } }
+    function nextImage() { if (currentIdx < currentImageList.length - 1) { currentIdx++; updateEvolutionDisplay(); if (isPlaying) { stopPlayer(); startPlayer(); } } }
+    function onSliderChange(value) { let idx = parseInt(value); if (!isNaN(idx) && idx >= 0 && idx < currentImageList.length) { currentIdx = idx; updateEvolutionDisplay(); if (isPlaying) { stopPlayer(); startPlayer(); } } }
+    function setModePeriod(code) { if (playerTimer) stopPlayer(); currentListType = 'period'; currentPeriodCode = code; currentImageList = buildPeriodImageList(code); if (!currentImageList.length) return; currentIdx = 0; updateEvolutionDisplay(); document.getElementById('recon-play').disabled = false; }
+    function setModeAll() { if (playerTimer) stopPlayer(); currentListType = 'all'; currentImageList = buildAllImageList(); if (!currentImageList.length) return; currentIdx = 0; updateEvolutionDisplay(); document.getElementById('recon-play').disabled = false; }
+    function buildReconButtons() { const container = document.getElementById('recon-geo-buttons'); container.innerHTML = ''; const allBtn = document.createElement('button'); allBtn.textContent = 'All'; allBtn.className = 'btn-all'; allBtn.addEventListener('click', () => setModeAll()); container.appendChild(allBtn); PERIOD_ORDER.forEach(code => { const btn = document.createElement('button'); btn.textContent = code; btn.style.backgroundColor = PERIOD_DATA[code].color; btn.style.opacity = 0.85; btn.className = 'btn-geo'; btn.addEventListener('click', () => setModePeriod(code)); container.appendChild(btn); }); }
+    // 页面切换
+    function showPage(pageId) { document.querySelectorAll('.page').forEach(p => p.classList.add('page-hidden')); document.getElementById(pageId).classList.remove('page-hidden'); if (pageId === 'data-page' && !window._modernInit) { initModernMap(); setupDataDownload(); window._modernInit = true; } if (pageId === 'stats-page') { renderStatsCharts(); } if (pageId === 'evolution-page' && !window._evolutionInit) { buildReconButtons(); setModePeriod("S"); document.getElementById('recon-prev').onclick = prevImage; document.getElementById('recon-next').onclick = nextImage; document.getElementById('recon-play').onclick = togglePlay; document.getElementById('recon-slider').oninput = (e) => onSliderChange(e.target.value); window._evolutionInit = true; } }
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.addEventListener('click', (e) => { showPage(e.currentTarget.getAttribute('data-page') + '-page'); }));
+    document.getElementById('home-goto-data').onclick = () => showPage('data-page');
+    document.getElementById('home-goto-reconstruction').onclick = () => showPage('reconstruction-page');
+    document.getElementById('home-goto-evolution').onclick = () => showPage('evolution-page');
+    document.getElementById('home-goto-stats').onclick = () => showPage('stats-page');
+    document.getElementById('home-goto-team').onclick = () => showPage('team-page');
+    document.getElementById('back-home-data').onclick = () => showPage('home-page');
+    document.getElementById('back-home-evolution').onclick = () => { if (playerTimer) clearInterval(playerTimer); showPage('home-page'); };
+    document.getElementById('back-home-stats').onclick = () => showPage('home-page');
+    document.getElementById('back-home-team').onclick = () => showPage('home-page');
+    document.getElementById('back-home-reconstr').onclick = () => showPage('home-page');
+    window.addEventListener('load', async () => { await loadData(); showPage('home-page'); });
+    
+    // ================= Reconstruction 页面初始化 =================
+    window._reconInitialized = false;
+    const origShowPage = showPage;
+    showPage = function(pageId) {
+        origShowPage(pageId);
+        if (pageId === 'reconstruction-page' && !window._reconInitialized) {
+            window._reconInitialized = true;
+            setTimeout(() => initReconstructionGlobe(), 200);
+        }
+    };
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ============ Global state ============
+let reconCurrentTime = 0; // Ma
+let reconRotations = {};   // plate_id -> [[time, lat, lon, angle, ref_plate_id], ...]
+let reconPlatePolygons = []; // [{id, name, vertices: [[lat,lng],...]}, ...]
+let reconPointsData = [];    // [{id, plateId, lat, lng, timeBegin, timeEnd}, ...]
+let reconRasters = [];       // [{time, file, boundingBox}, ...]
+let reconShowPlates = true;
+let reconShowPoints = true;
+let reconShowRaster = true;
+let reconCurrentRasterMesh = null;
+let reconPlateLineMeshes = [];     // Line objects (rebuilt each time)
+let reconPointMeshGroup = null;    // single Group containing all point sprites
+
+// ============ Recon Scene init ============
+let reconScene, reconCamera, reconRenderer, reconControls, reconEarth;
+let reconAnimFrameId = null;
+let reconInitialized = false;
+
+// Playback state
+let reconPlaying = false;
+let reconPlayInterval = null;
+let reconPlaySpeed = 1;
+
+// ============ Coordinate helpers ============
+function reconLatLngToVec3(lat, lng, radius) {
+  const phi = (90 - lat) * Math.PI / 180;
+  const theta = (lng + 180) * Math.PI / 180;
+  return new THREE.Vector3(
+    -radius * Math.sin(phi) * Math.cos(theta),
+    radius * Math.cos(phi),
+    radius * Math.sin(phi) * Math.sin(theta)
+  );
+}
+
+function reconNormalizeLon(lon) {
+  const v = ((lon + 180) % 360 + 360) % 360 - 180;
+  return v === -180 ? 180 : v;
+}
+
+function reconInterpLon(lon0, lon1, f) {
+  let d = lon1 - lon0;
+  if (d > 180) d -= 360;
+  if (d < -180) d += 360;
+  return reconNormalizeLon(lon0 + d * f);
+}
+
+// ============ Plate rotation calculation ============
+const reconRotationCache = new Map();
+
+function reconGetRotationForPlate(plateId, time) {
+  const cacheKey = `${plateId}_${time}`;
+  if (reconRotationCache.has(cacheKey)) return reconRotationCache.get(cacheKey);
+
+  const plateRots = reconRotations[plateId];
+  if (!plateRots || plateRots.length === 0) {
+    const identity = { lat: 90, lon: 0, angle: 0, refPlateId: 0 };
+    reconRotationCache.set(cacheKey, identity);
+    return identity;
+  }
+
+  let older = plateRots[0];
+  let younger = plateRots[plateRots.length - 1];
+  if (time >= plateRots[0][0]) {
+    older = younger = plateRots[0];
+  } else if (time <= plateRots[plateRots.length - 1][0]) {
+    older = younger = plateRots[plateRots.length - 1];
+  } else {
+    for (let i = 0; i < plateRots.length - 1; i++) {
+      const a = plateRots[i];
+      const b = plateRots[i + 1];
+      if (a[0] >= time && time >= b[0]) {
+        older = a;
+        younger = b;
+        break;
+      }
+    }
+  }
+
+  let lat, lon, angle, refPlateId;
+  if (older === younger || older[0] === younger[0]) {
+    [, lat, lon, angle, refPlateId] = older;
+  } else {
+    const [tOld, latOld, lonOld, angOld, refOld] = older;
+    const [tYoung, latYoung, lonYoung, angYoung] = younger;
+    const f = (tOld - tYoung) > 0 ? (time - tYoung) / (tOld - tYoung) : 0;
+    lat = latYoung + (latOld - latYoung) * f;
+    lon = reconInterpLon(lonYoung, lonOld, f);
+    angle = angYoung + (angOld - angYoung) * f;
+    refPlateId = refOld;
+  }
+
+  const result = { lat, lon, angle, refPlateId: Number(refPlateId) || 0 };
+  reconRotationCache.set(cacheKey, result);
+  return result;
+}
+
+function reconEulerToMatrix(lat, lon, angleDeg) {
+  const angle = angleDeg * Math.PI / 180;
+  const phi = lat * Math.PI / 180;
+  const lambda = lon * Math.PI / 180;
+  const cosA = Math.cos(angle), sinA = Math.sin(angle);
+  const ex = Math.cos(phi) * Math.cos(lambda);
+  const ey = Math.cos(phi) * Math.sin(lambda);
+  const ez = Math.sin(phi);
+  return [
+    [cosA + ex*ex*(1-cosA),     ex*ey*(1-cosA) - ez*sinA, ex*ez*(1-cosA) + ey*sinA],
+    [ey*ex*(1-cosA) + ez*sinA,  cosA + ey*ey*(1-cosA),    ey*ez*(1-cosA) - ex*sinA],
+    [ez*ex*(1-cosA) - ey*sinA,  ez*ey*(1-cosA) + ex*sinA, cosA + ez*ez*(1-cosA)]
+  ];
+}
+
+function reconApplyMatrix(m, v) {
+  return [
+    m[0][0]*v[0] + m[0][1]*v[1] + m[0][2]*v[2],
+    m[1][0]*v[0] + m[1][1]*v[1] + m[1][2]*v[2],
+    m[2][0]*v[0] + m[2][1]*v[1] + m[2][2]*v[2]
+  ];
+}
+
+function reconLatLonToCartesianGeo(lat, lon) {
+  const phi = lat * Math.PI / 180;
+  const lambda = lon * Math.PI / 180;
+  return [Math.cos(phi)*Math.cos(lambda), Math.cos(phi)*Math.sin(lambda), Math.sin(phi)];
+}
+
+function reconCartesianToLatLon(x, y, z) {
+  const r = Math.sqrt(x*x + y*y + z*z) || 1;
+  return { lat: Math.asin(Math.max(-1, Math.min(1, z/r))) * 180 / Math.PI,
+           lng: reconNormalizeLon(Math.atan2(y, x) * 180 / Math.PI) };
+}
+
+function reconGetPlateRotationMatrix(plateId, time) {
+  const rot = reconGetRotationForPlate(plateId, time);
+  if (!rot || Math.abs(rot.angle) < 1e-6) return [[1,0,0],[0,1,0],[0,0,1]];
+  return reconEulerToMatrix(rot.lat, rot.lon, rot.angle);
+}
+
+function reconReconstructPoint(plateId, lat, lng, time) {
+  const matrix = reconGetPlateRotationMatrix(plateId, time);
+  const v = reconApplyMatrix(matrix, reconLatLonToCartesianGeo(lat, lng));
+  return reconCartesianToLatLon(v[0], v[1], v[2]);
+}
+
+// ============ Rebuild plate boundaries ============
+function reconRebuildPlates(time) {
+  reconPlateLineMeshes.forEach(m => { reconEarth.remove(m); m.geometry.dispose(); });
+  reconPlateLineMeshes = [];
+
+  if (!reconShowPlates) return;
+
+  const lineMaterial = new THREE.LineBasicMaterial({
+    color: 0x4488aa,
+    transparent: true,
+    opacity: 0.0,
+    depthTest: true,
+    depthWrite: true
+  });
+
+  reconPlatePolygons.forEach(plate => {
+    const vertices = plate.vertices;
+    if (vertices.length < 3) return;
+
+    const points = [];
+    for (const [lat, lng] of vertices) {
+      const paleo = reconReconstructPoint(plate.id, lat, lng, time);
+      points.push(reconLatLngToVec3(paleo.lat, paleo.lng, 1.003));
+    }
+    if (vertices.length > 0) {
+      const [lat0, lng0] = vertices[0];
+      const paleo = reconReconstructPoint(plate.id, lat0, lng0, time);
+      points.push(reconLatLngToVec3(paleo.lat, paleo.lng, 1.003));
+    }
+
+    const geo = new THREE.BufferGeometry().setFromPoints(points);
+    const line = new THREE.Line(geo, lineMaterial);
+    reconEarth.add(line);
+    reconPlateLineMeshes.push(line);
+  });
+}
+
+// ============ Fire point sprites ============
+function reconCreatePointSprite(pointData) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 32;
+  canvas.height = 32;
+  const ctx = canvas.getContext('2d');
+
+  const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 12);
+  gradient.addColorStop(0, 'rgba(255, 120, 80, 1)');
+  gradient.addColorStop(0.3, 'rgba(255, 60, 40, 0.9)');
+  gradient.addColorStop(0.7, 'rgba(255, 20, 10, 0.3)');
+  gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+  ctx.fillStyle = gradient;
+  ctx.beginPath();
+  ctx.arc(16, 16, 12, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+  ctx.beginPath();
+  ctx.arc(16, 16, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  const texture = new THREE.CanvasTexture(canvas);
+  const spriteMat = new THREE.SpriteMaterial({
+    map: texture,
+    blending: THREE.AdditiveBlending,
+    depthTest: true,
+    depthWrite: false,
+    transparent: true,
+    opacity: 0.85
+  });
+  const sprite = new THREE.Sprite(spriteMat);
+  sprite.scale.set(0.05, 0.05, 0.05);
+  sprite.userData = pointData;
+  return sprite;
+}
+
+function reconCreateAllPointMarkers(points) {
+  const group = new THREE.Group();
+  group.userData = { points };
+
+  points.forEach(point => {
+    const sprite = reconCreatePointSprite(point);
+    sprite.position.set(0, 0, 0);
+    sprite.userData = point;
+    group.add(sprite);
+  });
+
+  return group;
+}
+
+function reconUpdateAllPointPositions(time) {
+  if (!reconPointMeshGroup) return;
+
+  const sprites = reconPointMeshGroup.children;
+  sprites.forEach(sprite => {
+    const point = sprite.userData;
+
+    const inTimeRange = time >= point.timeEnd && time <= point.timeBegin;
+    sprite.visible = inTimeRange && reconShowPoints;
+
+    if (!inTimeRange) return;
+
+    const paleoPos = reconReconstructPoint(point.plateId, point.lat, point.lng, time);
+    const pos = reconLatLngToVec3(paleoPos.lat, paleoPos.lng, 1.016);
+    sprite.position.copy(pos);
+  });
+
+}
+
+// ============ Raster texture ============
+function reconFindRasterForTime(time) {
+  let best = null;
+  let bestDiff = Infinity;
+  for (const r of reconRasters) {
+    const diff = Math.abs(r.time - time);
+    if (diff < bestDiff) {
+      bestDiff = diff;
+      best = r;
+    }
+  }
+  return best;
+}
+
+function reconCreateRasterMesh(rasterData) {
+  if (!rasterData) return null;
+
+  const imageUrl = `plates/PALEOMAP PaleoAtlas Rasters v3/${rasterData.file}`;
+  const textureLoader = new THREE.TextureLoader();
+
+  const texture = textureLoader.load(imageUrl, () => {
+  }, undefined, () => {
+    console.warn('Failed to load raster:', rasterData.file);
+  });
+
+  const material = new THREE.MeshPhongMaterial({
+    map: texture,
+    transparent: true,
+    opacity: 0.7,
+    emissive: 0x111111,
+    emissiveIntensity: 0.1,
+    depthWrite: true
+  });
+
+  const rasterGeo = new THREE.SphereGeometry(1.001, 128, 128);
+  const mesh = new THREE.Mesh(rasterGeo, material);
+  return mesh;
+}
+
+function reconUpdateRaster(time) {
+  if (reconCurrentRasterMesh) {
+    reconEarth.remove(reconCurrentRasterMesh);
+    if (reconCurrentRasterMesh.material.map) {
+      reconCurrentRasterMesh.material.map.dispose();
+    }
+    reconCurrentRasterMesh.material.dispose();
+    reconCurrentRasterMesh.geometry.dispose();
+    reconCurrentRasterMesh = null;
+  }
+
+  if (!reconShowRaster) return;
+
+  const raster = reconFindRasterForTime(time);
+  if (raster) {
+    reconCurrentRasterMesh = reconCreateRasterMesh(raster);
+    if (reconCurrentRasterMesh) {
+      reconEarth.add(reconCurrentRasterMesh);
+    }
+  }
+  const loadingText = document.getElementById('reconLoadingText');
+  if (loadingText) loadingText.textContent = raster ? `Raster: ${raster.file} (${raster.time} Ma)` : '';
+}
+
+// ============ Geological era names ============
+function reconGetEraName(timeMa) {
+  if (timeMa < 2.58) return 'Quaternary';
+  if (timeMa < 23.03) return 'Neogene';
+  if (timeMa < 66) return 'Paleogene';
+  if (timeMa < 145) return 'Cretaceous';
+  if (timeMa < 201.3) return 'Jurassic';
+  if (timeMa < 252.17) return 'Triassic';
+  if (timeMa < 298.9) return 'Permian';
+  if (timeMa < 358.9) return 'Carboniferous';
+  if (timeMa < 419.2) return 'Devonian';
+  if (timeMa < 443.8) return 'Silurian';
+  if (timeMa < 485.4) return 'Ordovician';
+  if (timeMa < 541) return 'Cambrian';
+  return 'Precambrian';
+}
+
+// ============ Screen projection ============
+function reconProjectPointToScreen(plateId, lat, lng, time) {
+  const paleoPos = reconReconstructPoint(plateId, lat, lng, time);
+  const pos3D = reconLatLngToVec3(paleoPos.lat, paleoPos.lng, 1.05);
+  const vector = pos3D.clone().project(reconCamera);
+  const container = document.getElementById('recon-globe-container');
+  if (!container) return { x: 0, y: 0 };
+  const rect = container.getBoundingClientRect();
+  return {
+    x: (vector.x * 0.5 + 0.5) * rect.width + rect.left,
+    y: (-vector.y * 0.5 + 0.5) * rect.height + rect.top
+  };
+}
+
+// ============ Popup ============
+const reconRaycaster = new THREE.Raycaster();
+const reconMouse = new THREE.Vector2();
+
+function reconGetIntersections(event) {
+  const rect = reconRenderer.domElement.getBoundingClientRect();
+  reconMouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  reconMouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  reconRaycaster.setFromCamera(reconMouse, reconCamera);
+
+  const sprites = [];
+  if (reconPointMeshGroup) {
+    reconPointMeshGroup.children.forEach(sprite => {
+      if (sprite.visible) sprites.push(sprite);
+    });
+  }
+  return reconRaycaster.intersectObjects(sprites);
+}
+
+let reconFullPointLookup = {}; // id -> { evidence, reference, epochKey, epochInfo }
+
+let reconPointsLookup = {}; // id -> { plateId, timeBegin, timeEnd, lat, lng }
+
+let reconMergedLookup = {}; // id -> { id, plateId, lat, lng, timeBegin, timeEnd, evidence, reference, epochKey, epochInfo }
+
+function reconBuildPointLookup() {
+  reconFullPointLookup = {};
+  reconPointsLookup = {};
+  reconMergedLookup = {};
+
+  // Step 1: index reconPointsData → reconPointsLookup (time/plate data)
+  if (Array.isArray(reconPointsData)) {
+    for (const pd of reconPointsData) {
+      if (pd.id !== undefined && pd.id !== null) {
+        const entry = {
+          plateId: pd.plateId || 0,
+          timeBegin: pd.timeBegin,
+          timeEnd: pd.timeEnd,
+          lat: pd.lat,
+          lng: pd.lng
         };
-        
-        // 地质时期信息 - 按地质年代从老到新排序
-        const geologicalPeriods = {
-            "S": { 
-                name: "Silurian", 
-                fullName: "Silurian Period",
-                color: "#FB745C", 
-                modernImage: "recent/S.png",
-                description: "The Silurian Period (443.8-419.2 million years ago) witnessed the diversification of jawed fish and the first vascular plants on land.",
-                images: [
-                    "palaeo/S_420.00Ma.jpg",
-                    "palaeo/S_425.00Ma.jpg",
-                    "palaeo/S_430.00Ma.jpg",
-                    "palaeo/S_435.00Ma.jpg",
-                    "palaeo/S_440.00Ma.jpg"
-                ]
-            },
-            "D": { 
-                name: "Devonian", 
-                fullName: "Devonian Period",
-                color: "#F1C868", 
-                modernImage: "recent/D.png",
-                description: "The Devonian Period (419.2-358.9 million years ago), known as the 'Age of Fishes', saw the diversification of fish and the first appearance of forests on land.",
-                images: [
-                    "palaeo/D_360.00Ma.jpg",
-                    "palaeo/D_365.00Ma.jpg",
-                    "palaeo/D_370.00Ma.jpg",
-                    "palaeo/D_375.00Ma.jpg",
-                    "palaeo/D_380.00Ma.jpg",
-                    "palaeo/D_385.00Ma.jpg",
-                    "palaeo/D_390.00Ma.jpg",
-                    "palaeo/D_395.00Ma.jpg",
-                    "palaeo/D_400.00Ma.jpg",
-                    "palaeo/D_405.00Ma.jpg",
-                    "palaeo/D_410.00Ma.jpg",
-                    "palaeo/D_415.00Ma.jpg"
-                ]
-            },
-            "C": { 
-                name: "Carboniferous", 
-                fullName: "Carboniferous Period",
-                color: "#99C2B5", 
-                modernImage: "recent/C.png",
-                description: "The Carboniferous Period (358.9-298.9 million years ago) was characterized by vast coal-forming swamps and the diversification of early reptiles and amphibians.",
-                images: [
-                    "palaeo/C_300.00Ma.jpg",
-                    "palaeo/C_305.00Ma.jpg",
-                    "palaeo/C_310.00Ma.jpg",
-                    "palaeo/C_315.00Ma.jpg",
-                    "palaeo/C_320.00Ma.jpg",
-                    "palaeo/C_325.00Ma.jpg",
-                    "palaeo/C_330.00Ma.jpg",
-                    "palaeo/C_335.00Ma.jpg",
-                    "palaeo/C_340.00Ma.jpg",
-                    "palaeo/C_345.00Ma.jpg",
-                    "palaeo/C_350.00Ma.jpg",
-                    "palaeo/C_355.00Ma.jpg"
-                ]
-            },
-            "P": { 
-                name: "Permian", 
-                fullName: "Permian Period",
-                color: "#FDB46C", 
-                modernImage: "recent/P.png",
-                description: "The Permian Period (298.9-252.2 million years ago) ended with the largest mass extinction event in Earth's history, the Permian-Triassic extinction.",
-                images: [
-                    "palaeo/P_255.00Ma.jpg",
-                    "palaeo/P_260.00Ma.jpg",
-                    "palaeo/P_265.00Ma.jpg",
-                    "palaeo/P_270.00Ma.jpg",
-                    "palaeo/P_275.00Ma.jpg",
-                    "palaeo/P_280.00Ma.jpg",
-                    "palaeo/P_285.00Ma.jpg",
-                    "palaeo/P_290.00Ma.jpg",
-                    "palaeo/P_295.00Ma.jpg"
-                ]
-            },
-            "T": { 
-                name: "Triassic", 
-                fullName: "Triassic Period",
-                color: "#B168B1", 
-                modernImage: "recent/T.png",
-                description: "The Triassic Period (252.2-201.3 million years ago) was the first period of the Mesozoic Era, following the Permian extinction and preceding the Jurassic.",
-                images: [
-                    "palaeo/T_205.00Ma.jpg",
-                    "palaeo/T_210.00Ma.jpg",
-                    "palaeo/T_215.00Ma.jpg",
-                    "palaeo/T_220.00Ma.jpg",
-                    "palaeo/T_225.00Ma.jpg",
-                    "palaeo/T_230.00Ma.jpg",
-                    "palaeo/T_235.00Ma.jpg",
-                    "palaeo/T_240.00Ma.jpg",
-                    "palaeo/T_245.00Ma.jpg",
-                    "palaeo/T_250.00Ma.jpg"
-                ]
-            },
-            "J": { 
-                name: "Jurassic", 
-                fullName: "Jurassic Period",
-                color: "#80CFD8", 
-                modernImage: "recent/J.png",
-                description: "The Jurassic Period (201.3-145 million years ago) is known for the dominance of dinosaurs, the appearance of birds, and the breakup of Pangaea.",
-                images: [
-                    "palaeo/J_145.00Ma.jpg",
-                    "palaeo/J_150.00Ma.jpg",
-                    "palaeo/J_155.00Ma.jpg",
-                    "palaeo/J_160.00Ma.jpg",
-                    "palaeo/J_165.00Ma.jpg",
-                    "palaeo/J_170.00Ma.jpg",
-                    "palaeo/J_175.00Ma.jpg",
-                    "palaeo/J_180.00Ma.jpg",
-                    "palaeo/J_185.00Ma.jpg",
-                    "palaeo/J_190.00Ma.jpg",
-                    "palaeo/J_195.00Ma.jpg",
-                    "palaeo/J_200.00Ma.jpg"
-                ]
-            },
-            "K": { 
-                name: "Cretaceous", 
-                fullName: "Cretaceous Period",
-                color: "#A6D84A", 
-                modernImage: "recent/K.png",
-                description: "The Cretaceous Period (145-66 million years ago) was the last period of the Mesozoic Era, ending with the extinction of non-avian dinosaurs.",
-                images: [
-                    "palaeo/K_70.00Ma.jpg",
-                    "palaeo/K_75.00Ma.jpg",
-                    "palaeo/K_80.00Ma.jpg",
-                    "palaeo/K_85.00Ma.jpg",
-                    "palaeo/K_90.00Ma.jpg",
-                    "palaeo/K_95.00Ma.jpg",
-                    "palaeo/K_100.00Ma.jpg",
-                    "palaeo/K_105.00Ma.jpg",
-                    "palaeo/K_110.00Ma.jpg",
-                    "palaeo/K_115.00Ma.jpg",
-                    "palaeo/K_120.00Ma.jpg",
-                    "palaeo/K_125.00Ma.jpg",
-                    "palaeo/K_130.00Ma.jpg",
-                    "palaeo/K_135.00Ma.jpg",
-                    "palaeo/K_140.00Ma.jpg"
-                ]
-            },
-            "E": { 
-                name: "Paleogene", 
-                fullName: "Paleogene Period",
-                color: "#FDA75F", 
-                modernImage: "recent/E.png",
-                description: "The Paleogene Period (66-23 million years ago) followed the Cretaceous-Paleogene extinction event and witnessed the diversification of mammals and birds.",
-                images: [
-                    "palaeo/E_25.00Ma.jpg",
-                    "palaeo/E_30.00Ma.jpg",
-                    "palaeo/E_35.00Ma.jpg",
-                    "palaeo/E_40.00Ma.jpg",
-                    "palaeo/E_45.00Ma.jpg",
-                    "palaeo/E_50.00Ma.jpg",
-                    "palaeo/E_55.00Ma.jpg",
-                    "palaeo/E_60.00Ma.jpg",
-                    "palaeo/E_65.00Ma.jpg"
-                ]
-            },
-            "N": { 
-                name: "Neogene", 
-                fullName: "Neogene Period",
-                color: "#FFFF00", 
-                modernImage: "recent/N.png",
-                description: "The Neogene Period (23-2.6 million years ago) saw the evolution of many modern mammals and the formation of current continents.",
-                images: [
-                    "palaeo/N_5.00Ma.jpg",
-                    "palaeo/N_10.00Ma.jpg",
-                    "palaeo/N_15.00Ma.jpg",
-                    "palaeo/N_20.00Ma.jpg"
-                ]
-            }
+        reconPointsLookup[pd.id] = entry;
+        reconMergedLookup[pd.id] = {
+          id: pd.id,
+          plateId: entry.plateId,
+          lat: entry.lat,
+          lng: entry.lng,
+          timeBegin: entry.timeBegin,
+          timeEnd: entry.timeEnd,
+          evidence: 'N/A',
+          reference: '',
+          epochKey: '',
+          epochInfo: null
         };
-        
-        // 全局变量
-        let map;
-        let markers = {};
-        let layers = {};
-        let allMarkersVisible = true;
-        
-        // 古地理复原相关变量
-        let currentPeriod = null;
-        let currentImageIndex = 0;
-        let isPlaying = false;
-        let playInterval = null;
-        let currentImages = [];
-        
-        // 初始化地图 - 使用多地图源方案
-        function initMap() {
-            // 创建Leaflet地图
-            map = L.map('map').setView([30, 0], 2);
-            
-            // 定义多个地图源
-            const baseMaps = {
-                "CartoDB彩色地图": L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    attribution: '© OpenStreetMap contributors, © CARTO',
-                    maxZoom: 19,
-                    subdomains: 'abcd'
-                }),
-                "OpenStreetMap": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap contributors',
-                    maxZoom: 19,
-                }),
-                "Esri卫星影像": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                    attribution: '© Esri',
-                    maxZoom: 19,
-                }),
-                "CartoDB简洁地图": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                    attribution: '© OpenStreetMap contributors, © CARTO',
-                    maxZoom: 19,
-                    subdomains: 'abcd'
-                })
-            };
-            
-            // 默认使用CartoDB彩色地图
-            baseMaps["CartoDB彩色地图"].addTo(map);
-            
-            // 添加地图选择控件（右上角图层选择器）
-            L.control.layers(baseMaps).addTo(map);
-            
-            // 如果默认地图加载失败，自动切换到OpenStreetMap
-            baseMaps["CartoDB彩色地图"].on('tileerror', function(e) {
-                console.log("CartoDB彩色地图加载失败，切换到OpenStreetMap...");
-                map.removeLayer(baseMaps["CartoDB彩色地图"]);
-                baseMaps["OpenStreetMap"].addTo(map);
-            });
-            
-            // 地图加载完成后隐藏加载指示器
-            map.whenReady(function() {
-                setTimeout(function() {
-                    document.getElementById('map-loading').style.display = 'none';
-                }, 500);
-            });
-            
-            // 加载数据
-            loadData();
-            
-            // 创建图例
-            createLegend();
-            
-            // 创建地质时期按钮
-            createGeologicalButtons();
-            
-            // 更新计数
-            updateMarkerCount();
+      }
+    }
+  }
+
+  // Step 2: enrich from globalJson (evidence/reference/epoch info)
+  if (window.globalJson) {
+    for (let [epochKey, fcont] of Object.entries(window.globalJson)) {
+      if (!fcont.data) continue;
+      const epochInfo = window.strataMapping[epochKey.toLowerCase()] || null;
+      for (let pt of fcont.data) {
+        const pid = pt.id;
+        if (pid === undefined || pid === null) continue;
+        const evidence = window.normalizeEvidenceFullName(pt['Wildfire evidence type']);
+        const reference = pt['Reference'] || '';
+        const epochKeyLower = epochKey.toLowerCase();
+
+        // Store in full lookup (legacy)
+        reconFullPointLookup[pid] = { evidence, reference, epochKey: epochKeyLower, epochInfo };
+
+        // Merge into unified lookup
+        if (reconMergedLookup[pid]) {
+          reconMergedLookup[pid].evidence = evidence;
+          reconMergedLookup[pid].reference = reference;
+          reconMergedLookup[pid].epochKey = epochKeyLower;
+          reconMergedLookup[pid].epochInfo = epochInfo;
+        } else {
+          // Point exists in globalJson but not in reconPointsData — create minimal entry
+          reconMergedLookup[pid] = {
+            id: pid,
+            plateId: 0,
+            lat: pt.lat,
+            lng: pt.lng,
+            timeBegin: null,
+            timeEnd: null,
+            evidence: evidence,
+            reference: reference,
+            epochKey: epochKeyLower,
+            epochInfo: epochInfo
+          };
         }
-        
-        // 加载数据
-        function loadData() {
-            // 从paleo_data.json文件加载数据
-            fetch('paleo_data.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log("成功加载数据，文件数量:", Object.keys(data).length);
-                    
-                    // 处理大小写不匹配：如果JSON中的键是小写，但颜色映射是大写，需要转换
-                    const processedData = {};
-                    
-                    Object.keys(data).forEach(fileName => {
-                        let processedFileName = fileName;
-                        
-                        // 尝试将小写文件名转换为大写（如c1.xlsx -> C1.xlsx）
-                        if (fileName.includes('.xlsx')) {
-                            const nameWithoutExt = fileName.replace('.xlsx', '');
-                            const uppercaseName = nameWithoutExt.toUpperCase() + '.xlsx';
-                            
-                            // 如果大写版本在颜色映射中，使用大写版本
-                            if (colorMap[uppercaseName]) {
-                                processedFileName = uppercaseName;
-                            }
-                        }
-                        
-                        processedData[processedFileName] = data[fileName];
-                    });
-                    
-                    // 绘制数据点
-                    plotDataPoints(processedData);
-                })
-                .catch(error => {
-                    console.error('无法加载paleo_data.json文件:', error);
-                    
-                    // 显示错误信息
-                    const mapContainer = document.getElementById('map');
-                    mapContainer.innerHTML = `
-                        <div class="map-fallback">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <h3>数据加载失败</h3>
-                            <p>无法加载 paleo_data.json 文件</p>
-                            <p>错误信息: ${error.message}</p>
-                            <p>请确保 paleo_data.json 文件与网页在同一目录下</p>
-                        </div>
-                    `;
-                    
-                    // 隐藏加载指示器
-                    document.getElementById('map-loading').style.display = 'none';
-                });
-        }
-        
-        // 在地图上绘制数据点
-        function plotDataPoints(data) {
-            // 清空现有标记
-            clearAllMarkers();
-            
-            let totalPoints = 0;
-            
-            // 为每个文件创建标记
-            Object.keys(data).forEach(fileName => {
-                const fileData = data[fileName];
-                const fileColor = fileData.color || colorMap[fileName] || "#808080";
-                const points = fileData.data || [];
-                
-                console.log(`绘制 ${fileName}: ${points.length} 个点`);
-                
-                // 为这个文件创建图层组
-                const layerGroup = L.layerGroup();
-                
-                // 创建标记
-                points.forEach(point => {
-                    const marker = L.circleMarker([point.lat, point.lng], {
-                        color: '#333',
-                        weight: 1,
-                        fillColor: fileColor,
-                        fillOpacity: 0.8,
-                        radius: 8
-                    });
-                    
-                    // 添加弹窗
-                    const popupContent = `
-                        <div class="info-window">
-                            <h3>Data Point #${point.id}</h3>
-                            <p><strong>File:</strong> ${fileName}</p>
-                            <p><strong>Coordinates:</strong> ${point.lat.toFixed(4)}°, ${point.lng.toFixed(4)}°</p>
-                            <p><strong>Note:</strong></p>
-                            <div class="note-text">${point.note || "No note available"}</div>
-                            <p class="copy-hint">Hover over note text to select and copy</p>
-                        </div>
-                    `;
-                    
-                    marker.bindPopup(popupContent);
-                    
-                    // 添加到图层组
-                    marker.addTo(layerGroup);
-                    
-                    // 存储标记
-                    if (!markers[fileName]) {
-                        markers[fileName] = [];
-                    }
-                    markers[fileName].push(marker);
-                    totalPoints++;
-                });
-                
-                // 存储图层
-                layers[fileName] = layerGroup;
-                
-                // 添加到地图
-                if (allMarkersVisible && points.length > 0) {
-                    layerGroup.addTo(map);
-                }
-            });
-            
-            console.log(`总共绘制了 ${totalPoints} 个数据点`);
-            
-            // 更新计数
-            updateMarkerCount();
-            
-            // 更新图例计数
-            updateLegendCounts(data);
-        }
-        
-        // 清空所有标记
-        function clearAllMarkers() {
-            Object.values(layers).forEach(layer => {
-                layer.remove();
-            });
-            
-            markers = {};
-            layers = {};
-        }
-        
-        // 创建图例
-        function createLegend() {
-            const legendContainer = document.getElementById('file-legend');
-            legendContainer.innerHTML = '';
-            
-            // 对文件名进行排序（按字母顺序，大写优先）
-            const sortedFileNames = Object.keys(colorMap).sort((a, b) => {
-                // 先按字母顺序，再按数字顺序
-                const aMatch = a.match(/([A-Z])(\d+)/);
-                const bMatch = b.match(/([A-Z])(\d+)/);
-                
-                if (aMatch && bMatch) {
-                    const aLetter = aMatch[1];
-                    const bLetter = bMatch[1];
-                    const aNum = parseInt(aMatch[2]);
-                    const bNum = parseInt(bMatch[2]);
-                    
-                    if (aLetter === bLetter) {
-                        return aNum - bNum;
-                    }
-                    return aLetter.localeCompare(bLetter);
-                }
-                return a.localeCompare(b);
-            });
-            
-            sortedFileNames.forEach(fileName => {
-                const legendItem = document.createElement('div');
-                legendItem.className = 'legend-item active';
-                legendItem.dataset.file = fileName;
-                legendItem.innerHTML = `
-                    <div class="color-box" style="background-color: ${colorMap[fileName]};"></div>
-                    <div class="file-name">${fileName}</div>
-                    <div class="point-count" id="count-${fileName}">0</div>
-                `;
-                
-                // 添加点击事件
-                legendItem.addEventListener('click', () => {
-                    toggleFileVisibility(fileName, legendItem);
-                });
-                
-                legendContainer.appendChild(legendItem);
-            });
-            
-            // 更新文件计数
-            document.getElementById('file-count').textContent = sortedFileNames.length;
-        }
-        
-        // 更新图例计数
-        function updateLegendCounts(data) {
-            Object.keys(colorMap).forEach(fileName => {
-                const countElement = document.getElementById(`count-${fileName}`);
-                if (countElement && data[fileName]) {
-                    countElement.textContent = data[fileName].data.length;
-                }
-            });
-        }
-        
-        // 切换文件可见性
-        function toggleFileVisibility(fileName, legendItem) {
-            const layer = layers[fileName];
-            
-            if (layer) {
-                if (map.hasLayer(layer)) {
-                    // 从地图移除
-                    map.removeLayer(layer);
-                    legendItem.classList.remove('active');
-                } else {
-                    // 添加到地图
-                    layer.addTo(map);
-                    legendItem.classList.add('active');
-                }
-                
-                // 更新可见标记计数
-                updateMarkerCount();
-            }
-        }
-        
-        // 更新标记计数
-        function updateMarkerCount() {
-            let totalMarkers = 0;
-            let visibleMarkers = 0;
-            
-            Object.keys(markers).forEach(fileName => {
-                totalMarkers += markers[fileName].length;
-                
-                if (layers[fileName] && map.hasLayer(layers[fileName])) {
-                    visibleMarkers += markers[fileName].length;
-                }
-            });
-            
-            document.getElementById('marker-count').textContent = totalMarkers;
-            document.getElementById('visible-marker-count').textContent = visibleMarkers;
-        }
-        
-        // 创建地质时期按钮 - 按地质年代从老到新排序
-        function createGeologicalButtons() {
-            const buttonsContainer = document.getElementById('geological-buttons');
-            buttonsContainer.innerHTML = '';
-            
-            // 按地质年代排序：S (Silurian) -> D (Devonian) -> C (Carboniferous) -> P (Permian) -> 
-            // T (Triassic) -> J (Jurassic) -> K (Cretaceous) -> E (Paleogene) -> N (Neogene)
-            const periodOrder = ["S", "D", "C", "P", "T", "J", "K", "E", "N"];
-            
-            periodOrder.forEach(periodCode => {
-                const period = geologicalPeriods[periodCode];
-                const button = document.createElement('button');
-                button.className = 'btn btn-geological';
-                button.textContent = periodCode;
-                button.style.backgroundColor = period.color;
-                button.style.color = "white"; // 所有按钮文字都为白色
-                
-                button.addEventListener('click', () => {
-                    // 移除所有按钮的选中状态
-                    document.querySelectorAll('.btn-geological').forEach(btn => {
-                        btn.style.boxShadow = 'none';
-                    });
-                    
-                    // 为当前按钮添加选中状态
-                    button.style.boxShadow = '0 0 0 3px rgba(26, 95, 122, 0.5)';
-                    
-                    // 显示该时期的古地理复原图
-                    showReconstruction(periodCode);
-                });
-                
-                buttonsContainer.appendChild(button);
-            });
-        }
-        
-        // 显示地质时期的重建内容
-        function showReconstruction(periodCode) {
-            const period = geologicalPeriods[periodCode];
-            currentPeriod = periodCode;
-            currentImageIndex = 0;
-            
-            // 停止播放
-            stopPlayback();
-            
-            // 显示内容区域
-            document.getElementById('period-content').style.display = 'block';
-            
-            // 更新标题和描述
-            document.getElementById('period-title').textContent = period.fullName;
-            document.getElementById('period-description').textContent = period.description;
-            
-            // 隐藏"无图像"提示
-            document.getElementById('palaeo-no-image').style.display = 'none';
-            document.getElementById('recent-no-image').style.display = 'none';
-            
-            // 清空现有图片容器
-            const palaeoContainer = document.getElementById('palaeo-image-container');
-            const recentContainer = document.getElementById('recent-image-container');
-            
-            // 清除所有子元素（除了no-image提示）
-            while (palaeoContainer.children.length > 1) {
-                palaeoContainer.removeChild(palaeoContainer.lastChild);
-            }
-            while (recentContainer.children.length > 1) {
-                recentContainer.removeChild(recentContainer.lastChild);
-            }
-            
-            // 加载古地理图 - 按时间从老到新排序（数值大的在前）
-            currentImages = [...period.images];
-            
-            // 按时间从大到小排序（老到新）
-            currentImages.sort((a, b) => {
-                const timeA = extractTimeValueFromFilename(a);
-                const timeB = extractTimeValueFromFilename(b);
-                return timeB - timeA; // 从大到小排序
-            });
-            
-            if (currentImages.length === 0) {
-                document.getElementById('palaeo-no-image').style.display = 'block';
-                document.getElementById('palaeo-caption').textContent = `No paleogeographic reconstructions available for ${period.name} period`;
-                
-                // 禁用控制按钮
-                document.getElementById('prev-btn').disabled = true;
-                document.getElementById('next-btn').disabled = true;
-                document.getElementById('play-pause-btn').disabled = true;
-                document.getElementById('time-slider').disabled = true;
-                document.getElementById('time-display').textContent = '-- Ma';
-            } else {
-                // 创建古地理图元素
-                currentImages.forEach((imageSrc, index) => {
-                    const img = document.createElement('img');
-                    img.src = imageSrc;
-                    img.alt = `Paleogeographic reconstruction for ${period.name} period`;
-                    img.className = 'palaeo-image';
-                    img.dataset.index = index;
-                    img.dataset.time = extractTimeFromFilename(imageSrc);
-                    
-                    // 添加错误处理
-                    img.onerror = function() {
-                        console.error(`Failed to load image: ${imageSrc}`);
-                        this.style.display = 'none';
-                        
-                        // 创建替代内容
-                        const fallbackDiv = document.createElement('div');
-                        fallbackDiv.className = 'no-image';
-                        fallbackDiv.innerHTML = `
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <p>Image not available: ${extractTimeFromFilename(imageSrc)}</p>
-                        `;
-                        
-                        // 替换图片元素
-                        this.parentNode.replaceChild(fallbackDiv, this);
-                    };
-                    
-                    palaeoContainer.appendChild(img);
-                });
-                
-                // 启用控制按钮
-                document.getElementById('prev-btn').disabled = currentImages.length <= 1;
-                document.getElementById('next-btn').disabled = currentImages.length <= 1;
-                document.getElementById('play-pause-btn').disabled = false;
-                
-                // 更新图片显示
-                updateImageDisplay();
-            }
-            
-            // 加载现代图
-            const recentImg = document.createElement('img');
-            recentImg.src = period.modernImage;
-            recentImg.alt = `Modern reference map for ${period.name} period`;
-            recentImg.className = 'recent-image';
-            
-            // 添加错误处理
-            recentImg.onerror = function() {
-                console.error(`Failed to load modern image: ${period.modernImage}`);
-                
-                const fallbackDiv = document.createElement('div');
-                fallbackDiv.className = 'no-image';
-                fallbackDiv.innerHTML = `
-                    <i class="fas fa-map-marked-alt"></i>
-                    <p>Modern reference map not available</p>
-                    <p>Placeholder: ${period.name} period reference</p>
-                `;
-                
-                this.parentNode.replaceChild(fallbackDiv, this);
-            };
-            
-            recentContainer.appendChild(recentImg);
-            
-            // 更新标题
-            document.getElementById('recent-caption').textContent = `Modern reference map for ${period.name} period`;
-            
-            // 更新滑块
-            const slider = document.getElementById('time-slider');
-            slider.max = Math.max(0, currentImages.length - 1);
-            slider.value = currentImageIndex;
-            slider.disabled = currentImages.length <= 1;
-        }
-        
-        // 从文件名中提取时间数值
-        function extractTimeValueFromFilename(filename) {
-            // 匹配类似 "C_300.00Ma.jpg" 中的时间数值部分
-            const match = filename.match(/_(\d+\.?\d*)Ma\./);
-            if (match && match[1]) {
-                return parseFloat(match[1]);
-            }
-            return 0;
-        }
-        
-        // 从文件名中提取时间
-        function extractTimeFromFilename(filename) {
-            // 匹配类似 "C_300.00Ma.jpg" 中的时间部分
-            const match = filename.match(/_(\d+\.?\d*)Ma\./);
-            if (match && match[1]) {
-                return `${match[1]} Ma`;
-            }
-            return "Time unknown";
-        }
-        
-        // 更新图片显示
-        function updateImageDisplay() {
-            // 隐藏所有图片
-            const images = document.querySelectorAll('.palaeo-image');
-            images.forEach(img => {
-                img.classList.remove('active');
-            });
-            
-            // 显示当前图片
-            if (images[currentImageIndex]) {
-                images[currentImageIndex].classList.add('active');
-                
-                // 更新标题
-                const time = images[currentImageIndex].dataset.time;
-                document.getElementById('palaeo-caption').textContent = 
-                    `${geologicalPeriods[currentPeriod].fullName} - ${time}`;
-                
-                // 更新时间显示
-                document.getElementById('time-display').textContent = time;
-                
-                // 更新滑块
-                document.getElementById('time-slider').value = currentImageIndex;
-            }
-        }
-        
-        // 更新按钮状态
-        function updateButtonState() {
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            
-            prevBtn.disabled = currentImages.length <= 1 || currentImageIndex === 0;
-            nextBtn.disabled = currentImages.length <= 1 || currentImageIndex === currentImages.length - 1;
-        }
-        
-        // 播放/暂停功能 - 从老到新播放（索引从小到大，但图片按时间从老到新排序）
-        function togglePlayback() {
-            const playPauseBtn = document.getElementById('play-pause-btn');
-            const icon = playPauseBtn.querySelector('i');
-            
-            if (isPlaying) {
-                stopPlayback();
-                icon.className = 'fas fa-play';
-                playPauseBtn.innerHTML = `<i class="fas fa-play"></i> Play`;
-            } else {
-                startPlayback();
-                icon.className = 'fas fa-pause';
-                playPauseBtn.innerHTML = `<i class="fas fa-pause"></i> Pause`;
-            }
-        }
-        
-        // 开始播放 - 从老到新播放
-        function startPlayback() {
-            if (currentImages.length <= 1) return;
-            
-            isPlaying = true;
-            playInterval = setInterval(() => {
-                // 前进到下一张（从老到新）
-                if (currentImageIndex < currentImages.length - 1) {
-                    currentImageIndex++;
-                } else {
-                    // 如果已经是最后一张，回到第一张（最老的）
-                    currentImageIndex = 0;
-                }
-                updateImageDisplay();
-                updateButtonState();
-            }, 2000); // 每2秒切换一张图片
-        }
-        
-        // 停止播放
-        function stopPlayback() {
-            isPlaying = false;
-            if (playInterval) {
-                clearInterval(playInterval);
-                playInterval = null;
-            }
-        }
-        
-        // 上一张图片 - 向更老的时间
-        function prevImage() {
-            if (currentImageIndex > 0) {
-                currentImageIndex--;
-                updateImageDisplay();
-                updateButtonState();
-            }
-        }
-        
-        // 下一张图片 - 向更新的时间
-        function nextImage() {
-            if (currentImageIndex < currentImages.length - 1) {
-                currentImageIndex++;
-                updateImageDisplay();
-                updateButtonState();
-            }
-        }
-        
-        // 滑块变化
-        function onSliderChange(value) {
-            currentImageIndex = parseInt(value);
-            updateImageDisplay();
-            updateButtonState();
-        }
-        
-        // 页面切换功能
-        document.getElementById('reconstruction-btn').addEventListener('click', () => {
-            document.getElementById('main-page').style.display = 'none';
-            document.getElementById('reconstruction-page').style.display = 'block';
+      }
+    }
+  }
+}
+
+function reconGetPointDetails(pointId) {
+  // Prefer merged lookup (has everything)
+  const merged = reconMergedLookup[pointId];
+  if (merged) return merged;
+  return reconFullPointLookup[pointId] || null;
+}
+
+function reconShowPopup(data, eventX, eventY) {
+  const popup = document.getElementById('reconPopup');
+  if (!popup) return;
+  const details = reconGetPointDetails(data.id);
+  const evidence = details ? (details.evidence || 'N/A') : 'N/A';
+  const reference = details ? (details.reference || '') : 'N/A';
+  const plateId = details ? (details.plateId || data.plateId || 0) : (data.plateId || 0);
+  const timeBegin = details && details.timeBegin != null ? details.timeBegin : (data.timeBegin || 0);
+  const timeEnd = details && details.timeEnd != null ? details.timeEnd : (data.timeEnd || 0);
+  const lat = details ? details.lat : data.lat;
+  const lng = details ? details.lng : data.lng;
+
+  // ========== 新增：生成与 Data 页面一致的地层名称 ==========
+  let epochDisplay = '';
+  if (details && details.epochInfo) {
+    // 优先使用 epochInfo 中的名称和短代码
+    const name = details.epochInfo.name_en;
+    const short = details.epochInfo.short;
+    epochDisplay = `${name} (${short})`;
+  } else if (details && details.epochKey && window.strataMapping && window.strataMapping[details.epochKey]) {
+    // 回退：通过 epochKey 查找
+    const info = window.strataMapping[details.epochKey];
+    epochDisplay = `${info.name_en} (${info.short})`;
+  } else {
+    // 最终回退：显示时间范围
+    epochDisplay = `${timeEnd.toFixed(1)} – ${timeBegin.toFixed(1)} Ma`;
+  }
+  // ========================================================
+
+  let html = `<h3>Fire Point #${data.id}</h3>`;
+  // 使用 epochDisplay 替换原来的时间范围行
+  html += `<div class="row"><span class="label">Period (Epoch):</span><span class="value">${epochDisplay}</span></div>`;
+  html += `<div class="row"><span class="label">Coordinates:</span><span class="value">${lat.toFixed(4)}, ${lng.toFixed(4)}</span></div>`;
+
+  if (reconCurrentTime >= timeEnd && reconCurrentTime <= timeBegin) {
+    const paleoPos = reconReconstructPoint(plateId, lat, lng, reconCurrentTime);
+    html += `<div class="row"><span class="label">Paleocoordinates:</span><span class="value">${paleoPos.lat.toFixed(4)}, ${paleoPos.lng.toFixed(4)}</span></div>`;
+  } else {
+    html += `<div class="row"><span class="label">Paleocoordinates:</span><span class="value">Not available</span></div>`;
+  }
+
+  html += `<div class="row"><span class="label">Proxy Type:</span><span class="value">${evidence}</span></div>`;
+  html += `<div class="row"><span class="label">Reference:</span><span class="value" style="font-size:11px;">${(reference || 'N/A').substring(0, 60)}</span></div>`;
+
+  popup.innerHTML = html;
+  popup.style.left = Math.min(eventX, window.innerWidth - 350) + 'px';
+  popup.style.top = Math.max(eventY - 180, 10) + 'px';
+  popup.classList.add('active');
+}
+
+function reconHidePopup() {
+  const popup = document.getElementById('reconPopup');
+  if (popup) popup.classList.remove('active');
+}
+
+// ============ Sidebar directory ============
+function reconBuildSidebar() {
+  const container = document.getElementById('recon-strata-list');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // Group points by period/epoch using globalJson
+  const epochGroups = new Map(); // epochKey -> { points: [...], epochInfo }
+  for (let [epochKey, fcont] of Object.entries(window.globalJson)) {
+    if (!fcont.data) continue;
+    const key = epochKey.toLowerCase();
+    const info = window.strataMapping[key] || null;
+    if (!epochGroups.has(key)) epochGroups.set(key, { points: [], epochInfo: info });
+    epochGroups.get(key).points.push(...fcont.data);
+  }
+
+  // Group epochs by period
+  const periodGroups = new Map(); // periodCode -> [{epochKey, epochName, short, points, color}]
+  for (let [epochKey, group] of epochGroups.entries()) {
+    const info = group.epochInfo;
+    if (!info) continue;
+    const periodCode = info.periodCode;
+    if (!periodGroups.has(periodCode)) periodGroups.set(periodCode, []);
+    periodGroups.get(periodCode).push({
+      epochKey,
+      epochName: info.name_en,
+      short: info.short,
+      baseAge: info.baseAge,
+      points: group.points,
+      color: window.EPOCH_COLOR_MAP[epochKey] || '#aaa'
+    });
+  }
+
+  // Build DOM in period order
+  for (let periodCode of window.PERIOD_ORDER) {
+    const epochs = periodGroups.get(periodCode) || [];
+    if (epochs.length === 0) continue;
+    epochs.sort((a, b) => b.baseAge - a.baseAge);
+
+    const pointTotal = epochs.reduce((s, e) => s + e.points.length, 0);
+    const periodDiv = document.createElement('div');
+    periodDiv.className = 'recon-period-group';
+
+    const header = document.createElement('div');
+    header.className = 'recon-period-header';
+    header.innerHTML = `${window.PERIOD_DATA[periodCode].name} <span class="badge">${pointTotal} pts</span>`;
+    header.addEventListener('click', () => {
+      const epCont = periodDiv.querySelector('.recon-epoch-points');
+      if (epCont) epCont.classList.toggle('open');
+    });
+
+    const epochPointsCont = document.createElement('div');
+    epochPointsCont.className = 'recon-epoch-points';
+
+    epochs.forEach(epoch => {
+      // Epoch group wrapper
+      const epochGroup = document.createElement('div');
+      epochGroup.className = 'recon-epoch-group';
+
+      // Epoch sub-header (clickable to expand/collapse points)
+      const epochHeader = document.createElement('div');
+      epochHeader.className = 'recon-epoch-group-header';
+      epochHeader.innerHTML = `${epoch.epochName} (${epoch.short}) · ${epoch.points.length} pts <span class="toggle-icon"><i class="fas fa-chevron-right"></i></span>`;
+
+      // Point items container (hidden by default)
+      const pointItemsCont = document.createElement('div');
+      pointItemsCont.className = 'recon-epoch-point-items';
+
+      // Individual point items
+      epoch.points.forEach(pt => {
+        const item = document.createElement('div');
+        item.className = 'recon-point-item';
+        item.dataset.pointId = pt.id;
+        item.innerHTML = `
+          <span class="recon-point-dot" style="background:${epoch.color};"></span>
+          <span class="recon-point-info">
+            <span class="recon-point-id">#${pt.id}</span>
+            <span class="recon-point-time">${pt.lat.toFixed(2)}°, ${pt.lng.toFixed(2)}°</span>
+          </span>`;
+
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // Highlight active item
+          document.querySelectorAll('.recon-point-item').forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+
+          // Get full merged data (combines reconPointsData + globalJson)
+          const pdata = reconMergedLookup[pt.id];
+          if (!pdata) return;
+
+          // If time data exists, jump to that geological era
+          if (pdata.timeBegin != null && pdata.timeEnd != null) {
+            const eraTime = (pdata.timeBegin + pdata.timeEnd) / 2;
+            reconSetTime(eraTime);
+          }
+
+          // Rotate camera to face the point on the globe
+          setTimeout(() => {
+            const paleoPos = reconReconstructPoint(pdata.plateId || 0, pdata.lat, pdata.lng, reconCurrentTime);
+            const pointDir = reconLatLngToVec3(paleoPos.lat, paleoPos.lng, 1.0);
+            const spherical = new THREE.Spherical().setFromVector3(pointDir);
+            const dist = reconCamera.position.distanceTo(new THREE.Vector3(0, 0, 0));
+            reconCamera.position.setFromSphericalCoords(dist, spherical.phi, spherical.theta);
+            reconControls.target.set(0, 0, 0);
+            reconControls.update();
+          }, 100);
+
+          // Show popup at the point's projected screen position (same as clicking on globe)
+          setTimeout(() => {
+            const screenPos = reconProjectPointToScreen(pdata.plateId || 0, pdata.lat, pdata.lng, reconCurrentTime);
+            reconShowPopup(
+              { id: pt.id, plateId: pdata.plateId || 0, lat: pdata.lat, lng: pdata.lng, timeBegin: pdata.timeBegin, timeEnd: pdata.timeEnd },
+              screenPos.x, screenPos.y
+            );
+          }, 200);
         });
-        
-        document.getElementById('back-btn').addEventListener('click', () => {
-            document.getElementById('reconstruction-page').style.display = 'none';
-            document.getElementById('main-page').style.display = 'block';
-            stopPlayback();
+        pointItemsCont.appendChild(item);
+      });
+
+      // Click header to toggle points visibility (accordion: close other expanded epochs)
+      epochHeader.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpening = !pointItemsCont.classList.contains('open');
+        // Close all other expanded epoch point items
+        document.querySelectorAll('.recon-epoch-point-items.open').forEach(el => {
+          el.classList.remove('open');
+          const header = el.previousElementSibling;
+          if (header) {
+            const icon = header.querySelector('.toggle-icon i');
+            if (icon) {
+              icon.classList.remove('fa-chevron-down');
+              icon.classList.add('fa-chevron-right');
+            }
+          }
         });
-        
-        // 重置地图视图
-        document.getElementById('reset-view').addEventListener('click', () => {
-            map.setView([30, 0], 2);
-        });
-        
-        // 切换所有标记的可见性
-        document.getElementById('toggle-all').addEventListener('click', () => {
-            allMarkersVisible = !allMarkersVisible;
-            
-            Object.keys(layers).forEach(fileName => {
-                const layer = layers[fileName];
-                const legendItem = document.querySelector(`.legend-item[data-file="${fileName}"]`);
-                
-                if (allMarkersVisible) {
-                    layer.addTo(map);
-                    if (legendItem) legendItem.classList.add('active');
-                } else {
-                    map.removeLayer(layer);
-                    if (legendItem) legendItem.classList.remove('active');
-                }
-            });
-            
-            updateMarkerCount();
-            
-            // 更新按钮文本
-            const toggleBtn = document.getElementById('toggle-all');
-            const icon = toggleBtn.querySelector('i');
-            const text = allMarkersVisible ? 'Hide All' : 'Show All';
-            icon.className = allMarkersVisible ? 'fas fa-eye-slash' : 'fas fa-eye';
-            toggleBtn.innerHTML = `${icon.outerHTML} ${text}`;
-        });
-        
-        // 导出数据
-        document.getElementById('export-data-btn').addEventListener('click', () => {
-            // 收集所有数据
-            const exportData = {};
-            
-            Object.keys(markers).forEach(fileName => {
-                const fileMarkers = markers[fileName];
-                const points = [];
-                
-                fileMarkers.forEach(marker => {
-                    const latlng = marker.getLatLng();
-                    points.push({
-                        lat: latlng.lat,
-                        lng: latlng.lng,
-                    });
-                });
-                
-                exportData[fileName] = {
-                    color: colorMap[fileName],
-                    count: points.length
-                };
-            });
-            
-            // 创建下载链接
-            const dataStr = JSON.stringify(exportData, null, 2);
-            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-            
-            const exportFileDefaultName = 'paleo_wildfire_data_export.json';
-            
-            const linkElement = document.createElement('a');
-            linkElement.setAttribute('href', dataUri);
-            linkElement.setAttribute('download', exportFileDefaultName);
-            linkElement.click();
-            
-            alert('Data exported successfully!');
-        });
-        
-        // 古地理控制事件
-        document.getElementById('play-pause-btn').addEventListener('click', togglePlayback);
-        document.getElementById('prev-btn').addEventListener('click', prevImage);
-        document.getElementById('next-btn').addEventListener('click', nextImage);
-        document.getElementById('time-slider').addEventListener('input', function() {
-            onSliderChange(this.value);
-        });
-        
-        // 初始化地图
-        document.addEventListener('DOMContentLoaded', function() {
-            initMap();
-        });
-    </script>
+        if (isOpening) {
+          pointItemsCont.classList.add('open');
+          const icon = epochHeader.querySelector('.toggle-icon i');
+          if (icon) {
+            icon.classList.remove('fa-chevron-right');
+            icon.classList.add('fa-chevron-down');
+          }
+        }
+      });
+
+      epochGroup.appendChild(epochHeader);
+      epochGroup.appendChild(pointItemsCont);
+      epochPointsCont.appendChild(epochGroup);
+    });
+
+    periodDiv.appendChild(header);
+    periodDiv.appendChild(epochPointsCont);
+    container.appendChild(periodDiv);
+  }
+}
+
+// ============ Time control ============
+function reconSetTime(time) {
+  reconCurrentTime = Math.max(0, Math.min(430, time));
+  const slider = document.getElementById('reconTimeSlider');
+  const timeDisplay = document.getElementById('reconTimeDisplay');
+  const eraDisplay = document.getElementById('reconEraDisplay');
+  const timeProgressBar = document.getElementById('reconTimeProgressBar');
+  if (slider) slider.value = reconCurrentTime;
+  if (timeDisplay) timeDisplay.textContent = `${reconCurrentTime} Ma`;
+  if (eraDisplay) eraDisplay.textContent = reconGetEraName(reconCurrentTime);
+  if (timeProgressBar) timeProgressBar.style.width = (reconCurrentTime / 430 * 100) + '%';
+
+  reconRotationCache.clear();
+  reconRebuildPlates(reconCurrentTime);
+  reconUpdateAllPointPositions(reconCurrentTime);
+
+  if (!reconSetTime._lastRasterUpdate || Math.abs(reconCurrentTime - reconSetTime._lastRasterUpdate) >= 2) {
+    reconUpdateRaster(reconCurrentTime);
+    reconSetTime._lastRasterUpdate = reconCurrentTime;
+  }
+}
+
+function reconStopPlayback() {
+  reconPlaying = false;
+  if (reconPlayInterval) { clearInterval(reconPlayInterval); reconPlayInterval = null; }
+  const playBtn = document.getElementById('reconBtnPlay');
+  const pauseBtn = document.getElementById('reconBtnPause');
+  if (playBtn) playBtn.disabled = false;
+  if (pauseBtn) pauseBtn.disabled = true;
+}
+
+function reconStartPlayback() {
+  reconStopPlayback();
+  reconPlaying = true;
+  const playBtn = document.getElementById('reconBtnPlay');
+  const pauseBtn = document.getElementById('reconBtnPause');
+  if (playBtn) playBtn.disabled = true;
+  if (pauseBtn) pauseBtn.disabled = false;
+
+  reconPlayInterval = setInterval(() => {
+    if (!reconPlaying) return;
+    reconCurrentTime += reconPlaySpeed;
+    if (reconCurrentTime > 430) { reconCurrentTime = 430; reconStopPlayback(); }
+    reconSetTime(reconCurrentTime);
+  }, 50);
+}
+
+// ============ Keyboard controls ============
+function reconHandleKeydown(e) {
+  switch(e.key.toLowerCase()) {
+    case 'r':
+      if (reconControls) reconControls.autoRotate = !reconControls.autoRotate;
+      break;
+    case '0':
+      reconSetTime(0);
+      break;
+    case 'arrowleft':
+      reconSetTime(reconCurrentTime - 10);
+      break;
+    case 'arrowright':
+      reconSetTime(reconCurrentTime + 10);
+      break;
+  }
+}
+
+// ============ Data loading ============
+async function reconLoadJSON(path) {
+  const resp = await fetch(path);
+  if (!resp.ok) throw new Error(`Failed to load ${path}`);
+  return resp.json();
+}
+
+function reconUpdateProgress(percent, text) {
+  const bar = document.getElementById('reconProgressBar');
+  const loadingText = document.getElementById('reconLoadingText');
+  if (bar) bar.style.width = percent + '%';
+  if (loadingText) loadingText.textContent = text;
+}
+
+async function reconLoadAllData() {
+  try {
+    reconUpdateProgress(10, 'Loading rotation model...');
+    reconRotations = await reconLoadJSON('paleo_rotations_absolute.json');
+    for (const pid in reconRotations) {
+      reconRotations[pid].reverse();
+    }
+    reconUpdateProgress(30, `Rotation model: ${Object.keys(reconRotations).length} plates`);
+
+    reconUpdateProgress(35, 'Loading fire point data...');
+    reconPointsData = await reconLoadJSON('paleo_points_full.json');
+    reconUpdateProgress(55, `Fire points: ${reconPointsData.length} entries`);
+
+    const point4 = reconPointsData.find(p => p.id === 4);
+    if (point4) {
+      point4.plateId = 315;
+    }
+
+    reconUpdateProgress(60, 'Loading plate polygons...');
+    reconPlatePolygons = await reconLoadJSON('paleo_polygons.json');
+    reconUpdateProgress(75, `Plate boundaries: ${reconPlatePolygons.length} polygons`);
+
+    reconUpdateProgress(80, 'Loading raster index...');
+    reconRasters = await reconLoadJSON('paleo_rasters.json');
+    reconUpdateProgress(90, `Rasters: ${reconRasters.length} images`);
+
+    reconUpdateProgress(95, 'Creating 3D visualization...');
+
+    reconPointMeshGroup = reconCreateAllPointMarkers(reconPointsData);
+    reconEarth.add(reconPointMeshGroup);
+
+    reconSetTime(0);
+
+    reconUpdateProgress(100, 'Initialization complete');
+
+    const infoEl = document.getElementById('reconDatasetInfo');
+    if (infoEl) infoEl.textContent = `Dataset: Scotese PaleoAtlas_v3 | ${Object.keys(reconRotations).length} plates ${reconPointsData.length} fire points ${reconRasters.length} rasters`;
+
+    setTimeout(() => {
+      const loadingOverlay = document.getElementById('recon-loading-overlay');
+      if (loadingOverlay) {
+        loadingOverlay.style.opacity = '0';
+        loadingOverlay.style.transition = 'opacity 0.5s';
+        setTimeout(() => { loadingOverlay.style.display = 'none'; }, 500);
+      }
+    }, 300);
+
+    return true;
+  } catch (err) {
+    console.error('Data loading failed:', err);
+    const loadingText = document.getElementById('reconLoadingText');
+    if (loadingText) { loadingText.textContent = 'Loading failed: ' + err.message; loadingText.style.color = '#ff6b6b'; }
+    return false;
+  }
+}
+
+// ============ Animation loop ============
+function reconAnimationLoop() {
+  reconAnimFrameId = requestAnimationFrame(reconAnimationLoop);
+  if (reconControls) reconControls.update();
+  if (reconRenderer && reconScene && reconCamera) {
+    reconRenderer.render(reconScene, reconCamera);
+  }
+}
+
+// ============ Init function (exposed to window) ============
+async function initReconstructionGlobe() {
+  if (reconInitialized) return;
+  reconInitialized = true;
+
+  const container = document.getElementById('recon-globe-container');
+  if (!container) return;
+
+  // Three.js setup
+  reconScene = new THREE.Scene();
+  reconCamera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+  reconCamera.position.set(0, 0, 3.5);
+
+  reconRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  reconRenderer.setSize(container.clientWidth, container.clientHeight);
+  reconRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(reconRenderer.domElement);
+
+  reconControls = new OrbitControls(reconCamera, reconRenderer.domElement);
+  reconControls.enableDamping = true;
+  reconControls.dampingFactor = 0.08;
+  reconControls.minDistance = 1.5;
+  reconControls.maxDistance = 12;
+  reconControls.autoRotate = false;
+
+  // Lighting – real-time sun position
+  let reconSunLight, reconFillLight;
+  function getRealTimeSunDirection() {
+    const now = new Date();
+    const utcHours = now.getUTCHours() + now.getUTCMinutes() / 60 + now.getUTCSeconds() / 3600;
+    const startOfYear = new Date(Date.UTC(now.getUTCFullYear(), 0, 1));
+    const dayOfYear = Math.floor((now - startOfYear) / 86400000) + 1;
+    // Solar declination: ±23.44° over the year
+    const declination = -23.44 * Math.cos((360 / 365) * (dayOfYear + 10) * Math.PI / 180);
+    // Hour angle: 0° at solar noon (12:00 UTC), positive east
+    const hourAngle = (utcHours - 12) * 15;
+    const decRad = declination * Math.PI / 180;
+    const haRad = hourAngle * Math.PI / 180;
+    // Unit vector from Earth centre toward the Sun (right-handed: X=0°lon, Z=90°E)
+    const x = Math.cos(decRad) * Math.cos(haRad);
+    const y = Math.sin(decRad);
+    const z = Math.cos(decRad) * Math.sin(haRad);
+    return new THREE.Vector3(x, y, z);
+  }
+  function updateSunLight() {
+    const sunDir = getRealTimeSunDirection();
+    if (reconSunLight) reconSunLight.position.copy(sunDir.clone().multiplyScalar(10));
+    // Subtle fill from the opposite direction (atmospheric scattering)
+    if (reconFillLight) reconFillLight.position.copy(sunDir.clone().multiplyScalar(-5));
+  }
+  reconScene.add(new THREE.AmbientLight(0x222240, 2));
+  reconSunLight = new THREE.DirectionalLight(0xffeedd, 5);
+  reconFillLight = new THREE.DirectionalLight(0x4488cc, 1.2);
+  updateSunLight();
+  reconScene.add(reconSunLight);
+  reconScene.add(reconFillLight);
+  // Update sun direction every 60 seconds
+  setInterval(updateSunLight, 60000);
+
+  // Stars
+  const starsGeo = new THREE.BufferGeometry();
+  const starPositions = new Float32Array(3000 * 3);
+  for (let i = 0; i < 3000; i++) {
+    starPositions[i * 3] = (Math.random() - 0.5) * 50;
+    starPositions[i * 3 + 1] = (Math.random() - 0.5) * 50;
+    starPositions[i * 3 + 2] = (Math.random() - 0.5) * 50;
+  }
+  starsGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+  const stars = new THREE.Points(starsGeo, new THREE.PointsMaterial({ color: 0xffffff, size: 0.03, transparent: true, opacity: 0.8 }));
+  reconScene.add(stars);
+
+  // Earth
+  const earthGeo = new THREE.SphereGeometry(1, 64, 64);
+  const earthMat = new THREE.MeshPhongMaterial({ color: 0x1a3a5c, specular: 0x222244, shininess: 10, emissive: 0x050515 });
+  reconEarth = new THREE.Mesh(earthGeo, earthMat);
+  reconScene.add(reconEarth);
+
+  // Atmosphere glow
+  const atmosphereGeo = new THREE.SphereGeometry(1.008, 64, 64);
+  const atmosphereMat = new THREE.MeshPhongMaterial({ color: 0x4488ff, transparent: true, opacity: 0.06, side: THREE.FrontSide, depthWrite: false });
+  reconScene.add(new THREE.Mesh(atmosphereGeo, atmosphereMat));
+
+  // Grid
+  reconScene.add(new THREE.PolarGridHelper(1, 36, 18, 64, 0x334455, 0x223344));
+
+  // Click events
+  reconRenderer.domElement.addEventListener('click', (event) => {
+    const intersects = reconGetIntersections(event);
+    if (intersects.length > 0) {
+      const sprite = intersects[0].object;
+      const data = sprite.userData;
+      if (data) {
+        reconShowPopup(data, event.clientX, event.clientY);
+      }
+    } else {
+      reconHidePopup();
+    }
+  });
+
+  reconRenderer.domElement.addEventListener('mousemove', (event) => {
+    const intersects = reconGetIntersections(event);
+    reconRenderer.domElement.style.cursor = intersects.length > 0 ? 'pointer' : 'grab';
+  });
+
+  // UI control bindings
+  const slider = document.getElementById('reconTimeSlider');
+  if (slider) slider.addEventListener('input', () => {
+    reconHidePopup();
+    reconSetTime(parseInt(slider.value));
+  });
+
+  const playBtn = document.getElementById('reconBtnPlay');
+  if (playBtn) playBtn.addEventListener('click', reconStartPlayback);
+
+  const pauseBtn = document.getElementById('reconBtnPause');
+  if (pauseBtn) pauseBtn.addEventListener('click', reconStopPlayback);
+
+  const resetBtn = document.getElementById('reconBtnReset');
+  if (resetBtn) resetBtn.addEventListener('click', () => { reconStopPlayback(); reconSetTime(0); });
+
+  const speedDown = document.getElementById('reconBtnSpeedDown');
+  if (speedDown) speedDown.addEventListener('click', () => {
+    reconPlaySpeed = Math.max(0.25, reconPlaySpeed / 2);
+    const speedDisplay = document.getElementById('reconSpeedDisplay');
+    if (speedDisplay) speedDisplay.textContent = reconPlaySpeed + 'x';
+  });
+
+  const speedUp = document.getElementById('reconBtnSpeedUp');
+  if (speedUp) speedUp.addEventListener('click', () => {
+    reconPlaySpeed = Math.min(16, reconPlaySpeed * 2);
+    const speedDisplay = document.getElementById('reconSpeedDisplay');
+    if (speedDisplay) speedDisplay.textContent = reconPlaySpeed + 'x';
+  });
+
+  // Keyboard
+  window.addEventListener('keydown', reconHandleKeydown);
+
+  // Resize
+  window.addEventListener('resize', () => {
+    if (!reconCamera || !reconRenderer || !container) return;
+    reconCamera.aspect = container.clientWidth / container.clientHeight;
+    reconCamera.updateProjectionMatrix();
+    reconRenderer.setSize(container.clientWidth, container.clientHeight);
+  });
+
+    const success = await reconLoadAllData();
+  if (success) {
+    try {
+      reconBuildPointLookup();
+      reconBuildSidebar();
+    } catch (e) {
+      console.warn('Sidebar build failed (globalJson may not be loaded yet):', e);
+    }
+    reconAnimationLoop();
+  }
+}
+
+window.initReconstructionGlobe = initReconstructionGlobe;
+</script>
 </body>
 </html>
