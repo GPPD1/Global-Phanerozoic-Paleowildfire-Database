@@ -888,51 +888,72 @@
     "color": "#E5AC4D",
     "data": [
       {
-        "id": 12,
+        "id": 9,
         "lat": 30.87,
         "lng": 10.053611111111111,
         "Wildfire evidence type": "PAHs",
         "Reference": "Romero-Sarmiento et al., 2011b"
       },
       {
-        "id": 13,
+        "id": 10,
         "lat": 48.00361111111111,
         "lng": -66.6675,
         "Wildfire evidence type": "FC",
         "Reference": "Kennedy et al., 2013"
       },
       {
-        "id": 14,
+        "id": 11,
         "lat": 52.31944444444445,
         "lng": -3.2472222222222222,
         "Wildfire evidence type": "FC/Inert",
         "Reference": "Edwards and Axe, 2004"
       },
       {
-        "id": 15,
+        "id": 12,
         "lat": 52.47527777777778,
         "lng": -2.5994444444444444,
         "Wildfire evidence type": "FC/Inert",
         "Reference": "Glasspool et al., 2006"
       },
       {
-        "id": 16,
+        "id": 13,
         "lat": 50.55777777777777,
         "lng": 6.793333333333333,
         "Wildfire evidence type": "FC",
         "Reference": "Wollenweber et al., 2006"
       },
       {
-        "id": 17,
+        "id": 14,
         "lat": 55.64416666666666,
         "lng": 13.691666666666666,
         "Wildfire evidence type": "FC",
         "Reference": "Mehlqvist et al., 2015"
       },
       {
-        "id": 18,
+        "id": 15,
+        "lat": 52.533055555555556,
+        "lng": -2.4844444444444447,
+        "Wildfire evidence type": "FC",
+        "Reference": "Glasspool and Gastaldo, 2022a"
+      },
+      {
+        "id": 16,
         "lat": 48.719722222222224,
         "lng": 25.629722222222224,
+        "Wildfire evidence type": "FC",
+        "Reference": "Filipiak and Szaniawski, 2016"
+      },
+      {
+        "id": 17,
+        "lat": 48.536944444444444,
+        "lng": 26.230833333333333,
+        "Wildfire evidence type": "FC",
+        "Reference": "Filipiak and Szaniawski, 2016"
+      },
+      {
+        "id": 18,
+        "lat": 48.593333333333334,
+        "lng": 25.921666666666667,
         "Wildfire evidence type": "FC",
         "Reference": "Filipiak and Szaniawski, 2016"
       }
@@ -6350,15 +6371,15 @@
     "data": [
       {
         "id": 2,
-        "lat": 52.115833333333335,
-        "lng": -3.5169444444444444,
+        "lat": 52.37222222222222,
+        "lng": -2.8002777777777776,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool and Gastaldo, 2022a"
       },
       {
         "id": 3,
-        "lat": 52.533055555555556,
-        "lng": -2.4844444444444447,
+        "lat": 52.115833333333335,
+        "lng": -3.5169444444444444,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool and Gastaldo, 2022a"
       },
@@ -6368,19 +6389,19 @@
         "lng": 21.104444444444447,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool and Gastaldo, 2022a;\nGlasspool and Gastaldo, 2022b"
-      }
-    ]
-  },
-  "s4": {
-    "color": "#E6F5E1",
-    "data": [
+      },
       {
         "id": 5,
         "lat": 51.9775,
         "lng": -3.683888888888889,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool and Gastaldo, 2022a"
-      },
+      }
+    ]
+  },
+  "s4": {
+    "color": "#E6F5E1",
+    "data": [
       {
         "id": 6,
         "lat": 52.055277777777775,
@@ -6391,37 +6412,16 @@
       {
         "id": 7,
         "lat": 52.37222222222222,
-        "lng": -2.8002777777777776,
-        "Wildfire evidence type": "FC",
-        "Reference": "Glasspool and Gastaldo, 2022a"
-      },
-      {
-        "id": 8,
-        "lat": 52.37222222222222,
         "lng": -2.7969444444444442,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool and Gastaldo, 2022a"
       },
       {
-        "id": 9,
+        "id": 8,
         "lat": 52.363055555555555,
         "lng": -2.718611111111111,
         "Wildfire evidence type": "FC",
         "Reference": "Glasspool et al., 2004"
-      },
-      {
-        "id": 10,
-        "lat": 52.53722222222222,
-        "lng": -2.5533333333333332,
-        "Wildfire evidence type": "FC",
-        "Reference": "Edwards and Axe, 2004"
-      },
-      {
-        "id": 11,
-        "lat": 52.53722222222222,
-        "lng": -2.5533333333333332,
-        "Wildfire evidence type": "FC",
-        "Reference": "Glasspool et al., 2006"
       }
     ]
   },
