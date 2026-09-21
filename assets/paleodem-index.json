@@ -1,0 +1,1782 @@
+{
+  "source": "Scotese & Wright (2018), PALEOMAP PaleoDEMs",
+  "sourceResolutionDegrees": 0.1,
+  "elevationUnits": "metres",
+  "textureSize": [
+    4096,
+    2048
+  ],
+  "longitudeRange": [
+    -180,
+    180
+  ],
+  "latitudeRange": [
+    90,
+    -90
+  ],
+  "timeConvention": "Nominal age in source filename; original metadata retained per frame.",
+  "frames": [
+    {
+      "time": 0,
+      "color": "assets/terrain/000ma.jpg",
+      "height": "assets/terrain/000ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 10500,
+      "sourceFile": "Map01_PALEOMAP_6min_Holocene_0Ma.nc",
+      "sourceDescription": "PALEOMAP:Holocene, 0.0 Ma",
+      "elevation": "assets/terrain/000ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 5,
+      "color": "assets/terrain/005ma.jpg",
+      "height": "assets/terrain/005ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 10500,
+      "sourceFile": "Map03_PALEOMAP_6min_Pliocene_5Ma.nc",
+      "sourceDescription": "PALEOMAP:Pliocene, 4.0 Ma",
+      "elevation": "assets/terrain/005ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 6600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 10,
+      "color": "assets/terrain/010ma.jpg",
+      "height": "assets/terrain/010ma-height.png",
+      "minElevation": -8000,
+      "maxElevation": 10200,
+      "sourceFile": "Map05_PALEOMAP_6min_middle_Late_Miocene_10Ma.nc",
+      "sourceDescription": "PALEOMAP:middle_Late_Miocene, 10.5 Ma",
+      "elevation": "assets/terrain/010ma-elevation.bin.gz",
+      "gridMinElevation": -8000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 15,
+      "color": "assets/terrain/015ma.jpg",
+      "height": "assets/terrain/015ma-height.png",
+      "minElevation": -7000,
+      "maxElevation": 10200,
+      "sourceFile": "Map06_PALEOMAP_6min_Middle_Miocene_15Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Miocene, 14.9 Ma",
+      "elevation": "assets/terrain/015ma-elevation.bin.gz",
+      "gridMinElevation": -7000,
+      "gridMaxElevation": 8100,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 20,
+      "color": "assets/terrain/020ma.jpg",
+      "height": "assets/terrain/020ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 10200,
+      "sourceFile": "Map07_PALEOMAP_6min_Early_Miocene_20Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Miocene, 19.5 Ma",
+      "elevation": "assets/terrain/020ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 25,
+      "color": "assets/terrain/025ma.jpg",
+      "height": "assets/terrain/025ma-height.png",
+      "minElevation": -7000,
+      "maxElevation": 9900,
+      "sourceFile": "Map08_PALEOMAP_6min_Late_Oligocene_25Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Oligocene, 25.6 Ma",
+      "elevation": "assets/terrain/025ma-elevation.bin.gz",
+      "gridMinElevation": -7000,
+      "gridMaxElevation": 9300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 30,
+      "color": "assets/terrain/030ma.jpg",
+      "height": "assets/terrain/030ma-height.png",
+      "minElevation": -8000,
+      "maxElevation": 10200,
+      "sourceFile": "Map09_PALEOMAP_6min_Early_Oligocene_30Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Oligocene, 31 Ma",
+      "elevation": "assets/terrain/030ma-elevation.bin.gz",
+      "gridMinElevation": -8000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 35,
+      "color": "assets/terrain/035ma.jpg",
+      "height": "assets/terrain/035ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 9000,
+      "sourceFile": "Map10_PALEOMAP_6min_Late_Eocene_35Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Eocene, 35.9 Ma",
+      "elevation": "assets/terrain/035ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 9000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 40,
+      "color": "assets/terrain/040ma.jpg",
+      "height": "assets/terrain/040ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 8400,
+      "sourceFile": "Map11_PALEOMAP_6min_late_Middle_Eocene_40Ma.nc",
+      "sourceDescription": "PALEOMAP:late_Middle_Eocene, 39.5 Ma",
+      "elevation": "assets/terrain/040ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 8400,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 45,
+      "color": "assets/terrain/045ma.jpg",
+      "height": "assets/terrain/045ma-height.png",
+      "minElevation": -7000,
+      "maxElevation": 4800,
+      "sourceFile": "Map12_PALEOMAP_6min_early_Middle_Eocene_45Ma.nc",
+      "sourceDescription": "PALEOMAP:early_Middle_Eocene, 44.5 Ma",
+      "elevation": "assets/terrain/045ma-elevation.bin.gz",
+      "gridMinElevation": -7000,
+      "gridMaxElevation": 4800,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 50,
+      "color": "assets/terrain/050ma.jpg",
+      "height": "assets/terrain/050ma-height.png",
+      "minElevation": -6000,
+      "maxElevation": 10500,
+      "sourceFile": "Map13_PALEOMAP_6min_Early_Eocene_50Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Eocene, 52.2 Ma",
+      "elevation": "assets/terrain/050ma-elevation.bin.gz",
+      "gridMinElevation": -6000,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 55,
+      "color": "assets/terrain/055ma.jpg",
+      "height": "assets/terrain/055ma-height.png",
+      "minElevation": -5960,
+      "maxElevation": 3300,
+      "sourceFile": "Map14_PALEOMAP_6min_Paleocene_Eocene_Boundary_55Ma.nc",
+      "sourceDescription": "PALEOMAP:Paleocene_Eocene_Boundary, 55.8 Ma",
+      "elevation": "assets/terrain/055ma-elevation.bin.gz",
+      "gridMinElevation": -5960,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 60,
+      "color": "assets/terrain/060ma.jpg",
+      "height": "assets/terrain/060ma-height.png",
+      "minElevation": -5920,
+      "maxElevation": 3900,
+      "sourceFile": "Map15_PALEOMAP_6min_Paleocene_60Ma.nc",
+      "sourceDescription": "PALEOMAP:Paleocene, 60.6 Ma",
+      "elevation": "assets/terrain/060ma-elevation.bin.gz",
+      "gridMinElevation": -5920,
+      "gridMaxElevation": 3900,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 65,
+      "color": "assets/terrain/065ma.jpg",
+      "height": "assets/terrain/065ma-height.png",
+      "minElevation": -5920,
+      "maxElevation": 3600,
+      "sourceFile": "Map16_PALEOMAP_6min_KT_Boundary_65Ma.nc",
+      "sourceDescription": "PALEOMAP:KT_Boundary, 66 Ma",
+      "elevation": "assets/terrain/065ma-elevation.bin.gz",
+      "gridMinElevation": -5920,
+      "gridMaxElevation": 3600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 70,
+      "color": "assets/terrain/070ma.jpg",
+      "height": "assets/terrain/070ma-height.png",
+      "minElevation": -8000,
+      "maxElevation": 10200,
+      "sourceFile": "Map17_PALEOMAP_6min_Late_Cretaceous_70Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cretaceous, 69 Ma",
+      "elevation": "assets/terrain/070ma-elevation.bin.gz",
+      "gridMinElevation": -8000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 75,
+      "color": "assets/terrain/075ma.jpg",
+      "height": "assets/terrain/075ma-height.png",
+      "minElevation": -6000,
+      "maxElevation": 3600,
+      "sourceFile": "Map18_PALEOMAP_6min_Late_Cretaceous_75Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cretaceous, 75 Ma",
+      "elevation": "assets/terrain/075ma-elevation.bin.gz",
+      "gridMinElevation": -6000,
+      "gridMaxElevation": 3600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 80,
+      "color": "assets/terrain/080ma.jpg",
+      "height": "assets/terrain/080ma-height.png",
+      "minElevation": -6000,
+      "maxElevation": 10500,
+      "sourceFile": "Map19_PALEOMAP_6min_Late_Cretaceous_80Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cretaceous, 80.8 Ma",
+      "elevation": "assets/terrain/080ma-elevation.bin.gz",
+      "gridMinElevation": -6000,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 85,
+      "color": "assets/terrain/085ma.jpg",
+      "height": "assets/terrain/085ma-height.png",
+      "minElevation": -5840,
+      "maxElevation": 8700,
+      "sourceFile": "Map20_PALEOMAP_6min_Late_Cretaceous_85Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cretaceous, 86.7 Ma",
+      "elevation": "assets/terrain/085ma-elevation.bin.gz",
+      "gridMinElevation": -5840,
+      "gridMaxElevation": 3000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 90,
+      "color": "assets/terrain/090ma.jpg",
+      "height": "assets/terrain/090ma-height.png",
+      "minElevation": -5840,
+      "maxElevation": 10200,
+      "sourceFile": "Map21_PALEOMAP_6min_Mid-Cretaceous_90Ma.nc",
+      "sourceDescription": "PALEOMAP:Mid-Cretaceous, 91.9 Ma",
+      "elevation": "assets/terrain/090ma-elevation.bin.gz",
+      "gridMinElevation": -5840,
+      "gridMaxElevation": 3600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 95,
+      "color": "assets/terrain/095ma.jpg",
+      "height": "assets/terrain/095ma-height.png",
+      "minElevation": -5840,
+      "maxElevation": 9900,
+      "sourceFile": "Map22_PALEOMAP_6min_Mid-Cretaceous_95Ma.nc",
+      "sourceDescription": "PALEOMAP:Mid-Cretaceous, 97.2 Ma",
+      "elevation": "assets/terrain/095ma-elevation.bin.gz",
+      "gridMinElevation": -5840,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 100,
+      "color": "assets/terrain/100ma.jpg",
+      "height": "assets/terrain/100ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 10200,
+      "sourceFile": "Map23_PALEOMAP_6min_Early_Cretaceous_100Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 102.6 Ma",
+      "elevation": "assets/terrain/100ma-elevation.bin.gz",
+      "gridMinElevation": -9000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 105,
+      "color": "assets/terrain/105ma.jpg",
+      "height": "assets/terrain/105ma-height.png",
+      "minElevation": -5800,
+      "maxElevation": 6300,
+      "sourceFile": "Map24_PALEOMAP_6min_Early Cretaceous_105Ma.nc",
+      "sourceDescription": "PALEOMAP:Early Cretaceous, 107 Ma",
+      "elevation": "assets/terrain/105ma-elevation.bin.gz",
+      "gridMinElevation": -5800,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 110,
+      "color": "assets/terrain/110ma.jpg",
+      "height": "assets/terrain/110ma-height.png",
+      "minElevation": -5920,
+      "maxElevation": 9300,
+      "sourceFile": "Map25_PALEOMAP_6min_Early_Cretaceous_110Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 111 Ma",
+      "elevation": "assets/terrain/110ma-elevation.bin.gz",
+      "gridMinElevation": -5920,
+      "gridMaxElevation": 5400,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 115,
+      "color": "assets/terrain/115ma.jpg",
+      "height": "assets/terrain/115ma-height.png",
+      "minElevation": -5720,
+      "maxElevation": 3300,
+      "sourceFile": "Map26_PALEOMAP_6min_Early_Cretaceous_115Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 115.8 Ma",
+      "elevation": "assets/terrain/115ma-elevation.bin.gz",
+      "gridMinElevation": -5720,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 120,
+      "color": "assets/terrain/120ma.jpg",
+      "height": "assets/terrain/120ma-height.png",
+      "minElevation": -9000,
+      "maxElevation": 9900,
+      "sourceFile": "Map27_PALEOMAP_6min_Early_Cretaceous_120Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 121.8 Ma",
+      "elevation": "assets/terrain/120ma-elevation.bin.gz",
+      "gridMinElevation": -6000,
+      "gridMaxElevation": 4500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 125,
+      "color": "assets/terrain/125ma.jpg",
+      "height": "assets/terrain/125ma-height.png",
+      "minElevation": -5480,
+      "maxElevation": 3000,
+      "sourceFile": "Map28_PALEOMAP_6min_Early_Cretaceous_125Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 127.2 Ma",
+      "elevation": "assets/terrain/125ma-elevation.bin.gz",
+      "gridMinElevation": -5480,
+      "gridMaxElevation": 3000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 130,
+      "color": "assets/terrain/130ma.jpg",
+      "height": "assets/terrain/130ma-height.png",
+      "minElevation": -5520,
+      "maxElevation": 10500,
+      "sourceFile": "Map29_PALEOMAP_6min_Early_Cretaceous_130Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 131.2 Ma",
+      "elevation": "assets/terrain/130ma-elevation.bin.gz",
+      "gridMinElevation": -5520,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 135,
+      "color": "assets/terrain/135ma.jpg",
+      "height": "assets/terrain/135ma-height.png",
+      "minElevation": -5520,
+      "maxElevation": 2960,
+      "sourceFile": "Map30_PALEOMAP_6min_Early_Cretaceous_135Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 136.4 Ma",
+      "elevation": "assets/terrain/135ma-elevation.bin.gz",
+      "gridMinElevation": -5520,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 140,
+      "color": "assets/terrain/140ma.jpg",
+      "height": "assets/terrain/140ma-height.png",
+      "minElevation": -11000,
+      "maxElevation": 10200,
+      "sourceFile": "Map31_PALEOMAP_6min_Early_Cretaceous_140Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cretaceous, 142.4 Ma",
+      "elevation": "assets/terrain/140ma-elevation.bin.gz",
+      "gridMinElevation": -6000,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 145,
+      "color": "assets/terrain/145ma.jpg",
+      "height": "assets/terrain/145ma-height.png",
+      "minElevation": -5240,
+      "maxElevation": 3600,
+      "sourceFile": "Map32_PALEOMAP_6min_Jurassic_Cretaceous_Boundary_145Ma.nc",
+      "sourceDescription": "PALEOMAP:Jurassic_Cretaceous_Boundary, 145 Ma",
+      "elevation": "assets/terrain/145ma-elevation.bin.gz",
+      "gridMinElevation": -5240,
+      "gridMaxElevation": 3600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 150,
+      "color": "assets/terrain/150ma.jpg",
+      "height": "assets/terrain/150ma-height.png",
+      "minElevation": -5280,
+      "maxElevation": 6000,
+      "sourceFile": "Map33_PALEOMAP_6min_Late_Jurassic_150Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Jurassic, 148.6 Ma",
+      "elevation": "assets/terrain/150ma-elevation.bin.gz",
+      "gridMinElevation": -5280,
+      "gridMaxElevation": 4800,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 155,
+      "color": "assets/terrain/155ma.jpg",
+      "height": "assets/terrain/155ma-height.png",
+      "minElevation": -4680,
+      "maxElevation": 4200,
+      "sourceFile": "Map34_PALEOMAP_6min_Late_Jurassic_155Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Jurassic, 154.7 Ma",
+      "elevation": "assets/terrain/155ma-elevation.bin.gz",
+      "gridMinElevation": -4680,
+      "gridMaxElevation": 4200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 160,
+      "color": "assets/terrain/160ma.jpg",
+      "height": "assets/terrain/160ma-height.png",
+      "minElevation": -4680,
+      "maxElevation": 10500,
+      "sourceFile": "Map35_PALEOMAP_6min_Late_Jurassic_160Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Jurassic, 160.4 Ma",
+      "elevation": "assets/terrain/160ma-elevation.bin.gz",
+      "gridMinElevation": -4680,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 165,
+      "color": "assets/terrain/165ma.jpg",
+      "height": "assets/terrain/165ma-height.png",
+      "minElevation": -3960,
+      "maxElevation": 2840,
+      "sourceFile": "Map36_PALEOMAP_6min_Middle_Jurassic_165Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Jurassic, 164.8 Ma",
+      "elevation": "assets/terrain/165ma-elevation.bin.gz",
+      "gridMinElevation": -3960,
+      "gridMaxElevation": 2840,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 170,
+      "color": "assets/terrain/170ma.jpg",
+      "height": "assets/terrain/170ma-height.png",
+      "minElevation": -3880,
+      "maxElevation": 2880,
+      "sourceFile": "Map37_PALEOMAP_6min_Middle_Jurassic_170Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Jurassic, 168.2 Ma",
+      "elevation": "assets/terrain/170ma-elevation.bin.gz",
+      "gridMinElevation": -3880,
+      "gridMaxElevation": 2880,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 175,
+      "color": "assets/terrain/175ma.jpg",
+      "height": "assets/terrain/175ma-height.png",
+      "minElevation": -3960,
+      "maxElevation": 2760,
+      "sourceFile": "Map38_PALEOMAP_6min_Middle_Jurassic_175Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Jurassic, 172.2 Ma",
+      "elevation": "assets/terrain/175ma-elevation.bin.gz",
+      "gridMinElevation": -3960,
+      "gridMaxElevation": 2760,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 180,
+      "color": "assets/terrain/180ma.jpg",
+      "height": "assets/terrain/180ma-height.png",
+      "minElevation": -4840,
+      "maxElevation": 8700,
+      "sourceFile": "Map39_PALEOMAP_6min_Early_Jurassic_180Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Jurassic, 178.4 Ma",
+      "elevation": "assets/terrain/180ma-elevation.bin.gz",
+      "gridMinElevation": -4840,
+      "gridMaxElevation": 6900,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 185,
+      "color": "assets/terrain/185ma.jpg",
+      "height": "assets/terrain/185ma-height.png",
+      "minElevation": -3800,
+      "maxElevation": 2960,
+      "sourceFile": "Map40_PALEOMAP_6min_Early_Jurassic_185Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Jurassic, 186.8 Ma",
+      "elevation": "assets/terrain/185ma-elevation.bin.gz",
+      "gridMinElevation": -3800,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 190,
+      "color": "assets/terrain/190ma.jpg",
+      "height": "assets/terrain/190ma-height.png",
+      "minElevation": -3840,
+      "maxElevation": 2960,
+      "sourceFile": "Map41_PALEOMAP_6min_Early_Jurassic_190Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Jurassic, 190.8 Ma",
+      "elevation": "assets/terrain/190ma-elevation.bin.gz",
+      "gridMinElevation": -3840,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 195,
+      "color": "assets/terrain/195ma.jpg",
+      "height": "assets/terrain/195ma-height.png",
+      "minElevation": -3600,
+      "maxElevation": 2840,
+      "sourceFile": "Map42_PALEOMAP_6min_Early_Jurassic_195Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Jurassic, 196 Ma",
+      "elevation": "assets/terrain/195ma-elevation.bin.gz",
+      "gridMinElevation": -3600,
+      "gridMaxElevation": 2840,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 200,
+      "color": "assets/terrain/200ma.jpg",
+      "height": "assets/terrain/200ma-height.png",
+      "minElevation": -4080,
+      "maxElevation": 3300,
+      "sourceFile": "Map43_PALEOMAP_6min_Late_Triassic_200Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 201.3 Ma",
+      "elevation": "assets/terrain/200ma-elevation.bin.gz",
+      "gridMinElevation": -4080,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 205,
+      "color": "assets/terrain/205ma.jpg",
+      "height": "assets/terrain/205ma-height.png",
+      "minElevation": -3720,
+      "maxElevation": 2960,
+      "sourceFile": "Map43.5_PALEOMAP_6min_Late_Triassic_205Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 204.9 Ma",
+      "elevation": "assets/terrain/205ma-elevation.bin.gz",
+      "gridMinElevation": -3720,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 210,
+      "color": "assets/terrain/210ma.jpg",
+      "height": "assets/terrain/210ma-height.png",
+      "minElevation": -3920,
+      "maxElevation": 2960,
+      "sourceFile": "Map44_PALEOMAP_6min_Late_Triassic_210Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 213.2 Ma",
+      "elevation": "assets/terrain/210ma-elevation.bin.gz",
+      "gridMinElevation": -3920,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 215,
+      "color": "assets/terrain/215ma.jpg",
+      "height": "assets/terrain/215ma-height.png",
+      "minElevation": -4320,
+      "maxElevation": 3600,
+      "sourceFile": "Map44.5_PALEOMAP_6min_Late_Triassic_215Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 217.8 Ma",
+      "elevation": "assets/terrain/215ma-elevation.bin.gz",
+      "gridMinElevation": -4320,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 220,
+      "color": "assets/terrain/220ma.jpg",
+      "height": "assets/terrain/220ma-height.png",
+      "minElevation": -5000,
+      "maxElevation": 10500,
+      "sourceFile": "Map45_PALEOMAP_6min_Late_Triassic_220Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 222.4 Ma",
+      "elevation": "assets/terrain/220ma-elevation.bin.gz",
+      "gridMinElevation": -5000,
+      "gridMaxElevation": 9300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 225,
+      "color": "assets/terrain/225ma.jpg",
+      "height": "assets/terrain/225ma-height.png",
+      "minElevation": -4560,
+      "maxElevation": 2960,
+      "sourceFile": "Map45.5_PALEOMAP_6min_Late_Triassic_225Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 227 Ma",
+      "elevation": "assets/terrain/225ma-elevation.bin.gz",
+      "gridMinElevation": -4560,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 230,
+      "color": "assets/terrain/230ma.jpg",
+      "height": "assets/terrain/230ma-height.png",
+      "minElevation": -4120,
+      "maxElevation": 2920,
+      "sourceFile": "Map46_PALEOMAP_6min_Late_Triassic_230Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 232 Ma",
+      "elevation": "assets/terrain/230ma-elevation.bin.gz",
+      "gridMinElevation": -4120,
+      "gridMaxElevation": 2920,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 235,
+      "color": "assets/terrain/235ma.jpg",
+      "height": "assets/terrain/235ma-height.png",
+      "minElevation": -3840,
+      "maxElevation": 2960,
+      "sourceFile": "Map46.5_PALEOMAP_6min_Late_Triassic_235Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Triassic, 233.6 Ma",
+      "elevation": "assets/terrain/235ma-elevation.bin.gz",
+      "gridMinElevation": -3840,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 240,
+      "color": "assets/terrain/240ma.jpg",
+      "height": "assets/terrain/240ma-height.png",
+      "minElevation": -3680,
+      "maxElevation": 2920,
+      "sourceFile": "Map47_PALEOMAP_6min_Middle_Triassic_240Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Triassic, 239.5 Ma",
+      "elevation": "assets/terrain/240ma-elevation.bin.gz",
+      "gridMinElevation": -3680,
+      "gridMaxElevation": 2920,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 245,
+      "color": "assets/terrain/245ma.jpg",
+      "height": "assets/terrain/245ma-height.png",
+      "minElevation": -3920,
+      "maxElevation": 2600,
+      "sourceFile": "Map48_PALEOMAP_6min_Middle_Triassic_245Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Triassic, 244.6 Ma",
+      "elevation": "assets/terrain/245ma-elevation.bin.gz",
+      "gridMinElevation": -3920,
+      "gridMaxElevation": 2600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 250,
+      "color": "assets/terrain/250ma.jpg",
+      "height": "assets/terrain/250ma-height.png",
+      "minElevation": -4480,
+      "maxElevation": 2440,
+      "sourceFile": "Map49_PALEOMAP_6min_Permo-Triassic Boundary_250Ma.nc",
+      "sourceDescription": "PALEOMAP:Permo-Triassic Boundary, 252 Ma",
+      "elevation": "assets/terrain/250ma-elevation.bin.gz",
+      "gridMinElevation": -4480,
+      "gridMaxElevation": 2440,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 255,
+      "color": "assets/terrain/255ma.jpg",
+      "height": "assets/terrain/255ma-height.png",
+      "minElevation": -4840,
+      "maxElevation": 2200,
+      "sourceFile": "Map50_PALEOMAP_6min_LatePermian_255Ma.nc",
+      "sourceDescription": "PALEOMAP:LatePermian, 256 Ma",
+      "elevation": "assets/terrain/255ma-elevation.bin.gz",
+      "gridMinElevation": -4840,
+      "gridMaxElevation": 2200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 260,
+      "color": "assets/terrain/260ma.jpg",
+      "height": "assets/terrain/260ma-height.png",
+      "minElevation": -5440,
+      "maxElevation": 2480,
+      "sourceFile": "Map51_PALEOMAP_6min_Middle_Permian_260Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Permian, 262.5 Ma",
+      "elevation": "assets/terrain/260ma-elevation.bin.gz",
+      "gridMinElevation": -5440,
+      "gridMaxElevation": 2480,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 265,
+      "color": "assets/terrain/265ma.jpg",
+      "height": "assets/terrain/265ma-height.png",
+      "minElevation": -5000,
+      "maxElevation": 2480,
+      "sourceFile": "Map51.5_PALEOMAP_6min_Middle_Permian_265Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Permian, 265.1 Ma",
+      "elevation": "assets/terrain/265ma-elevation.bin.gz",
+      "gridMinElevation": -5000,
+      "gridMaxElevation": 2480,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 270,
+      "color": "assets/terrain/270ma.jpg",
+      "height": "assets/terrain/270ma-height.png",
+      "minElevation": -4480,
+      "maxElevation": 2680,
+      "sourceFile": "Map52_PALEOMAP_6min_Middle_Permian_270Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Permian, 268.7 Ma",
+      "elevation": "assets/terrain/270ma-elevation.bin.gz",
+      "gridMinElevation": -4480,
+      "gridMaxElevation": 2680,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 275,
+      "color": "assets/terrain/275ma.jpg",
+      "height": "assets/terrain/275ma-height.png",
+      "minElevation": -4640,
+      "maxElevation": 3600,
+      "sourceFile": "Map53_PALEOMAP_6min_Early_Permian_275Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Permian, 275 Ma",
+      "elevation": "assets/terrain/275ma-elevation.bin.gz",
+      "gridMinElevation": -4640,
+      "gridMaxElevation": 2920,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 280,
+      "color": "assets/terrain/280ma.jpg",
+      "height": "assets/terrain/280ma-height.png",
+      "minElevation": -8000,
+      "maxElevation": 10500,
+      "sourceFile": "Map53.5_PALEOMAP_6min_Early_Permian_280Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Permian, 280 Ma",
+      "elevation": "assets/terrain/280ma-elevation.bin.gz",
+      "gridMinElevation": -8000,
+      "gridMaxElevation": 9000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 285,
+      "color": "assets/terrain/285ma.jpg",
+      "height": "assets/terrain/285ma-height.png",
+      "minElevation": -4560,
+      "maxElevation": 3000,
+      "sourceFile": "Map54_PALEOMAP_6min_Early_Permian_285Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Permian, 286.8 Ma",
+      "elevation": "assets/terrain/285ma-elevation.bin.gz",
+      "gridMinElevation": -4560,
+      "gridMaxElevation": 2840,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 290,
+      "color": "assets/terrain/290ma.jpg",
+      "height": "assets/terrain/290ma-height.png",
+      "minElevation": -3880,
+      "maxElevation": 2880,
+      "sourceFile": "Map55_PALEOMAP_6min_Early_Permian_290Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Permian, 292.6 Ma",
+      "elevation": "assets/terrain/290ma-elevation.bin.gz",
+      "gridMinElevation": -3880,
+      "gridMaxElevation": 2880,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 295,
+      "color": "assets/terrain/295ma.jpg",
+      "height": "assets/terrain/295ma-height.png",
+      "minElevation": -3680,
+      "maxElevation": 3300,
+      "sourceFile": "Map56_PALEOMAP_6min_Early_Permian_295Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Permian, 297 Ma",
+      "elevation": "assets/terrain/295ma-elevation.bin.gz",
+      "gridMinElevation": -3680,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 300,
+      "color": "assets/terrain/300ma.jpg",
+      "height": "assets/terrain/300ma-height.png",
+      "minElevation": -3640,
+      "maxElevation": 5100,
+      "sourceFile": "Map57_PALEOMAP_6min_Late_Pennsylvanian_300Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Pennsylvanian, 301.3 Ma",
+      "elevation": "assets/terrain/300ma-elevation.bin.gz",
+      "gridMinElevation": -3640,
+      "gridMaxElevation": 5100,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 305,
+      "color": "assets/terrain/305ma.jpg",
+      "height": "assets/terrain/305ma-height.png",
+      "minElevation": -3640,
+      "maxElevation": 3000,
+      "sourceFile": "Map58_PALEOMAP_6min_Late_Pennsylvanian_305Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Pennsylvanian, 305.4 Ma",
+      "elevation": "assets/terrain/305ma-elevation.bin.gz",
+      "gridMinElevation": -3640,
+      "gridMaxElevation": 3000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 310,
+      "color": "assets/terrain/310ma.jpg",
+      "height": "assets/terrain/310ma-height.png",
+      "minElevation": -3600,
+      "maxElevation": 2760,
+      "sourceFile": "Map59_PALEOMAP_6min_Middle_Pennsylvanian_310Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Pennsylvanian, 311.1 Ma",
+      "elevation": "assets/terrain/310ma-elevation.bin.gz",
+      "gridMinElevation": -3600,
+      "gridMaxElevation": 2760,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 315,
+      "color": "assets/terrain/315ma.jpg",
+      "height": "assets/terrain/315ma-height.png",
+      "minElevation": -4600,
+      "maxElevation": 2880,
+      "sourceFile": "Map59.5_PALEOMAP_6min_EarlyMiddleCarboniferous_315Ma.nc",
+      "sourceDescription": "PALEOMAP:EarlyMiddleCarboniferous, 314.6 Ma",
+      "elevation": "assets/terrain/315ma-elevation.bin.gz",
+      "gridMinElevation": -4600,
+      "gridMaxElevation": 2560,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 320,
+      "color": "assets/terrain/320ma.jpg",
+      "height": "assets/terrain/320ma-height.png",
+      "minElevation": -10000,
+      "maxElevation": 10200,
+      "sourceFile": "Map60_PALEOMAP_6min_Early_Pennsylvanian_320Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Pennsylvanian, 319.2 Ma",
+      "elevation": "assets/terrain/320ma-elevation.bin.gz",
+      "gridMinElevation": -10000,
+      "gridMaxElevation": 2680,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 325,
+      "color": "assets/terrain/325ma.jpg",
+      "height": "assets/terrain/325ma-height.png",
+      "minElevation": -4320,
+      "maxElevation": 2840,
+      "sourceFile": "Map61_PALEOMAP_6min_Late_Mississippian_325Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Mississippian, 327 Ma",
+      "elevation": "assets/terrain/325ma-elevation.bin.gz",
+      "gridMinElevation": -4320,
+      "gridMaxElevation": 2640,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 330,
+      "color": "assets/terrain/330ma.jpg",
+      "height": "assets/terrain/330ma-height.png",
+      "minElevation": -3520,
+      "maxElevation": 2640,
+      "sourceFile": "Map62_PALEOMAP_6min_Late_Mississippian_330Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Mississippian, 330.9 Ma",
+      "elevation": "assets/terrain/330ma-elevation.bin.gz",
+      "gridMinElevation": -3520,
+      "gridMaxElevation": 2640,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 335,
+      "color": "assets/terrain/335ma.jpg",
+      "height": "assets/terrain/335ma-height.png",
+      "minElevation": -3520,
+      "maxElevation": 2800,
+      "sourceFile": "Map62.5_PALEOMAP_6min_Middle_Mississippian_335Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Mississippian, 333 Ma",
+      "elevation": "assets/terrain/335ma-elevation.bin.gz",
+      "gridMinElevation": -3520,
+      "gridMaxElevation": 2800,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 340,
+      "color": "assets/terrain/340ma.jpg",
+      "height": "assets/terrain/340ma-height.png",
+      "minElevation": -3480,
+      "maxElevation": 3900,
+      "sourceFile": "Map63_PALEOMAP_6min_Middle_Mississippian_340Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Mississippian, 338.8 Ma",
+      "elevation": "assets/terrain/340ma-elevation.bin.gz",
+      "gridMinElevation": -3480,
+      "gridMaxElevation": 3900,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 345,
+      "color": "assets/terrain/345ma.jpg",
+      "height": "assets/terrain/345ma-height.png",
+      "minElevation": -3680,
+      "maxElevation": 2960,
+      "sourceFile": "Map63.5_PALEOMAP_6min_Middle_Mississippian_345Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Mississippian, 344 Ma",
+      "elevation": "assets/terrain/345ma-elevation.bin.gz",
+      "gridMinElevation": -3680,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 350,
+      "color": "assets/terrain/350ma.jpg",
+      "height": "assets/terrain/350ma-height.png",
+      "minElevation": -3920,
+      "maxElevation": 2760,
+      "sourceFile": "Map64_PALEOMAP_6min_Early_Mississippian_350Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Mississippian, 349 Ma",
+      "elevation": "assets/terrain/350ma-elevation.bin.gz",
+      "gridMinElevation": -3920,
+      "gridMaxElevation": 2760,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 355,
+      "color": "assets/terrain/355ma.jpg",
+      "height": "assets/terrain/355ma-height.png",
+      "minElevation": -4200,
+      "maxElevation": 2640,
+      "sourceFile": "Map64.5_PALEOMAP_6min_Early_Mississippian_355Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Mississippian, 354 Ma",
+      "elevation": "assets/terrain/355ma-elevation.bin.gz",
+      "gridMinElevation": -4200,
+      "gridMaxElevation": 2640,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 360,
+      "color": "assets/terrain/360ma.jpg",
+      "height": "assets/terrain/360ma-height.png",
+      "minElevation": -5240,
+      "maxElevation": 2560,
+      "sourceFile": "Map65_PALEOMAP_6min_Devono-Carboniferous Boundary_360Ma.nc",
+      "sourceDescription": "PALEOMAP:Devono-Carboniferous Boundary, 358.9 Ma",
+      "elevation": "assets/terrain/360ma-elevation.bin.gz",
+      "gridMinElevation": -5240,
+      "gridMaxElevation": 2560,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 365,
+      "color": "assets/terrain/365ma.jpg",
+      "height": "assets/terrain/365ma-height.png",
+      "minElevation": -4760,
+      "maxElevation": 2520,
+      "sourceFile": "Map65.5_PALEOMAP_6min_Late_Devonian_365Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Devonian, 365.6 Ma",
+      "elevation": "assets/terrain/365ma-elevation.bin.gz",
+      "gridMinElevation": -4760,
+      "gridMaxElevation": 2520,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 370,
+      "color": "assets/terrain/370ma.jpg",
+      "height": "assets/terrain/370ma-height.png",
+      "minElevation": -4320,
+      "maxElevation": 2560,
+      "sourceFile": "Map66_PALEOMAP_6min_Late_Devonian_370Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Devonian, 370 Ma",
+      "elevation": "assets/terrain/370ma-elevation.bin.gz",
+      "gridMinElevation": -4320,
+      "gridMaxElevation": 2560,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 375,
+      "color": "assets/terrain/375ma.jpg",
+      "height": "assets/terrain/375ma-height.png",
+      "minElevation": -4560,
+      "maxElevation": 2760,
+      "sourceFile": "Map66.5_PALEOMAP_6min_Late_Devonian_375Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Devonian, 375 Ma",
+      "elevation": "assets/terrain/375ma-elevation.bin.gz",
+      "gridMinElevation": -4560,
+      "gridMaxElevation": 2760,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 380,
+      "color": "assets/terrain/380ma.jpg",
+      "height": "assets/terrain/380ma-height.png",
+      "minElevation": -5040,
+      "maxElevation": 4800,
+      "sourceFile": "Map67_PALEOMAP_6min_Late_Devonian_380Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Devonian, 380 Ma",
+      "elevation": "assets/terrain/380ma-elevation.bin.gz",
+      "gridMinElevation": -5040,
+      "gridMaxElevation": 3900,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 385,
+      "color": "assets/terrain/385ma.jpg",
+      "height": "assets/terrain/385ma-height.png",
+      "minElevation": -4600,
+      "maxElevation": 3300,
+      "sourceFile": "Map67.5_PALEOMAP_6min_Middle_Devonian_385Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Devonian, 385.2 Ma",
+      "elevation": "assets/terrain/385ma-elevation.bin.gz",
+      "gridMinElevation": -4600,
+      "gridMaxElevation": 3300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 390,
+      "color": "assets/terrain/390ma.jpg",
+      "height": "assets/terrain/390ma-height.png",
+      "minElevation": -4240,
+      "maxElevation": 2960,
+      "sourceFile": "Map68_PALEOMAP_6min_Middle_Devonian_390Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Devonian, 390.5 Ma",
+      "elevation": "assets/terrain/390ma-elevation.bin.gz",
+      "gridMinElevation": -4240,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 395,
+      "color": "assets/terrain/395ma.jpg",
+      "height": "assets/terrain/395ma-height.png",
+      "minElevation": -4000,
+      "maxElevation": 2960,
+      "sourceFile": "Map69_PALEOMAP_6min_Early_Devonian_395Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Devonian, 395 Ma",
+      "elevation": "assets/terrain/395ma-elevation.bin.gz",
+      "gridMinElevation": -4000,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 400,
+      "color": "assets/terrain/400ma.jpg",
+      "height": "assets/terrain/400ma-height.png",
+      "minElevation": -4160,
+      "maxElevation": 6000,
+      "sourceFile": "Map70_PALEOMAP_6min_Early_Devonian_400Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Devonian, 400 Ma",
+      "elevation": "assets/terrain/400ma-elevation.bin.gz",
+      "gridMinElevation": -4160,
+      "gridMaxElevation": 6000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 405,
+      "color": "assets/terrain/405ma.jpg",
+      "height": "assets/terrain/405ma-height.png",
+      "minElevation": -4160,
+      "maxElevation": 2920,
+      "sourceFile": "Map70.5_PALEOMAP_6min_Early_Devonian_405Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Devonian, 405 Ma",
+      "elevation": "assets/terrain/405ma-elevation.bin.gz",
+      "gridMinElevation": -4160,
+      "gridMaxElevation": 2920,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 410,
+      "color": "assets/terrain/410ma.jpg",
+      "height": "assets/terrain/410ma-height.png",
+      "minElevation": -3920,
+      "maxElevation": 2880,
+      "sourceFile": "Map71_PALEOMAP_6min_Early_Devonian_410Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Devonian, 410 Ma",
+      "elevation": "assets/terrain/410ma-elevation.bin.gz",
+      "gridMinElevation": -3920,
+      "gridMaxElevation": 2880,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 415,
+      "color": "assets/terrain/415ma.jpg",
+      "height": "assets/terrain/415ma-height.png",
+      "minElevation": -3880,
+      "maxElevation": 6300,
+      "sourceFile": "Map72_PALEOMAP_6min_Early_Devonian_415Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Devonian, 415 Ma",
+      "elevation": "assets/terrain/415ma-elevation.bin.gz",
+      "gridMinElevation": -3880,
+      "gridMaxElevation": 6300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 420,
+      "color": "assets/terrain/420ma.jpg",
+      "height": "assets/terrain/420ma-height.png",
+      "minElevation": -3880,
+      "maxElevation": 10500,
+      "sourceFile": "Map73_PALEOMAP_6min_Late_Silurian_420Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Silurian, 421.1 Ma",
+      "elevation": "assets/terrain/420ma-elevation.bin.gz",
+      "gridMinElevation": -3880,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 425,
+      "color": "assets/terrain/425ma.jpg",
+      "height": "assets/terrain/425ma-height.png",
+      "minElevation": -3840,
+      "maxElevation": 8400,
+      "sourceFile": "Map74_PALEOMAP_6min_Late_Silurian_425Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Silurian, 425.2 Ma",
+      "elevation": "assets/terrain/425ma-elevation.bin.gz",
+      "gridMinElevation": -3840,
+      "gridMaxElevation": 8400,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 430,
+      "color": "assets/terrain/430ma.jpg",
+      "height": "assets/terrain/430ma-height.png",
+      "minElevation": -4040,
+      "maxElevation": 10500,
+      "sourceFile": "Map75_PALEOMAP_6min_Middle_Silurian_430Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Silurian, 430.4 Ma",
+      "elevation": "assets/terrain/430ma-elevation.bin.gz",
+      "gridMinElevation": -4040,
+      "gridMaxElevation": 10500,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 435,
+      "color": "assets/terrain/435ma.jpg",
+      "height": "assets/terrain/435ma-height.png",
+      "minElevation": -3760,
+      "maxElevation": 4200,
+      "sourceFile": "Map75.5_PALEOMAP_6min_Early_Silurian_435Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Silurian, 436 Ma",
+      "elevation": "assets/terrain/435ma-elevation.bin.gz",
+      "gridMinElevation": -3760,
+      "gridMaxElevation": 4200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 440,
+      "color": "assets/terrain/440ma.jpg",
+      "height": "assets/terrain/440ma-height.png",
+      "minElevation": -3480,
+      "maxElevation": 5700,
+      "sourceFile": "Map76_PALEOMAP_6min_Early_Silurian_440Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Silurian, 441.2 Ma",
+      "elevation": "assets/terrain/440ma-elevation.bin.gz",
+      "gridMinElevation": -3480,
+      "gridMaxElevation": 5700,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 445,
+      "color": "assets/terrain/445ma.jpg",
+      "height": "assets/terrain/445ma-height.png",
+      "minElevation": -4040,
+      "maxElevation": 3000,
+      "sourceFile": "Map77_PALEOMAP_6min_Late_Ordovician_445Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Ordovician, 444.5 Ma",
+      "elevation": "assets/terrain/445ma-elevation.bin.gz",
+      "gridMinElevation": -4040,
+      "gridMaxElevation": 3000,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 450,
+      "color": "assets/terrain/450ma.jpg",
+      "height": "assets/terrain/450ma-height.png",
+      "minElevation": -3720,
+      "maxElevation": 2840,
+      "sourceFile": "Map78_PALEOMAP_6min_Late_Ordovician_450Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Ordovician, 449.1 Ma",
+      "elevation": "assets/terrain/450ma-elevation.bin.gz",
+      "gridMinElevation": -3720,
+      "gridMaxElevation": 2840,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 455,
+      "color": "assets/terrain/455ma.jpg",
+      "height": "assets/terrain/455ma-height.png",
+      "minElevation": -3880,
+      "maxElevation": 5400,
+      "sourceFile": "Map79_PALEOMAP_6min_Late_Ordovician_455Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Ordovician, 455.7 Ma",
+      "elevation": "assets/terrain/455ma-elevation.bin.gz",
+      "gridMinElevation": -3880,
+      "gridMaxElevation": 5400,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 460,
+      "color": "assets/terrain/460ma.jpg",
+      "height": "assets/terrain/460ma-height.png",
+      "minElevation": -4000,
+      "maxElevation": 9300,
+      "sourceFile": "Map80_PALEOMAP_6min_Middle_Ordovician_460Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Ordovician, 460 Ma",
+      "elevation": "assets/terrain/460ma-elevation.bin.gz",
+      "gridMinElevation": -4000,
+      "gridMaxElevation": 9300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 465,
+      "color": "assets/terrain/465ma.jpg",
+      "height": "assets/terrain/465ma-height.png",
+      "minElevation": -4160,
+      "maxElevation": 6600,
+      "sourceFile": "Map80.5_PALEOMAP_6min_Middle_Ordovician_465Ma.nc",
+      "sourceDescription": "PALEOMAP:Middle_Ordovician, 465 Ma",
+      "elevation": "assets/terrain/465ma-elevation.bin.gz",
+      "gridMinElevation": -4160,
+      "gridMaxElevation": 6600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 470,
+      "color": "assets/terrain/470ma.jpg",
+      "height": "assets/terrain/470ma-height.png",
+      "minElevation": -3960,
+      "maxElevation": 6300,
+      "sourceFile": "Map81_PALEOMAP_6min_Early_Ordovician_470Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Ordovician, 470 Ma",
+      "elevation": "assets/terrain/470ma-elevation.bin.gz",
+      "gridMinElevation": -3960,
+      "gridMaxElevation": 6300,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 475,
+      "color": "assets/terrain/475ma.jpg",
+      "height": "assets/terrain/475ma-height.png",
+      "minElevation": -4000,
+      "maxElevation": 5400,
+      "sourceFile": "Map81.5_PALEOMAP_6min_Early_Ordovician_475Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Ordovician, 475 Ma",
+      "elevation": "assets/terrain/475ma-elevation.bin.gz",
+      "gridMinElevation": -4000,
+      "gridMaxElevation": 5400,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 480,
+      "color": "assets/terrain/480ma.jpg",
+      "height": "assets/terrain/480ma-height.png",
+      "minElevation": -4120,
+      "maxElevation": 10200,
+      "sourceFile": "Map82_PALEOMAP_6min_Early_Ordovician_480Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Ordovician, 481.6 Ma",
+      "elevation": "assets/terrain/480ma-elevation.bin.gz",
+      "gridMinElevation": -4120,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 485,
+      "color": "assets/terrain/485ma.jpg",
+      "height": "assets/terrain/485ma-height.png",
+      "minElevation": -3960,
+      "maxElevation": 5100,
+      "sourceFile": "Map82.5_PALEOMAP_6min_Cambro-Ordovician_Boundary_485Ma.nc",
+      "sourceDescription": "PALEOMAP:Cambro-Ordovician_Boundary, 485.4 Ma",
+      "elevation": "assets/terrain/485ma-elevation.bin.gz",
+      "gridMinElevation": -3960,
+      "gridMaxElevation": 5100,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 490,
+      "color": "assets/terrain/490ma.jpg",
+      "height": "assets/terrain/490ma-height.png",
+      "minElevation": -3800,
+      "maxElevation": 2840,
+      "sourceFile": "Map83_PALEOMAP_6min_Late_Cambrian_490Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cambrian, 491.8 Ma",
+      "elevation": "assets/terrain/490ma-elevation.bin.gz",
+      "gridMinElevation": -3800,
+      "gridMaxElevation": 2840,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 495,
+      "color": "assets/terrain/495ma.jpg",
+      "height": "assets/terrain/495ma-height.png",
+      "minElevation": -3640,
+      "maxElevation": 2960,
+      "sourceFile": "Map83.5_PALEOMAP_6min_Late_Cambrian_495Ma.nc",
+      "sourceDescription": "PALEOMAP:Late_Cambrian, 495.5 Ma",
+      "elevation": "assets/terrain/495ma-elevation.bin.gz",
+      "gridMinElevation": -3640,
+      "gridMaxElevation": 2960,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 500,
+      "color": "assets/terrain/500ma.jpg",
+      "height": "assets/terrain/500ma-height.png",
+      "minElevation": -3480,
+      "maxElevation": 4800,
+      "sourceFile": "Map84_PALEOMAP_6min_late_Middle_Cambrian_500Ma.nc",
+      "sourceDescription": "PALEOMAP:late_Middle_Cambrian, 498.8 Ma",
+      "elevation": "assets/terrain/500ma-elevation.bin.gz",
+      "gridMinElevation": -3480,
+      "gridMaxElevation": 4800,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 505,
+      "color": "assets/terrain/505ma.jpg",
+      "height": "assets/terrain/505ma-height.png",
+      "minElevation": -3560,
+      "maxElevation": 2760,
+      "sourceFile": "Map84.1_PALEOMAP_6min_late_Middle_Cambrian_505Ma.nc",
+      "sourceDescription": "PALEOMAP:late_Middle_Cambrian, 505 Ma",
+      "elevation": "assets/terrain/505ma-elevation.bin.gz",
+      "gridMinElevation": -3560,
+      "gridMaxElevation": 2760,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 510,
+      "color": "assets/terrain/510ma.jpg",
+      "height": "assets/terrain/510ma-height.png",
+      "minElevation": -3720,
+      "maxElevation": 2440,
+      "sourceFile": "Map84.2_PALEOMAP_6min_early_Middle_Cambrian_510Ma.nc",
+      "sourceDescription": "PALEOMAP:early_Middle_Cambrian, 510 Ma",
+      "elevation": "assets/terrain/510ma-elevation.bin.gz",
+      "gridMinElevation": -3720,
+      "gridMaxElevation": 2440,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 515,
+      "color": "assets/terrain/515ma.jpg",
+      "height": "assets/terrain/515ma-height.png",
+      "minElevation": -3840,
+      "maxElevation": 2120,
+      "sourceFile": "Map85_PALEOMAP_6min_early_Middle_Cambrian_515Ma.nc",
+      "sourceDescription": "PALEOMAP:early_Middle_Cambrian, 515 Ma",
+      "elevation": "assets/terrain/515ma-elevation.bin.gz",
+      "gridMinElevation": -3840,
+      "gridMaxElevation": 2120,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 520,
+      "color": "assets/terrain/520ma.jpg",
+      "height": "assets/terrain/520ma-height.png",
+      "minElevation": -4080,
+      "maxElevation": 2080,
+      "sourceFile": "Map86_PALEOMAP_6min_Early_Middle_Cambrian_boundary_520Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Middle_Cambrian_boundary, 520 Ma",
+      "elevation": "assets/terrain/520ma-elevation.bin.gz",
+      "gridMinElevation": -4080,
+      "gridMaxElevation": 2080,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 525,
+      "color": "assets/terrain/525ma.jpg",
+      "height": "assets/terrain/525ma-height.png",
+      "minElevation": -4080,
+      "maxElevation": 2200,
+      "sourceFile": "Map86.5_PALEOMAP_6min_Early_Cambrian_525Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cambrian, 525 Ma",
+      "elevation": "assets/terrain/525ma-elevation.bin.gz",
+      "gridMinElevation": -4080,
+      "gridMaxElevation": 2200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 530,
+      "color": "assets/terrain/530ma.jpg",
+      "height": "assets/terrain/530ma-height.png",
+      "minElevation": -4120,
+      "maxElevation": 2600,
+      "sourceFile": "Map87_PALEOMAP_6min_Early_Cambrian_530Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cambrian, 530 Ma",
+      "elevation": "assets/terrain/530ma-elevation.bin.gz",
+      "gridMinElevation": -4120,
+      "gridMaxElevation": 2600,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 535,
+      "color": "assets/terrain/535ma.jpg",
+      "height": "assets/terrain/535ma-height.png",
+      "minElevation": -4160,
+      "maxElevation": 3900,
+      "sourceFile": "Map87.5_PALEOMAP_6min_Early_Cambrian_535Ma.nc",
+      "sourceDescription": "PALEOMAP:Early_Cambrian, 535 Ma",
+      "elevation": "assets/terrain/535ma-elevation.bin.gz",
+      "gridMinElevation": -4160,
+      "gridMaxElevation": 3900,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "time": 540,
+      "color": "assets/terrain/540ma.jpg",
+      "height": "assets/terrain/540ma-height.png",
+      "minElevation": -4240,
+      "maxElevation": 10200,
+      "sourceFile": "Map88_PALEOMAP_6min_Cambrian_Precambrian boundary_540Ma.nc",
+      "sourceDescription": "PALEOMAP:Cambrian_Precambrian boundary, 541 Ma",
+      "elevation": "assets/terrain/540ma-elevation.bin.gz",
+      "gridMinElevation": -4240,
+      "gridMaxElevation": 10200,
+      "colorSize": [
+        4096,
+        2048
+      ]
+    }
+  ],
+  "elevationGrid": {
+    "width": 3601,
+    "height": 1801,
+    "type": "int16-le",
+    "compression": "gzip",
+    "units": "metres",
+    "latitudeRange": [
+      90,
+      -90
+    ],
+    "longitudeRange": [
+      -180,
+      180
+    ],
+    "sampling": "Exact source grid nodes at 0.1 degree; rounded to 1 metre."
+  },
+  "colourVersion": "20260920-relief",
+  "shading": "Native DEM northwest hillshade with bounded local relief contrast; elevations unchanged."
+}

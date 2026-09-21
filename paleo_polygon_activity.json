@@ -1,0 +1,3299 @@
+[
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 0,
+    "featureId": "GPlates-d33ecd37-88f0-4ce0-964d-82998a7d16d0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 101,
+    "sourceIndex": 1,
+    "featureId": "GPlates-7aa51133-f9f5-4913-a735-d49b97a3235b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 101,
+    "sourceIndex": 2,
+    "featureId": "GPlates-5a47c27a-4685-4d31-85d0-3e23f2953924"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 102,
+    "sourceIndex": 3,
+    "featureId": "GPlates-4e33738c-136a-4d4f-9bca-64a179cc2967"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 114,
+    "sourceIndex": 4,
+    "featureId": "GPlates-92a06e7c-e2f3-4f08-849b-98be15fb0fb6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 104,
+    "sourceIndex": 5,
+    "featureId": "GPlates-99651f35-7848-4d1a-968c-e64e3130d498"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 104,
+    "sourceIndex": 6,
+    "featureId": "GPlates-2ea4aff4-a5b5-4c34-9e92-c0765ec497f0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 105,
+    "sourceIndex": 7,
+    "featureId": "GPlates-2c9334ac-e1fc-4c75-84cc-55508b9c316a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 105,
+    "sourceIndex": 8,
+    "featureId": "GPlates-c67d1448-2644-421e-a2f7-af3fcf80f310"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 105,
+    "sourceIndex": 9,
+    "featureId": "GPlates-a70a9359-5ad1-4b95-8284-c5bf23d5f2df"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 106,
+    "sourceIndex": 10,
+    "featureId": "GPlates-f78a1d9b-c02a-4248-ac21-6fd69e91fd50"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 128,
+    "sourceIndex": 11,
+    "featureId": "GPlates-d91b754f-b6a5-4cc7-a065-f71a20e80811"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 137,
+    "sourceIndex": 12,
+    "featureId": "GPlates-6947bdc5-c8a5-4400-911c-2964ff39fded"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 137,
+    "sourceIndex": 13,
+    "featureId": "GPlates-da304c55-d63a-476c-a25b-673123c22651"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 140,
+    "sourceIndex": 14,
+    "featureId": "GPlates-f2a24ed4-501a-4aea-a1b4-f1d572c1781f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 141,
+    "sourceIndex": 15,
+    "featureId": "GPlates-82702783-837d-421f-8ed0-98acdcce02fb"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 141,
+    "sourceIndex": 16,
+    "featureId": "GPlates-33c9b7b0-86b3-4029-ab04-3883ea528db3"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 201,
+    "sourceIndex": 17,
+    "featureId": "GPlates-f6c75f63-1247-4842-b983-2d6de6e4b267"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 204,
+    "sourceIndex": 18,
+    "featureId": "GPlates-50fb83fd-25a4-487b-aff6-3322e5cae666"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 204,
+    "sourceIndex": 19,
+    "featureId": "GPlates-929b730c-afce-4d7c-a368-0ea9c8407c3e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 251,
+    "sourceIndex": 20,
+    "featureId": "GPlates-dd4baf8b-8350-425b-aa39-0ef85c27a2df"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 206,
+    "sourceIndex": 21,
+    "featureId": "GPlates-476ebdf1-9752-49da-b670-0fc51ee2c127"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 216,
+    "sourceIndex": 22,
+    "featureId": "GPlates-ed58f278-0fd7-4465-a8fb-1ff45d626faf"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 217,
+    "sourceIndex": 23,
+    "featureId": "GPlates-3bc6e5e0-7c67-4e5a-93a0-4842279d9fca"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 218,
+    "sourceIndex": 24,
+    "featureId": "GPlates-a396d3d0-9d70-48ce-8366-772eef26ca31"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 221,
+    "sourceIndex": 25,
+    "featureId": "GPlates-e6c0707c-e8a4-4f54-aa64-f575edc83092"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 222,
+    "sourceIndex": 26,
+    "featureId": "GPlates-15434dd9-c7dd-4dfa-875e-b161e3571efd"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 223,
+    "sourceIndex": 27,
+    "featureId": "GPlates-086c87e8-8c51-454b-aa0c-bf87979f59c4"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 224,
+    "sourceIndex": 28,
+    "featureId": "GPlates-388ad9f0-011a-4e3e-b7a3-a3e4783244ab"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 237,
+    "sourceIndex": 29,
+    "featureId": "GPlates-7678566f-22f8-4639-b916-cd5e9bd7c48f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 239,
+    "sourceIndex": 30,
+    "featureId": "GPlates-3895beeb-c6bd-4f19-97bf-83c3e86963ea"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 239,
+    "sourceIndex": 31,
+    "featureId": "GPlates-5eb48a5f-61fa-479e-b59a-af0ff1d1759c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 251,
+    "sourceIndex": 32,
+    "featureId": "GPlates-6b0a1fd2-9c35-4d1b-ad38-9577b74dd8f4"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 252,
+    "sourceIndex": 33,
+    "featureId": "GPlates-8681da57-16cd-4074-a5e5-222f516c1fbf"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 252,
+    "sourceIndex": 34,
+    "featureId": "GPlates-d409a631-c55e-4d58-9428-cf4bbf174953"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 252,
+    "sourceIndex": 35,
+    "featureId": "GPlates-76226753-67f4-4544-ab34-8af76e68707a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 252,
+    "sourceIndex": 36,
+    "featureId": "GPlates-5cc7e538-c377-4fdc-9828-347913bc8dc6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 257,
+    "sourceIndex": 37,
+    "featureId": "GPlates-14acfcba-6aa5-4064-aa5b-69cf2e8c4d3e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 291,
+    "sourceIndex": 38,
+    "featureId": "GPlates-002bbfda-3793-4419-a5c5-80513c3d765c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 10.0,
+    "plateId": 301,
+    "sourceIndex": 39,
+    "featureId": "GPlates-22033806-5fa7-4bb8-8484-2c71fd00f979"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 304,
+    "sourceIndex": 40,
+    "featureId": "GPlates-a0c00ad5-9e31-4379-87ae-c5cc28857a15"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 304,
+    "sourceIndex": 41,
+    "featureId": "GPlates-d480cb74-a1ac-49cb-8953-7c9c4a17ff6b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 305,
+    "sourceIndex": 42,
+    "featureId": "GPlates-10153e6f-bc98-4f9b-852b-875ee506377f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 306,
+    "sourceIndex": 43,
+    "featureId": "GPlates-1ab6116f-6a7e-428c-b54f-ceb530df81d2"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 306,
+    "sourceIndex": 44,
+    "featureId": "GPlates-1746cf0a-c10a-4d65-909b-2da8c4781cbe"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": 0.0,
+    "plateId": 330,
+    "sourceIndex": 45,
+    "featureId": "GPlates-a074f39a-5707-40a6-a430-f83bfe15b2f9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 329,
+    "sourceIndex": 46,
+    "featureId": "GPlates-9248e68b-0dff-41bb-95c8-6073bafef959"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 310,
+    "sourceIndex": 47,
+    "featureId": "GPlates-c3be46e0-43d5-40da-8476-103329b8aa82"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 310,
+    "sourceIndex": 48,
+    "featureId": "GPlates-3041fd38-c0e1-4d73-aee5-794e56852820"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 310,
+    "sourceIndex": 49,
+    "featureId": "GPlates-171c2b9a-8ded-432b-9510-732d6d39c978"
+  },
+  {
+    "validFrom": 140.0,
+    "validTo": 0.0,
+    "plateId": 317,
+    "sourceIndex": 50,
+    "featureId": "GPlates-3abdf9a1-c4c8-4def-8c86-2b25b95269fe"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 317,
+    "sourceIndex": 51,
+    "featureId": "GPlates-c35c70f1-0022-4637-a696-1412e27c161c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 317,
+    "sourceIndex": 52,
+    "featureId": "GPlates-b2927c19-0cff-483a-8f07-e30131feebd4"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 317,
+    "sourceIndex": 53,
+    "featureId": "GPlates-85188b56-876b-45c6-88ae-19c846b448ce"
+  },
+  {
+    "validFrom": 140.0,
+    "validTo": 0.0,
+    "plateId": 318,
+    "sourceIndex": 54,
+    "featureId": "GPlates-c84f234b-adbd-4f52-9405-1c9e069a6a2c"
+  },
+  {
+    "validFrom": 140.0,
+    "validTo": 0.0,
+    "plateId": 318,
+    "sourceIndex": 55,
+    "featureId": "GPlates-98e4413f-494d-4b32-9948-6f223204fd38"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 320,
+    "sourceIndex": 56,
+    "featureId": "GPlates-baf503f0-cc01-40c2-aa48-86a8e5b54c3a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 320,
+    "sourceIndex": 57,
+    "featureId": "GPlates-14376d7e-9602-41f5-9d1d-2667c1449ddc"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 320,
+    "sourceIndex": 58,
+    "featureId": "GPlates-3680dcc2-6026-4d74-8416-99c36356ff3b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 321,
+    "sourceIndex": 59,
+    "featureId": "GPlates-7763bd46-3a85-4657-841c-ceda86126f35"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 323,
+    "sourceIndex": 60,
+    "featureId": "GPlates-2c9f26c9-a0f5-4ea0-bb8e-657cd3bb64b2"
+  },
+  {
+    "validFrom": 120.0,
+    "validTo": 0.0,
+    "plateId": 324,
+    "sourceIndex": 61,
+    "featureId": "GPlates-d310c935-1c98-4d05-b25b-7850edf1f2d9"
+  },
+  {
+    "validFrom": 53.0,
+    "validTo": 0.0,
+    "plateId": 325,
+    "sourceIndex": 62,
+    "featureId": "GPlates-cf5326c6-22ee-4a2d-8281-8cce4d64c995"
+  },
+  {
+    "validFrom": 54.0,
+    "validTo": 0.0,
+    "plateId": 325,
+    "sourceIndex": 63,
+    "featureId": "GPlates-e5f6fea3-ac6f-4fd9-ad25-ced0ceb49ad3"
+  },
+  {
+    "validFrom": 140.0,
+    "validTo": 0.0,
+    "plateId": 325,
+    "sourceIndex": 64,
+    "featureId": "GPlates-9fbf671b-ac6a-4c2c-8112-9b50a66bff4b"
+  },
+  {
+    "validFrom": 140.0,
+    "validTo": 0.0,
+    "plateId": 326,
+    "sourceIndex": 65,
+    "featureId": "GPlates-1fac7bb6-1a17-40aa-8311-49de470f27c2"
+  },
+  {
+    "validFrom": 160.0,
+    "validTo": 0.0,
+    "plateId": 327,
+    "sourceIndex": 66,
+    "featureId": "GPlates-9aef7a27-3c7b-4dfa-bd69-dfd9d0fe02b1"
+  },
+  {
+    "validFrom": 100.0,
+    "validTo": 0.0,
+    "plateId": 328,
+    "sourceIndex": 67,
+    "featureId": "GPlates-8028caed-9793-4a4b-9f52-065907811953"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 331,
+    "sourceIndex": 68,
+    "featureId": "GPlates-55c7ce59-4d42-4999-ab1c-fc8136de6a5a"
+  },
+  {
+    "validFrom": 120.0,
+    "validTo": 0.0,
+    "plateId": 322,
+    "sourceIndex": 69,
+    "featureId": "GPlates-6d7476bd-7ff6-4c6d-b1a7-5e617e21844c"
+  },
+  {
+    "validFrom": 160.0,
+    "validTo": 0.0,
+    "plateId": 332,
+    "sourceIndex": 70,
+    "featureId": "GPlates-a722fb5d-3bda-41e9-a502-e69923324590"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 406,
+    "sourceIndex": 71,
+    "featureId": "GPlates-93e8c04b-d7b3-4a80-9347-e780ccba9b38"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 406,
+    "sourceIndex": 72,
+    "featureId": "GPlates-2e7831d1-1fcd-4c4e-aac2-042e36e8aabf"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 406,
+    "sourceIndex": 73,
+    "featureId": "GPlates-6604229b-0c4e-4281-ac9a-f4b4bd894117"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 406,
+    "sourceIndex": 74,
+    "featureId": "GPlates-abbd9ec8-09a7-422c-a6f7-8c4585656fd7"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 410,
+    "sourceIndex": 75,
+    "featureId": "GPlates-f4076328-64a7-421e-97d2-c486313886f7"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 413,
+    "sourceIndex": 76,
+    "featureId": "GPlates-e0d7fbef-a9f6-493b-81b9-55d595fed88d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 416,
+    "sourceIndex": 77,
+    "featureId": "GPlates-41b689e4-fa76-4b5e-a407-d49e17678759"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 416,
+    "sourceIndex": 78,
+    "featureId": "GPlates-2ba32123-5e7d-4991-9c1f-7f4edcf18aad"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 416,
+    "sourceIndex": 79,
+    "featureId": "GPlates-ef810f28-6789-4ba2-8eac-8c62cf16cb54"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 420,
+    "sourceIndex": 80,
+    "featureId": "GPlates-7d251ee0-7639-40a1-ae2d-b2263a0ce7c3"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 420,
+    "sourceIndex": 81,
+    "featureId": "GPlates-4a97c1c8-7903-4702-be5b-1036d9a71e15"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 501,
+    "sourceIndex": 82,
+    "featureId": "GPlates-f763bd29-58cd-4fb3-bfdd-6ce942148530"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 501,
+    "sourceIndex": 83,
+    "featureId": "GPlates-fe5fe3ae-b85a-4e4b-8bb9-5274ff3ed024"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 84,
+    "featureId": "GPlates-45c95495-52b8-4233-a17a-1f551d48fd35"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 85,
+    "featureId": "GPlates-fb4abd2d-c6ef-4c5d-848d-17e2c05d8fd6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 86,
+    "featureId": "GPlates-c5b6ec72-b17e-4f0f-8090-fd6f501281cf"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 87,
+    "featureId": "GPlates-74bf9673-4421-4243-9635-9514d34ae80b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 88,
+    "featureId": "GPlates-5b63e4e7-796e-4f64-a302-38eddbc3c55f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 503,
+    "sourceIndex": 89,
+    "featureId": "GPlates-4145ec56-895c-439e-935a-2d5f596f07e7"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 506,
+    "sourceIndex": 90,
+    "featureId": "GPlates-059c45bc-e86e-4f71-ab08-2b575e13d457"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 605,
+    "sourceIndex": 91,
+    "featureId": "GPlates-afd78658-0ba3-4f1f-a93d-353fca62c636"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 607,
+    "sourceIndex": 92,
+    "featureId": "GPlates-4872ae90-4deb-4af9-94cb-85c11d7504e7"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 631,
+    "sourceIndex": 93,
+    "featureId": "GPlates-5aff8844-7dcb-47d4-9129-5fc2f934309d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 616,
+    "sourceIndex": 94,
+    "featureId": "GPlates-3dcd0cbc-d836-4efd-8743-fcd299379b99"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 618,
+    "sourceIndex": 95,
+    "featureId": "GPlates-38e355e5-098a-4a5d-8200-3bd72f971391"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 626,
+    "sourceIndex": 96,
+    "featureId": "GPlates-74043921-3763-45c0-9ea0-156eeba89858"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 620,
+    "sourceIndex": 97,
+    "featureId": "GPlates-b55325ec-76c7-4a88-b07c-09ed5949bed2"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 620,
+    "sourceIndex": 98,
+    "featureId": "GPlates-65703c7f-5149-4640-9988-818391b9a187"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 623,
+    "sourceIndex": 99,
+    "featureId": "GPlates-a38e7173-d3f6-45eb-a72d-a63ca781e0ec"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 632,
+    "sourceIndex": 100,
+    "featureId": "GPlates-fbcdbcc3-3955-488c-ae94-0e5dc3e885af"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 637,
+    "sourceIndex": 101,
+    "featureId": "GPlates-fc586cda-2d4f-4ea7-bd9f-4fc8e7bb7879"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 603,
+    "sourceIndex": 102,
+    "featureId": "GPlates-7658aac1-1a11-4373-8884-0d313eb02dce"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 650,
+    "sourceIndex": 103,
+    "featureId": "GPlates-5d83f905-44d4-45dd-8e83-6a4862749884"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 651,
+    "sourceIndex": 104,
+    "featureId": "GPlates-b3a4257b-c531-49e0-bdaa-2d143f803262"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 652,
+    "sourceIndex": 105,
+    "featureId": "GPlates-e66d88ec-5bf7-40a6-8608-b016e3f805f9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 653,
+    "sourceIndex": 106,
+    "featureId": "GPlates-10093ac9-4cff-47ef-9aab-f98d10f402d0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 654,
+    "sourceIndex": 107,
+    "featureId": "GPlates-24a40739-c59d-4ec9-8cf3-875079f3729e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 655,
+    "sourceIndex": 108,
+    "featureId": "GPlates-ae18da1d-6ce3-4c4c-92e5-cbe0408236d7"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 656,
+    "sourceIndex": 109,
+    "featureId": "GPlates-f864a2eb-5792-4e5b-a5c5-5c59e43a8c21"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 664,
+    "sourceIndex": 110,
+    "featureId": "GPlates-b9de5e9f-6547-4b84-85ea-f5cd2281e454"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 664,
+    "sourceIndex": 111,
+    "featureId": "GPlates-d3fa93c1-b75b-4a55-8782-15c6a6d44f1e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 670,
+    "sourceIndex": 112,
+    "featureId": "GPlates-21463e73-cbaf-4bef-9901-ef1b4a06d059"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 672,
+    "sourceIndex": 113,
+    "featureId": "GPlates-fe9d2473-00e7-4d1a-9d34-f2f9c485e0b0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 673,
+    "sourceIndex": 114,
+    "featureId": "GPlates-6c921053-25c0-45cd-a3f8-2fee1218dace"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 675,
+    "sourceIndex": 115,
+    "featureId": "GPlates-02fde162-5087-4fae-a690-eb4eef1ed7df"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 676,
+    "sourceIndex": 116,
+    "featureId": "GPlates-82e5400d-48e8-4162-9b9d-24f0652f76d1"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 679,
+    "sourceIndex": 117,
+    "featureId": "GPlates-4149328a-4ae1-45c3-8b54-ee12484ffd89"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 682,
+    "sourceIndex": 118,
+    "featureId": "GPlates-8e3fa627-7b51-4d54-903b-e78579103c0b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 684,
+    "sourceIndex": 119,
+    "featureId": "GPlates-ea209ee0-26cd-4c46-bff4-5db63a040b67"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 671,
+    "sourceIndex": 120,
+    "featureId": "GPlates-02c5695d-288c-42e1-ab13-b14d719afd38"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 121,
+    "featureId": "GPlates-6653fa4e-19b8-4abe-8142-ba34f43931a8"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 702,
+    "sourceIndex": 122,
+    "featureId": "GPlates-fcbb3156-5952-41b5-8c02-7b3734b3c812"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 704,
+    "sourceIndex": 123,
+    "featureId": "GPlates-15741e58-0dac-4d0e-a11f-291cc40ac17a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 704,
+    "sourceIndex": 124,
+    "featureId": "GPlates-c58e7f86-f176-4455-b765-6f442df2d330"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 709,
+    "sourceIndex": 125,
+    "featureId": "GPlates-3d11432c-d200-45d3-93bc-3c73c60eb6e2"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 714,
+    "sourceIndex": 126,
+    "featureId": "GPlates-93cd0662-6a69-4660-80c9-8153da3082d8"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 715,
+    "sourceIndex": 127,
+    "featureId": "GPlates-d732e36e-b7b8-497c-8805-5306c36e0ee0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 715,
+    "sourceIndex": 128,
+    "featureId": "GPlates-354025b6-a0f2-40e7-b12b-c693a82bd5ab"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 715,
+    "sourceIndex": 129,
+    "featureId": "GPlates-fdd782f2-4773-4583-9ef0-f382c70e40f9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 905,
+    "sourceIndex": 130,
+    "featureId": "GPlates-a859df29-61be-4fb8-b675-d45de2c6850e"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 131,
+    "featureId": "GPlates-04136f8b-3550-4bf0-8335-f6b44e058035"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 132,
+    "featureId": "GPlates-03d281d3-7498-445c-aa97-0ac88c03721d"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 133,
+    "featureId": "GPlates-7a43a743-f183-460b-bacf-826500f316b4"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 134,
+    "featureId": "GPlates-ac1d3749-127c-404e-a8ca-9ffd72eb2913"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": 0.0,
+    "plateId": 701,
+    "sourceIndex": 135,
+    "featureId": "GPlates-7ace0906-af9a-4868-9758-eeae4575a63c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 800,
+    "sourceIndex": 136,
+    "featureId": "GPlates-5fef8666-fa61-4662-a0d5-37bb4eb7bd2c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 800,
+    "sourceIndex": 137,
+    "featureId": "GPlates-95cd5faf-fb25-47c6-ad26-4495bea12876"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 801,
+    "sourceIndex": 138,
+    "featureId": "GPlates-233396f4-2338-4abe-acd7-b4e17562c1fd"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 811,
+    "sourceIndex": 139,
+    "featureId": "GPlates-a8c6ba83-8c1f-45d5-ab13-fbdf03491726"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 944,
+    "sourceIndex": 140,
+    "featureId": "GPlates-3ab044d8-9c33-4dab-a7ad-5450ca26b965"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 944,
+    "sourceIndex": 141,
+    "featureId": "GPlates-edbbdb97-fa62-47a8-a355-c573ca2853a1"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 802,
+    "sourceIndex": 142,
+    "featureId": "GPlates-e2529b13-3a2d-4831-92ac-fafaf3aa3cb5"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 802,
+    "sourceIndex": 143,
+    "featureId": "GPlates-df85f733-5b38-4300-a3f7-0b3807ba57e6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 803,
+    "sourceIndex": 144,
+    "featureId": "GPlates-45b3c958-48e0-478e-b3d2-bcb103191d3e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 904,
+    "sourceIndex": 145,
+    "featureId": "GPlates-5d829ad6-ed69-497e-8fd5-b6a25965bf6b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 818,
+    "sourceIndex": 146,
+    "featureId": "GPlates-2f6333f4-5e97-4545-beab-e104cc28332d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 817,
+    "sourceIndex": 147,
+    "featureId": "GPlates-842abb36-0022-4f99-be95-eaa66363412e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 808,
+    "sourceIndex": 148,
+    "featureId": "GPlates-64859234-58bc-4ecd-92e4-62822d384478"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 809,
+    "sourceIndex": 149,
+    "featureId": "GPlates-f857cc48-37db-4367-ae2b-041c15c6ba85"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 810,
+    "sourceIndex": 150,
+    "featureId": "GPlates-eaa4057b-06c1-4bcd-84c7-694a1c663558"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 826,
+    "sourceIndex": 151,
+    "featureId": "GPlates-9da6c5ba-e157-4510-93b9-b66ed4b4e4b6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 822,
+    "sourceIndex": 152,
+    "featureId": "GPlates-a162a1fc-1a08-4bdf-bf04-36b8716b1f43"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 848,
+    "sourceIndex": 153,
+    "featureId": "GPlates-afa33810-0e1a-411d-bb1b-1e33e322d79d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 815,
+    "sourceIndex": 154,
+    "featureId": "GPlates-f55bcbc2-cb6d-4772-8ac2-d3f2a8e5be67"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 847,
+    "sourceIndex": 155,
+    "featureId": "GPlates-73c06528-84b0-443f-b85c-296e570ac55f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 815,
+    "sourceIndex": 156,
+    "featureId": "GPlates-266fef2a-f9a6-4742-a283-1692793d4424"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 819,
+    "sourceIndex": 157,
+    "featureId": "GPlates-4c6b91b4-4106-4f76-9146-873fb0e83cb0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 819,
+    "sourceIndex": 158,
+    "featureId": "GPlates-bfc1e878-f77f-472f-9f34-bf38fd905f75"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 820,
+    "sourceIndex": 159,
+    "featureId": "GPlates-8996f90e-2a56-4fe2-9c2d-1cc9cec46c25"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 821,
+    "sourceIndex": 160,
+    "featureId": "GPlates-b7ab7b2e-b7ff-4893-9720-435582c63b56"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 824,
+    "sourceIndex": 161,
+    "featureId": "GPlates-13590eea-ccc7-4917-a622-0150ef86016c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 825,
+    "sourceIndex": 162,
+    "featureId": "GPlates-b9890bb1-956c-47c4-877e-756301bb021c"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 833,
+    "sourceIndex": 163,
+    "featureId": "GPlates-b4bc3f8b-f417-4ca5-aedf-dca2a16a92ec"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 833,
+    "sourceIndex": 164,
+    "featureId": "GPlates-711a9213-bd1f-4502-a3ed-1ddad9def350"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 834,
+    "sourceIndex": 165,
+    "featureId": "GPlates-c1e0d621-3b0d-4458-ae6e-022a5ddd2942"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 840,
+    "sourceIndex": 166,
+    "featureId": "GPlates-d1aec8c6-51b2-4bde-bab4-0aee495db015"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 847,
+    "sourceIndex": 167,
+    "featureId": "GPlates-786eab35-8edc-4069-9779-6c0ce6a4e6c1"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 846,
+    "sourceIndex": 168,
+    "featureId": "GPlates-65b5e191-5d66-40af-9a38-1943f4877b35"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 847,
+    "sourceIndex": 169,
+    "featureId": "GPlates-92e4fb81-5c3d-4338-9761-52bfc68830b6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 870,
+    "sourceIndex": 170,
+    "featureId": "GPlates-a2d99e50-9c67-4060-bf26-460fa3c11aea"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 871,
+    "sourceIndex": 171,
+    "featureId": "GPlates-b3e3e0a2-a30d-4980-af59-36743dd7c09d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 872,
+    "sourceIndex": 172,
+    "featureId": "GPlates-bcac93e1-2572-4e7a-946a-bb5047715591"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 872,
+    "sourceIndex": 173,
+    "featureId": "GPlates-55f2f667-0618-4be1-bdb5-755a4f2f127e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 873,
+    "sourceIndex": 174,
+    "featureId": "GPlates-7c5470c7-5446-4bb4-a2a7-f48f3ebc3f31"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 875,
+    "sourceIndex": 175,
+    "featureId": "GPlates-45dc9027-2d07-4346-a14c-70c112d9daeb"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 875,
+    "sourceIndex": 176,
+    "featureId": "GPlates-8c60d0b0-ee0b-4ae6-a089-3269b18ae030"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 876,
+    "sourceIndex": 177,
+    "featureId": "GPlates-6f2e3672-58d9-4aac-aa79-bc486963b348"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 877,
+    "sourceIndex": 178,
+    "featureId": "GPlates-edb20824-9652-434f-9989-123cda95b370"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 179,
+    "featureId": "GPlates-570f0cbf-d6b0-471c-9368-6f98301645a0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 180,
+    "featureId": "GPlates-c0fa0658-2844-4ac7-9b41-b886825d7530"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 181,
+    "featureId": "GPlates-fb97b637-f476-4f85-94b7-e010e5fc68a8"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 182,
+    "featureId": "GPlates-6fbbe9fb-c391-4449-b193-eac87b143ccb"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 183,
+    "featureId": "GPlates-2691514c-2e64-4acf-b1db-d8e98c2c6905"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 184,
+    "featureId": "GPlates-fd0ec605-207f-4a3b-9b2b-266aec28b7eb"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 888,
+    "sourceIndex": 185,
+    "featureId": "GPlates-7ee339b4-e8e5-4cdf-85eb-b1f1bb9ea17b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 901,
+    "sourceIndex": 186,
+    "featureId": "GPlates-16c50bd7-f067-4348-b4aa-10002f0229d1"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 901,
+    "sourceIndex": 187,
+    "featureId": "GPlates-f26c1f3d-e68c-4692-9c06-2bf4e8497889"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 901,
+    "sourceIndex": 188,
+    "featureId": "GPlates-ae27cfd9-739d-47dd-897a-336cc47c09e4"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 815,
+    "sourceIndex": 189,
+    "featureId": "GPlates-2eea1aac-9ff1-4318-8b32-04df101061b2"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 834,
+    "sourceIndex": 190,
+    "featureId": "GPlates-c73e1adb-e6cb-41ab-8369-a94d0d78de7a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 846,
+    "sourceIndex": 191,
+    "featureId": "GPlates-921a3a07-95f5-48a7-8e6a-ffd2ce86fca9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 901,
+    "sourceIndex": 192,
+    "featureId": "GPlates-fdef5922-6e38-425f-af00-1a9b432433d9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 901,
+    "sourceIndex": 193,
+    "featureId": "GPlates-627736cd-5b16-453f-ba35-3e9bfd3ae07b"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 904,
+    "sourceIndex": 194,
+    "featureId": "GPlates-a92781fe-376c-4f03-b948-de3aa9b0133d"
+  },
+  {
+    "validFrom": 55.0,
+    "validTo": 0.0,
+    "plateId": 907,
+    "sourceIndex": 195,
+    "featureId": "GPlates-8f154889-4853-41a9-8802-fef4408819fe"
+  },
+  {
+    "validFrom": 55.0,
+    "validTo": 0.0,
+    "plateId": 908,
+    "sourceIndex": 196,
+    "featureId": "GPlates-ba2edf90-ba14-4428-9dce-42fb6b126613"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 909,
+    "sourceIndex": 197,
+    "featureId": "GPlates-0a29c228-7f9c-4964-ab9e-ee552ba0391a"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 910,
+    "sourceIndex": 198,
+    "featureId": "GPlates-41b597fd-9212-4b2f-a33c-068a61deb738"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 912,
+    "sourceIndex": 199,
+    "featureId": "GPlates-cc6be8ef-2b32-4057-832c-98db46b17d50"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 913,
+    "sourceIndex": 200,
+    "featureId": "GPlates-1dd6f50a-7599-4b00-852c-e243450ba345"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 930,
+    "sourceIndex": 201,
+    "featureId": "GPlates-5c137730-f91d-44a3-b980-259e3cf0c711"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 930,
+    "sourceIndex": 202,
+    "featureId": "GPlates-ea372da3-32b1-4b94-a63a-796d48ae8780"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 931,
+    "sourceIndex": 203,
+    "featureId": "GPlates-3ce5d956-c957-4930-ace6-230bb9ac0234"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 932,
+    "sourceIndex": 204,
+    "featureId": "GPlates-7190b307-6942-4e39-bdf0-8a28766f8bd6"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 940,
+    "sourceIndex": 205,
+    "featureId": "GPlates-835af871-23f3-41c6-97eb-61dfc200f446"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 944,
+    "sourceIndex": 206,
+    "featureId": "GPlates-80df2d87-b10a-4ca1-9423-e969a15dc5a0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 985,
+    "sourceIndex": 207,
+    "featureId": "GPlates-7b3ed914-6568-41f4-a9ad-9df4e86723ac"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 992,
+    "sourceIndex": 208,
+    "featureId": "GPlates-815dfe0e-872e-49e2-8cca-72347ff54d5d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 992,
+    "sourceIndex": 209,
+    "featureId": "GPlates-ae95dbfd-5bf4-4344-986d-3e27e0c47c25"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 992,
+    "sourceIndex": 210,
+    "featureId": "GPlates-97197f72-f1b2-47d5-91d3-0ff83123220f"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 992,
+    "sourceIndex": 211,
+    "featureId": "GPlates-52fa3823-79d1-416d-a79a-8d50386b4891"
+  },
+  {
+    "validFrom": 3.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 212,
+    "featureId": "GPlates-0e7018ab-e351-4c8d-9466-4a1419621e67"
+  },
+  {
+    "validFrom": 6.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 213,
+    "featureId": "GPlates-9ff8671a-d81d-48b3-a514-54a179ce2470"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 214,
+    "featureId": "GPlates-2acc75d1-36af-4191-8170-d70a0352dd3f"
+  },
+  {
+    "validFrom": 10.0,
+    "validTo": -1000000000.0,
+    "plateId": 550,
+    "sourceIndex": 215,
+    "featureId": "GPlates-6e0d3792-9739-4af0-a311-f72acca03b5a"
+  },
+  {
+    "validFrom": 55.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 216,
+    "featureId": "GPlates-ccd02346-f6d4-439a-8e4c-4b6b364d3d2d"
+  },
+  {
+    "validFrom": 15.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 217,
+    "featureId": "GPlates-bf0beb65-da77-4a1b-85fe-2d931ba2cbc5"
+  },
+  {
+    "validFrom": 20.0,
+    "validTo": -1000000000.0,
+    "plateId": 204,
+    "sourceIndex": 218,
+    "featureId": "GPlates-9c274d8b-33e1-4faf-ac2b-cce99d3fe520"
+  },
+  {
+    "validFrom": 60.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 219,
+    "featureId": "GPlates-48c8143e-89a8-4da5-bbea-2c83331c6579"
+  },
+  {
+    "validFrom": 20.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 220,
+    "featureId": "GPlates-420a59a9-0f35-4e9f-a70f-037f44543e92"
+  },
+  {
+    "validFrom": 21.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 221,
+    "featureId": "GPlates-347278e6-372d-416b-bfd0-9cfcabda81c3"
+  },
+  {
+    "validFrom": 24.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 222,
+    "featureId": "GPlates-41aef30e-ab81-4553-92fa-fd340296af9e"
+  },
+  {
+    "validFrom": 15.0,
+    "validTo": -1000000000.0,
+    "plateId": 102,
+    "sourceIndex": 223,
+    "featureId": "GPlates-bcbe4caa-e066-4a8c-aaf1-f3c88923c8f1"
+  },
+  {
+    "validFrom": 30.0,
+    "validTo": -1000000000.0,
+    "plateId": 301,
+    "sourceIndex": 224,
+    "featureId": "GPlates-bd8ec849-b762-4d66-b560-0c5b45781e1a"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 225,
+    "featureId": "GPlates-ddb1a957-13ec-4250-98fa-aedc2b0161b6"
+  },
+  {
+    "validFrom": 30.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 226,
+    "featureId": "GPlates-38f3ddc4-27f3-42a6-b929-7ce461856439"
+  },
+  {
+    "validFrom": 36.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 227,
+    "featureId": "GPlates-b066929a-818f-46a8-8497-77217e769c53"
+  },
+  {
+    "validFrom": 40.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 228,
+    "featureId": "GPlates-42e708a0-8839-4c9b-a7a2-26eca9e109d7"
+  },
+  {
+    "validFrom": 40.0,
+    "validTo": -1000000000.0,
+    "plateId": 897,
+    "sourceIndex": 229,
+    "featureId": "GPlates-9c7df5cc-9b61-4a26-ab6c-fb6c679ca860"
+  },
+  {
+    "validFrom": 40.0,
+    "validTo": -1000000000.0,
+    "plateId": 895,
+    "sourceIndex": 230,
+    "featureId": "GPlates-3e319c46-acff-4b84-ad06-0b3137bb0bef"
+  },
+  {
+    "validFrom": 40.0,
+    "validTo": -1000000000.0,
+    "plateId": 896,
+    "sourceIndex": 231,
+    "featureId": "GPlates-ff550f86-4960-402a-b23d-4f25fee9565c"
+  },
+  {
+    "validFrom": 48.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 232,
+    "featureId": "GPlates-5aadc382-4949-464e-ab01-ed090001b053"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 416,
+    "sourceIndex": 233,
+    "featureId": "GPlates-40547cd8-5b42-49a1-8cfe-95bb8b935bff"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 416,
+    "sourceIndex": 234,
+    "featureId": "GPlates-a14c6459-5862-4ebc-8214-5a7372e7ddc9"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 416,
+    "sourceIndex": 235,
+    "featureId": "GPlates-5da752ef-6e5c-49fb-bee2-49940e43affc"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 416,
+    "sourceIndex": 236,
+    "featureId": "GPlates-9438151f-8ca5-4dba-9bba-674a853e45da"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 237,
+    "featureId": "GPlates-39a04a34-1d14-495b-8bd2-169f7ee2f478"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 238,
+    "featureId": "GPlates-91900add-0276-4eea-b867-bb2aeffd8bc1"
+  },
+  {
+    "validFrom": 52.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 239,
+    "featureId": "GPlates-648f0c41-1625-444c-8cb8-8a5db7237d49"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 515,
+    "sourceIndex": 240,
+    "featureId": "GPlates-279f75f8-6a34-48aa-a0a9-15d09a8bd969"
+  },
+  {
+    "validFrom": 48.1,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 241,
+    "featureId": "GPlates-3426fe07-fb3c-4aaf-93f9-4cb0e860b7e8"
+  },
+  {
+    "validFrom": 59.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 242,
+    "featureId": "GPlates-b39efae1-d19b-4e7d-a9b5-f6e8fb97ed79"
+  },
+  {
+    "validFrom": 72.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 243,
+    "featureId": "GPlates-dd82e5a1-d449-4fac-a91c-628858ec2082"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 239,
+    "sourceIndex": 244,
+    "featureId": "GPlates-c518b6df-1163-4f27-be3b-d6a6c31981f5"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 239,
+    "sourceIndex": 245,
+    "featureId": "GPlates-6b5157fd-bf21-48b9-98ca-f8f11301bc3b"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 239,
+    "sourceIndex": 246,
+    "featureId": "GPlates-22e864d9-ec16-4a86-829d-eb42ba8e3a6a"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 239,
+    "sourceIndex": 247,
+    "featureId": "GPlates-bb61333d-9dc5-402f-a20d-0a6cf4811ebc"
+  },
+  {
+    "validFrom": 45.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 248,
+    "featureId": "GPlates-7844650d-f478-466d-930f-ac2984d19d46"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 659,
+    "sourceIndex": 249,
+    "featureId": "GPlates-9ecb6ffa-bff1-4877-9e98-2801874ae475"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 664,
+    "sourceIndex": 250,
+    "featureId": "GPlates-e8fca010-44c0-4eec-978f-e128fc2de1ff"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 664,
+    "sourceIndex": 251,
+    "featureId": "GPlates-78e06227-2ca1-4654-8f0e-ad6fd3c8dd62"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 672,
+    "sourceIndex": 252,
+    "featureId": "GPlates-c993d8c2-d377-42af-a8bf-2e1189a0fd4f"
+  },
+  {
+    "validFrom": 90.0,
+    "validTo": -1000000000.0,
+    "plateId": 701,
+    "sourceIndex": 253,
+    "featureId": "GPlates-abe625d3-832d-4b56-9616-14bdc5f5e83f"
+  },
+  {
+    "validFrom": 75.0,
+    "validTo": -1000000000.0,
+    "plateId": 704,
+    "sourceIndex": 254,
+    "featureId": "GPlates-392cabdf-6c0d-4611-b54a-4953fbe30446"
+  },
+  {
+    "validFrom": 75.0,
+    "validTo": -1000000000.0,
+    "plateId": 704,
+    "sourceIndex": 255,
+    "featureId": "GPlates-912ca00c-8525-4085-a3db-d34f04f96b5e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 846,
+    "sourceIndex": 256,
+    "featureId": "GPlates-b077dbfd-8ec0-4bf7-95a1-0fd028d2a988"
+  },
+  {
+    "validFrom": 78.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 257,
+    "featureId": "GPlates-2bc6d036-9b9e-476a-a52f-1491d1a8de29"
+  },
+  {
+    "validFrom": 72.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 258,
+    "featureId": "GPlates-cf4d9947-7320-49ed-85ca-b47e0366906b"
+  },
+  {
+    "validFrom": 75.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 259,
+    "featureId": "GPlates-a7508673-ec2c-4d52-a984-453af2f8570d"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 901,
+    "sourceIndex": 260,
+    "featureId": "GPlates-0c222d37-0634-4dfb-8c46-5fc7147abdd0"
+  },
+  {
+    "validFrom": 80.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 261,
+    "featureId": "GPlates-55a9b2e5-5aa5-4279-a74d-e324c6c78fc2"
+  },
+  {
+    "validFrom": 83.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 262,
+    "featureId": "GPlates-1540faee-fd17-4b6b-8db7-b09480eb9bc8"
+  },
+  {
+    "validFrom": 87.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 263,
+    "featureId": "GPlates-a0c6d09a-3b49-4f2b-a03b-b5bbd7d6cc5e"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 624,
+    "sourceIndex": 264,
+    "featureId": "GPlates-38a38e78-fc86-4e11-beae-85ca16fc59ce"
+  },
+  {
+    "validFrom": 93.0,
+    "validTo": -1000000000.0,
+    "plateId": 888,
+    "sourceIndex": 265,
+    "featureId": "GPlates-f510b642-b5af-47d9-b2bc-3d33015c3c59"
+  },
+  {
+    "validFrom": 93.0,
+    "validTo": -1000000000.0,
+    "plateId": 985,
+    "sourceIndex": 266,
+    "featureId": "GPlates-85a72907-7129-448f-8239-0a52a46493d6"
+  },
+  {
+    "validFrom": 112.0,
+    "validTo": -1000000000.0,
+    "plateId": 992,
+    "sourceIndex": 267,
+    "featureId": "GPlates-adc67193-3d36-48d1-94f1-71be9c19b05e"
+  },
+  {
+    "validFrom": 145.0,
+    "validTo": -1000000000.0,
+    "plateId": 126,
+    "sourceIndex": 268,
+    "featureId": "GPlates-d86657ce-2664-43f2-b0ea-7c36999a6ba0"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 198,
+    "sourceIndex": 269,
+    "featureId": "GPlates-ea08e82d-1ecf-4d6d-bc01-4228b10cc004"
+  },
+  {
+    "validFrom": 150.0,
+    "validTo": -1000000000.0,
+    "plateId": 101,
+    "sourceIndex": 270,
+    "featureId": "GPlates-bd8db911-eba5-4521-8425-3f925db03e93"
+  },
+  {
+    "validFrom": 165.0,
+    "validTo": -1000000000.0,
+    "plateId": 101,
+    "sourceIndex": 271,
+    "featureId": "GPlates-4b48d925-b31b-4dbb-a040-a34dd18ff1e9"
+  },
+  {
+    "validFrom": 165.0,
+    "validTo": -1000000000.0,
+    "plateId": 101,
+    "sourceIndex": 272,
+    "featureId": "GPlates-c15d011b-a73d-4a48-8e67-1bf1df1560dd"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 273,
+    "featureId": "GPlates-3246953f-91a0-49b3-b117-2b2182f9611c"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 274,
+    "featureId": "GPlates-36b87a59-9d33-484d-b282-0bdfd3eae9cd"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 275,
+    "featureId": "GPlates-30b458cf-730c-42f6-a4b7-7539b7d08fca"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 107,
+    "sourceIndex": 276,
+    "featureId": "GPlates-25a896c4-8a59-4c32-b044-426c8805c442"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 110,
+    "sourceIndex": 277,
+    "featureId": "GPlates-c50c8b8b-10ae-43cc-a379-cf266366d3ca"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 110,
+    "sourceIndex": 278,
+    "featureId": "GPlates-1c57d581-3745-4d7a-8d65-106fef488a39"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 112,
+    "sourceIndex": 279,
+    "featureId": "GPlates-858b5872-b05a-4096-9eec-68bac835e33d"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 0,
+    "sourceIndex": 280,
+    "featureId": "GPlates-a5dfd97a-ac80-41f6-8f51-183e3d098204"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 281,
+    "featureId": "GPlates-c1906b89-906f-4770-99fc-0f69f6f5480f"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 282,
+    "featureId": "GPlates-d097f7e5-67c9-418d-bfea-91286cc32a4a"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 283,
+    "featureId": "GPlates-1c79b576-0994-429f-9090-57a7c3b19d2a"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 284,
+    "featureId": "GPlates-4c5109ee-2973-4872-924d-e35a1710a72b"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 285,
+    "featureId": "GPlates-799ea8f3-cde5-4e14-9fef-27a836d654fe"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 117,
+    "sourceIndex": 286,
+    "featureId": "GPlates-f5501974-6b98-4f51-93e6-264c88f5b5b1"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 117,
+    "sourceIndex": 287,
+    "featureId": "GPlates-3ab6fd71-fa4f-477a-88cd-ae32204274b1"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 121,
+    "sourceIndex": 288,
+    "featureId": "GPlates-beca7c6d-0ff0-420f-a5fa-63650a5b451f"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 127,
+    "sourceIndex": 289,
+    "featureId": "GPlates-366f95c5-d1d3-4b5a-9a36-ce4d02d65d28"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 128,
+    "sourceIndex": 290,
+    "featureId": "GPlates-acb68b40-8741-489f-a445-d9ab4a9efc55"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 129,
+    "sourceIndex": 291,
+    "featureId": "GPlates-787a9b4d-69ae-42d2-b7c1-78ab18e3df6b"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 130,
+    "sourceIndex": 292,
+    "featureId": "GPlates-04d8f30a-443d-4bbe-b5c4-fb0eae473ee0"
+  },
+  {
+    "validFrom": 155.0,
+    "validTo": -1000000000.0,
+    "plateId": 135,
+    "sourceIndex": 293,
+    "featureId": "GPlates-33f5e28a-03cd-4fd3-979c-5b44162afd35"
+  },
+  {
+    "validFrom": 155.0,
+    "validTo": -1000000000.0,
+    "plateId": 135,
+    "sourceIndex": 294,
+    "featureId": "GPlates-dee57d17-eba1-43e1-92c7-914be77878ef"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 114,
+    "sourceIndex": 295,
+    "featureId": "GPlates-0234e661-fbdc-4d96-af5c-f2016fef69cd"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 206,
+    "sourceIndex": 296,
+    "featureId": "GPlates-5a02f62a-e441-48c7-88a5-b0bb35d1b62c"
+  },
+  {
+    "validFrom": 79.1,
+    "validTo": -1000000000.0,
+    "plateId": 222,
+    "sourceIndex": 297,
+    "featureId": "GPlates-6705281d-e3e5-4407-ab78-c6d34fcac6ab"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 237,
+    "sourceIndex": 298,
+    "featureId": "GPlates-1ad738ca-ff2d-4fa9-9ec3-ab8716520c1f"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 252,
+    "sourceIndex": 299,
+    "featureId": "GPlates-94ddd608-7dcd-4dba-bf39-8e7e35b81d50"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 301,
+    "sourceIndex": 300,
+    "featureId": "GPlates-f9f7a68b-78c5-4e08-8193-8832517ab226"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 330,
+    "sourceIndex": 301,
+    "featureId": "GPlates-07613a07-6763-4af5-adf3-f0ca0bca23ce"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 331,
+    "sourceIndex": 302,
+    "featureId": "GPlates-bff25237-87b4-47ae-a933-1baadf688831"
+  },
+  {
+    "validFrom": 37.0,
+    "validTo": -1000000000.0,
+    "plateId": 350,
+    "sourceIndex": 303,
+    "featureId": "GPlates-28c8faff-966e-4dab-8b33-95a899cf2cfd"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 406,
+    "sourceIndex": 304,
+    "featureId": "GPlates-4e77fc99-b199-4122-8352-420cec96dae2"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 406,
+    "sourceIndex": 305,
+    "featureId": "GPlates-05a189b5-5dff-4246-85c2-e8a13a7765b4"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 406,
+    "sourceIndex": 306,
+    "featureId": "GPlates-ec4fa96c-3f10-45f7-bfe7-811ba0a4f497"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 408,
+    "sourceIndex": 307,
+    "featureId": "GPlates-505989fe-8fe9-4191-b1c4-ba42b37e0875"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 410,
+    "sourceIndex": 308,
+    "featureId": "GPlates-aa7087c7-3e1f-4a07-9a81-d6a61cade854"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 410,
+    "sourceIndex": 309,
+    "featureId": "GPlates-d8375ad0-b6c6-40ea-9af0-9e9fb1f21eaa"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 406,
+    "sourceIndex": 310,
+    "featureId": "GPlates-b32747f9-dcb5-4e5a-9811-3c8ee110c695"
+  },
+  {
+    "validFrom": 100.0,
+    "validTo": -1000000000.0,
+    "plateId": 511,
+    "sourceIndex": 311,
+    "featureId": "GPlates-88d907bc-4816-4610-b328-175adb9a448a"
+  },
+  {
+    "validFrom": 100.0,
+    "validTo": -1000000000.0,
+    "plateId": 513,
+    "sourceIndex": 312,
+    "featureId": "GPlates-ff165298-f687-4cd4-941f-88891a5f1bee"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 514,
+    "sourceIndex": 313,
+    "featureId": "GPlates-39f90006-b9eb-46e1-95e8-676161d12a1b"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 609,
+    "sourceIndex": 314,
+    "featureId": "GPlates-c8939380-3cfa-4d60-8c12-b3c8cee0ecd7"
+  },
+  {
+    "validFrom": 220.0,
+    "validTo": -1000000000.0,
+    "plateId": 620,
+    "sourceIndex": 315,
+    "featureId": "GPlates-99900367-0ccd-4df9-ba82-44c726908764"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 621,
+    "sourceIndex": 316,
+    "featureId": "GPlates-43b17008-5b75-4062-8356-c87e85463f97"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 622,
+    "sourceIndex": 317,
+    "featureId": "GPlates-d78b3245-dc8f-4332-b944-35872d8684de"
+  },
+  {
+    "validFrom": 145.0,
+    "validTo": -1000000000.0,
+    "plateId": 682,
+    "sourceIndex": 318,
+    "featureId": "GPlates-2e07fb30-3551-4906-b19a-e481c7c8ae1a"
+  },
+  {
+    "validFrom": 145.0,
+    "validTo": -1000000000.0,
+    "plateId": 682,
+    "sourceIndex": 319,
+    "featureId": "GPlates-c8fff474-3608-40c5-a271-ae4abcb419de"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 684,
+    "sourceIndex": 320,
+    "featureId": "GPlates-8010bb95-1f68-4b8b-ad2e-62b08dd659bf"
+  },
+  {
+    "validFrom": 145.0,
+    "validTo": -1000000000.0,
+    "plateId": 800,
+    "sourceIndex": 321,
+    "featureId": "GPlates-d24ae656-a4a1-461a-afe5-b937a6637ab6"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 812,
+    "sourceIndex": 322,
+    "featureId": "GPlates-8ab77fea-3dae-404b-ab20-41c9bdb423c2"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 803,
+    "sourceIndex": 323,
+    "featureId": "GPlates-176efb5e-f3d0-4f82-b755-d15fc5751d59"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 813,
+    "sourceIndex": 324,
+    "featureId": "GPlates-c8789282-b8bc-457a-a176-77d4f3476e18"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 814,
+    "sourceIndex": 325,
+    "featureId": "GPlates-7f67dd24-f391-491f-ab9f-fb723a0e933b"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 815,
+    "sourceIndex": 326,
+    "featureId": "GPlates-6ba1b21a-9f30-4376-a613-eeccc7e4d74f"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 816,
+    "sourceIndex": 327,
+    "featureId": "GPlates-bcf12de2-0fd7-46cc-9711-ee523038ad79"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 823,
+    "sourceIndex": 328,
+    "featureId": "GPlates-bc013a47-3522-449e-90b6-f4dfb1a400c5"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 833,
+    "sourceIndex": 329,
+    "featureId": "GPlates-c7804313-419d-49f7-98dd-9fdd20abd91f"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 834,
+    "sourceIndex": 330,
+    "featureId": "GPlates-b81274ad-48ea-4319-9941-a6d5d055a112"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 817,
+    "sourceIndex": 331,
+    "featureId": "GPlates-d76c15d3-4344-4907-a939-652c0ace9c05"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 814,
+    "sourceIndex": 332,
+    "featureId": "GPlates-58f01ecd-7f54-4820-ba48-9d812d5ebc5d"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 813,
+    "sourceIndex": 333,
+    "featureId": "GPlates-417bdcf4-b452-43e3-bc68-70c2f0aa295a"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 813,
+    "sourceIndex": 334,
+    "featureId": "GPlates-b3e685fb-5b4f-4e91-8df9-1c56b5553a57"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 834,
+    "sourceIndex": 335,
+    "featureId": "GPlates-0234f55b-586e-49cf-b48d-7a79280abd68"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 930,
+    "sourceIndex": 336,
+    "featureId": "GPlates-4970db6f-fb7a-4f1c-913e-50f466481f7b"
+  },
+  {
+    "validFrom": 250.0,
+    "validTo": -1000000000.0,
+    "plateId": 409,
+    "sourceIndex": 337,
+    "featureId": "GPlates-093b861c-a93b-42b7-b258-d06375c320cb"
+  },
+  {
+    "validFrom": 300.0,
+    "validTo": -1000000000.0,
+    "plateId": 407,
+    "sourceIndex": 338,
+    "featureId": "GPlates-96a22b48-0efe-4668-b6be-8db6adf190ab"
+  },
+  {
+    "validFrom": 300.0,
+    "validTo": -1000000000.0,
+    "plateId": 401,
+    "sourceIndex": 339,
+    "featureId": "GPlates-2aeba51f-1ea0-4959-bed4-9e186fe9bb1e"
+  },
+  {
+    "validFrom": 300.0,
+    "validTo": -1000000000.0,
+    "plateId": 407,
+    "sourceIndex": 340,
+    "featureId": "GPlates-f5639cf6-2815-40d9-b240-400a32396ff0"
+  },
+  {
+    "validFrom": 130.0,
+    "validTo": -1000000000.0,
+    "plateId": 606,
+    "sourceIndex": 341,
+    "featureId": "GPlates-c685ba9e-f5c7-4d0d-b212-fe027e15bbb2"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 704,
+    "sourceIndex": 342,
+    "featureId": "GPlates-ba0fc422-114b-4dcc-ba65-4d07bb4a468e"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 101,
+    "sourceIndex": 343,
+    "featureId": "GPlates-917e0a6b-1b30-470e-8f93-d45bb894db5f"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 102,
+    "sourceIndex": 344,
+    "featureId": "GPlates-5024e58b-8c2e-45ed-bf81-3484f265f8b4"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 103,
+    "sourceIndex": 345,
+    "featureId": "GPlates-034f5468-ddb0-4659-879b-01f12e36a4a3"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 103,
+    "sourceIndex": 346,
+    "featureId": "GPlates-c72b9581-c712-453a-b684-37658101e629"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 104,
+    "sourceIndex": 347,
+    "featureId": "GPlates-3b351892-3a96-4641-b06c-f6a907b39b96"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 105,
+    "sourceIndex": 348,
+    "featureId": "GPlates-5647e5f5-9a2a-4888-bd38-dcc3c6e639f6"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 106,
+    "sourceIndex": 349,
+    "featureId": "GPlates-523d60ba-395b-4789-bd97-41b98065d197"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 108,
+    "sourceIndex": 350,
+    "featureId": "GPlates-cd4fc408-5e49-453e-9b2d-dca94671ff6b"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 109,
+    "sourceIndex": 351,
+    "featureId": "GPlates-4f98c9f7-254c-432a-b321-7689744f7195"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 123,
+    "sourceIndex": 352,
+    "featureId": "GPlates-f0b8ab4b-1104-4c9d-aefc-0c687ea5bed1"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 123,
+    "sourceIndex": 353,
+    "featureId": "GPlates-77c900e6-0403-411a-8114-573e34d1a0cc"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 123,
+    "sourceIndex": 354,
+    "featureId": "GPlates-1191ebe9-b471-4063-831c-93db9439c798"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 124,
+    "sourceIndex": 355,
+    "featureId": "GPlates-a70b0965-175f-428a-a53b-ba68f5c54391"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 125,
+    "sourceIndex": 356,
+    "featureId": "GPlates-bca3ad77-3ed6-44bd-b960-113891b1a986"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 131,
+    "sourceIndex": 357,
+    "featureId": "GPlates-29139221-9fbf-4a30-99bd-2352cfe7daf5"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 132,
+    "sourceIndex": 358,
+    "featureId": "GPlates-5601b7b9-c7c6-4ca0-a036-11993c4cb4c3"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 133,
+    "sourceIndex": 359,
+    "featureId": "GPlates-f0a67d5e-a741-4eb4-9cb9-e9d18af44a67"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 134,
+    "sourceIndex": 360,
+    "featureId": "GPlates-3d0db7fc-18e4-4fc7-bdd7-b41ced4e8ce7"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 201,
+    "sourceIndex": 361,
+    "featureId": "GPlates-4a783b88-5aac-42ed-9b7b-73b2794381ce"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 202,
+    "sourceIndex": 362,
+    "featureId": "GPlates-e77d0e99-fd4b-4904-adea-6d74cd3bd3e7"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 203,
+    "sourceIndex": 363,
+    "featureId": "GPlates-84284c0e-b1d1-4803-81a2-ce654ca7966e"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 204,
+    "sourceIndex": 364,
+    "featureId": "GPlates-e2eddc06-e9e0-42af-9c58-25c8b0e229a0"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 205,
+    "sourceIndex": 365,
+    "featureId": "GPlates-01726c81-f0cf-4f28-bf20-d6ea712c4b13"
+  },
+  {
+    "validFrom": 80.0,
+    "validTo": -1000000000.0,
+    "plateId": 230,
+    "sourceIndex": 366,
+    "featureId": "GPlates-231d0574-f34d-444e-8faa-a89d54e21ab4"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 290,
+    "sourceIndex": 367,
+    "featureId": "GPlates-45b5ebab-d161-416f-be0a-5714536df28e"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 291,
+    "sourceIndex": 368,
+    "featureId": "GPlates-88f2163f-4e92-45c2-a3ca-aca9f6021b07"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 301,
+    "sourceIndex": 369,
+    "featureId": "GPlates-501bc3b2-b4f0-4da2-a0a9-c13e1b34e20a"
+  },
+  {
+    "validFrom": 440.0,
+    "validTo": -1000000000.0,
+    "plateId": 310,
+    "sourceIndex": 370,
+    "featureId": "GPlates-24b77bdd-084b-42c9-a9c3-e9f2bd1a516e"
+  },
+  {
+    "validFrom": 440.0,
+    "validTo": -1000000000.0,
+    "plateId": 310,
+    "sourceIndex": 371,
+    "featureId": "GPlates-34ebbdd8-5ddc-4772-8d2b-12bef35605a0"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 303,
+    "sourceIndex": 372,
+    "featureId": "GPlates-7d2b4caf-c06f-4c79-ad93-e1124974b651"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 304,
+    "sourceIndex": 373,
+    "featureId": "GPlates-7bec3513-3571-44fb-974a-21399d715341"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 305,
+    "sourceIndex": 374,
+    "featureId": "GPlates-d8c51ede-e19c-4c3a-a925-70dddda6e03f"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 306,
+    "sourceIndex": 375,
+    "featureId": "GPlates-f918c1c3-d1c3-4026-ae14-538a04c3f612"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 307,
+    "sourceIndex": 376,
+    "featureId": "GPlates-d9cabd73-a21d-4410-b756-fc6195839586"
+  },
+  {
+    "validFrom": 65.0,
+    "validTo": -1000000000.0,
+    "plateId": 308,
+    "sourceIndex": 377,
+    "featureId": "GPlates-f3955489-53c0-40ab-988b-0f6d7f528a53"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 309,
+    "sourceIndex": 378,
+    "featureId": "GPlates-ed825a52-cb23-4af0-b85c-cae0038109dc"
+  },
+  {
+    "validFrom": 440.0,
+    "validTo": -1000000000.0,
+    "plateId": 310,
+    "sourceIndex": 379,
+    "featureId": "GPlates-643a7814-1751-46b9-b2b5-0c0654f5815a"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 311,
+    "sourceIndex": 380,
+    "featureId": "GPlates-f51ee553-2eea-4c3e-b1fc-4d01ef37f5a5"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 313,
+    "sourceIndex": 381,
+    "featureId": "GPlates-b957611e-06b3-4285-b033-0b58b01285a1"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 315,
+    "sourceIndex": 382,
+    "featureId": "GPlates-ea7f0cdc-e5bf-41db-b6fc-166931649d7b"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 317,
+    "sourceIndex": 383,
+    "featureId": "GPlates-ed951337-18c3-44a8-b4b4-134d7de2e468"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 318,
+    "sourceIndex": 384,
+    "featureId": "GPlates-ed8fdd63-de2e-4008-bd7f-8f8818a6cc90"
+  },
+  {
+    "validFrom": 360.0,
+    "validTo": -1000000000.0,
+    "plateId": 319,
+    "sourceIndex": 385,
+    "featureId": "GPlates-36c6a110-cee9-40f2-893b-84939b468ff2"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 320,
+    "sourceIndex": 386,
+    "featureId": "GPlates-a484e584-aad8-4bc7-99cf-e67de28bb565"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 320,
+    "sourceIndex": 387,
+    "featureId": "GPlates-9837205c-c091-429d-a11d-d30c95714196"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 401,
+    "sourceIndex": 388,
+    "featureId": "GPlates-19bd6b33-9657-40ff-8c3c-07673373a8ba"
+  },
+  {
+    "validFrom": 420.0,
+    "validTo": -1000000000.0,
+    "plateId": 402,
+    "sourceIndex": 389,
+    "featureId": "GPlates-140a1abd-1369-4a55-9732-17918f1f61ad"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 403,
+    "sourceIndex": 390,
+    "featureId": "GPlates-a5827040-a5a3-4238-86d5-93bd5311443e"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 405,
+    "sourceIndex": 391,
+    "featureId": "GPlates-24694b9c-d280-4f79-abef-1979fe170c9e"
+  },
+  {
+    "validFrom": 50.0,
+    "validTo": -1000000000.0,
+    "plateId": 416,
+    "sourceIndex": 392,
+    "featureId": "GPlates-2ba7fa34-7579-4fb5-b34c-282f59bad2ae"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 123,
+    "sourceIndex": 393,
+    "featureId": "GPlates-411b7b44-be73-4cc7-953f-470df02c8d5f"
+  },
+  {
+    "validFrom": 115.0,
+    "validTo": -1000000000.0,
+    "plateId": 123,
+    "sourceIndex": 394,
+    "featureId": "GPlates-1a0b9083-38ea-4fa6-b23a-c5ed731d9cd3"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 501,
+    "sourceIndex": 395,
+    "featureId": "GPlates-c4f408be-27a9-4700-bded-b0ae72a30095"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 502,
+    "sourceIndex": 396,
+    "featureId": "GPlates-ec3b87e2-865c-4d74-8030-ecf243d4b439"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 503,
+    "sourceIndex": 397,
+    "featureId": "GPlates-7e02ece3-33ea-48e2-8ad4-4cb1376ff9fb"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 504,
+    "sourceIndex": 398,
+    "featureId": "GPlates-f13b070e-93bc-4f5a-bfab-e58b7efcc8ae"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 505,
+    "sourceIndex": 399,
+    "featureId": "GPlates-a2136603-58e5-4af7-97f5-d8af344fabeb"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 506,
+    "sourceIndex": 400,
+    "featureId": "GPlates-29bfb903-35bd-43d6-b3a6-801dbd6d336c"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 507,
+    "sourceIndex": 401,
+    "featureId": "GPlates-cb703ec2-64e9-493c-8d82-28c5f46e801f"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 508,
+    "sourceIndex": 402,
+    "featureId": "GPlates-38ecc900-0786-433b-9167-21ec0ced881a"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 510,
+    "sourceIndex": 403,
+    "featureId": "GPlates-3c01f405-41db-4ef4-9b14-4cdf298991cb"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 512,
+    "sourceIndex": 404,
+    "featureId": "GPlates-66c1fb28-cbc5-4da8-a871-6efde22eb1f2"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 601,
+    "sourceIndex": 405,
+    "featureId": "GPlates-fa38889b-655a-4188-a386-05c2852ef1cd"
+  },
+  {
+    "validFrom": 230.0,
+    "validTo": -1000000000.0,
+    "plateId": 602,
+    "sourceIndex": 406,
+    "featureId": "GPlates-c0e3bad1-e7c2-4462-8776-59352aaeaca7"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 604,
+    "sourceIndex": 407,
+    "featureId": "GPlates-db07f37f-04f6-4046-ab6a-566c8152f5a4"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 610,
+    "sourceIndex": 408,
+    "featureId": "GPlates-de6fecb9-45cf-430c-9411-82f5d242a45c"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 611,
+    "sourceIndex": 409,
+    "featureId": "GPlates-6a116441-0e61-43a1-ad54-4e234d282625"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 612,
+    "sourceIndex": 410,
+    "featureId": "GPlates-aa98ed2a-dc65-4734-9e70-d9d39b409480"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 613,
+    "sourceIndex": 411,
+    "featureId": "GPlates-aa90241b-4eb2-4515-b5c9-d4c67dbf6cd0"
+  },
+  {
+    "validFrom": 230.0,
+    "validTo": -1000000000.0,
+    "plateId": 614,
+    "sourceIndex": 412,
+    "featureId": "GPlates-56e6809e-acb3-4aff-87f3-81f3ccd3ff63"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 615,
+    "sourceIndex": 413,
+    "featureId": "GPlates-261d97d6-d145-452d-8aef-581659cdc8e5"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 616,
+    "sourceIndex": 414,
+    "featureId": "GPlates-9a62afaf-741c-4e9d-bad2-dde2b95dfe4f"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 619,
+    "sourceIndex": 415,
+    "featureId": "GPlates-0f3a47f1-5393-4227-bbd7-69a84b2233f8"
+  },
+  {
+    "validFrom": 540.0,
+    "validTo": -1000000000.0,
+    "plateId": 628,
+    "sourceIndex": 416,
+    "featureId": "GPlates-75aca669-7356-4b31-8033-db398e1947a9"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 701,
+    "sourceIndex": 417,
+    "featureId": "GPlates-360cbe8e-34b6-4124-a319-4ff374fdc8ef"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 702,
+    "sourceIndex": 418,
+    "featureId": "GPlates-98d0aee1-10ea-4c0a-b995-bff303a44c3c"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 707,
+    "sourceIndex": 419,
+    "featureId": "GPlates-31c4dbe0-7dcd-499c-bc7c-266a77ecd5ef"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 709,
+    "sourceIndex": 420,
+    "featureId": "GPlates-6592f0fd-3637-4c1b-aa50-3f84b06caa35"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 712,
+    "sourceIndex": 421,
+    "featureId": "GPlates-24edf483-285a-4220-bdaa-93d3d333fbb4"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 714,
+    "sourceIndex": 422,
+    "featureId": "GPlates-86fdb85e-c480-4ec8-bf6d-f350d722d57e"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 715,
+    "sourceIndex": 423,
+    "featureId": "GPlates-33f457f1-0cd4-489b-9cdb-9dd6fdc2f2e5"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 716,
+    "sourceIndex": 424,
+    "featureId": "GPlates-022b5ca4-9feb-4468-8f19-765a0ef4d1ff"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 701,
+    "sourceIndex": 425,
+    "featureId": "GPlates-07681a5c-47fd-47cb-80a9-ac8a1585946b"
+  },
+  {
+    "validFrom": 135.0,
+    "validTo": -1000000000.0,
+    "plateId": 701,
+    "sourceIndex": 426,
+    "featureId": "GPlates-1f21713d-869a-4785-ba2e-275ccfa39508"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 801,
+    "sourceIndex": 427,
+    "featureId": "GPlates-86f0ed32-ac15-4234-b65a-5cd084fe00e6"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 802,
+    "sourceIndex": 428,
+    "featureId": "GPlates-ba7ec3e1-9ac2-44f0-9370-69917a01b112"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 802,
+    "sourceIndex": 429,
+    "featureId": "GPlates-5266cd37-1d32-4e6c-95e9-5d232a3d01dd"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 802,
+    "sourceIndex": 430,
+    "featureId": "GPlates-564aa6e6-8242-425c-8103-acb3d0be6139"
+  },
+  {
+    "validFrom": 200.0,
+    "validTo": -1000000000.0,
+    "plateId": 802,
+    "sourceIndex": 431,
+    "featureId": "GPlates-7e731ff9-d17c-4eb1-aa91-21f6e4c40f45"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 802,
+    "sourceIndex": 432,
+    "featureId": "GPlates-562c5ac8-602d-4367-8a11-02686091d505"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 811,
+    "sourceIndex": 433,
+    "featureId": "GPlates-a59b853d-e8da-442b-8d86-a33748166e8d"
+  },
+  {
+    "validFrom": 270.0,
+    "validTo": -1000000000.0,
+    "plateId": 804,
+    "sourceIndex": 434,
+    "featureId": "GPlates-9486c1fa-a6d6-494f-973a-f246becd1697"
+  },
+  {
+    "validFrom": 280.0,
+    "validTo": -1000000000.0,
+    "plateId": 805,
+    "sourceIndex": 435,
+    "featureId": "GPlates-f31df48e-c7ba-4515-bf68-f6d9e1d5e7d4"
+  },
+  {
+    "validFrom": 270.0,
+    "validTo": -1000000000.0,
+    "plateId": 806,
+    "sourceIndex": 436,
+    "featureId": "GPlates-19899315-3607-488a-87a8-d60a522266b0"
+  },
+  {
+    "validFrom": 270.0,
+    "validTo": -1000000000.0,
+    "plateId": 807,
+    "sourceIndex": 437,
+    "featureId": "GPlates-f819422c-d415-4e04-9f7b-96ee2e3100e9"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 811,
+    "sourceIndex": 438,
+    "featureId": "GPlates-7d129328-fc88-409e-8edf-966f27f712cd"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 872,
+    "sourceIndex": 439,
+    "featureId": "GPlates-3f0ca6e2-1470-477c-9b35-ff39d86b6abb"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 875,
+    "sourceIndex": 440,
+    "featureId": "GPlates-9ebc8b86-adb6-4d74-9019-88a0744720db"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 875,
+    "sourceIndex": 441,
+    "featureId": "GPlates-e4da746f-d68a-4366-93c8-2c169fbb76f9"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": -1000000000.0,
+    "plateId": 875,
+    "sourceIndex": 442,
+    "featureId": "GPlates-e6e92e27-5833-48c6-8e34-f967eb14e7cd"
+  },
+  {
+    "validFrom": 4500.0,
+    "validTo": -1000000000.0,
+    "plateId": 801,
+    "sourceIndex": 443,
+    "featureId": "GPlates-845439df-ea66-4c58-a595-95f0dc24082b"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 291,
+    "sourceIndex": 444,
+    "featureId": "GPlates-02a8fce7-2c2d-4617-841c-cbb5efbd245e"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 902,
+    "sourceIndex": 445,
+    "featureId": "GPlates-06977d3d-6bfc-4714-90d4-a78c343140d8"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 848,
+    "sourceIndex": 446,
+    "featureId": "GPlates-a442b3f0-15e8-43d6-b163-9f1818e8c275"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 848,
+    "sourceIndex": 447,
+    "featureId": "GPlates-dd8d843c-1611-4d52-ad95-6747275984ea"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 823,
+    "sourceIndex": 448,
+    "featureId": "GPlates-a342a0e8-0d36-439a-8bbd-a270722783cb"
+  },
+  {
+    "validFrom": 245.0,
+    "validTo": -1000000000.0,
+    "plateId": 823,
+    "sourceIndex": 449,
+    "featureId": "GPlates-bc81e081-96a1-4390-aa61-86a5ed2523b3"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 301,
+    "sourceIndex": 450,
+    "featureId": "GPlates-d219881f-5a11-4c3b-b55e-79d9582af0dc"
+  },
+  {
+    "validFrom": 0.0,
+    "validTo": 0.0,
+    "plateId": 301,
+    "sourceIndex": 451,
+    "featureId": "GPlates-6dcc0912-7b5e-4d00-a076-043fc77e21a9"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 201,
+    "sourceIndex": 452,
+    "featureId": "GPlates-b1f21133-bb55-4283-8eb7-d49a34d41734"
+  },
+  {
+    "validFrom": 600.0,
+    "validTo": -1000000000.0,
+    "plateId": 714,
+    "sourceIndex": 453,
+    "featureId": "GPlates-52c499dd-5350-44b2-9e70-c3a707435109"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 531,
+    "sourceIndex": 454,
+    "featureId": "GPlates-d39b7c3d-fe4b-47d0-803c-09aa0a98374b"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 780,
+    "sourceIndex": 455,
+    "featureId": "GPlates-b7f2fe13-d38c-432b-99de-b746e001ef53"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 530,
+    "sourceIndex": 456,
+    "featureId": "GPlates-572becce-1e51-4042-b431-25880209390d"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 781,
+    "sourceIndex": 457,
+    "featureId": "GPlates-57dd7641-37c6-4d7c-8ebf-f1dd6f1ed13f"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 779,
+    "sourceIndex": 458,
+    "featureId": "GPlates-af1a91f5-0cfc-4111-9d87-0dc8ac18fde5"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 777,
+    "sourceIndex": 459,
+    "featureId": "GPlates-5ede8b3e-552f-494e-8c4d-2b5303ca4025"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 776,
+    "sourceIndex": 460,
+    "featureId": "GPlates-98db36b6-1a54-4b0f-a8c8-d997766d8570"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 778,
+    "sourceIndex": 461,
+    "featureId": "GPlates-7c75deee-fc0a-46f7-b8fa-ac1a4ff39d24"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 263,
+    "sourceIndex": 462,
+    "featureId": "GPlates-e8193339-f054-4e79-9360-500b0cd6bcad"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 782,
+    "sourceIndex": 463,
+    "featureId": "GPlates-1530e33e-ba91-4879-bc94-97bfe24732bd"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 267,
+    "sourceIndex": 464,
+    "featureId": "GPlates-de662188-4255-4b92-ae86-d85178316889"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 783,
+    "sourceIndex": 465,
+    "featureId": "GPlates-033f60b4-0813-4372-871e-0f9bad6b70be"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 784,
+    "sourceIndex": 466,
+    "featureId": "GPlates-fff98660-df72-4236-bb18-ba318e2095af"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 266,
+    "sourceIndex": 467,
+    "featureId": "GPlates-18bcaddc-6353-4529-b6fd-5092cfe14411"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 265,
+    "sourceIndex": 468,
+    "featureId": "GPlates-e7a3c73b-4f01-48fe-b6c8-e2201973a64d"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 264,
+    "sourceIndex": 469,
+    "featureId": "GPlates-3119d2ad-98e8-4298-8417-21d600515a59"
+  },
+  {
+    "validFrom": 1000000000.0,
+    "validTo": 600.0,
+    "plateId": 262,
+    "sourceIndex": 470,
+    "featureId": "GPlates-a7f6ad26-93ce-4770-b376-957e575c1ec7"
+  }
+]
