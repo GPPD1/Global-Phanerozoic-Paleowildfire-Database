@@ -145,13 +145,13 @@
 .module-deck .experience>div{position:relative;z-index:2;display:flex;flex-direction:column;width:100%;padding:30px 24px 24px}
 .module-deck .experience h3{font-size:27px;line-height:1.2;margin:0 0 9px}
 .module-deck .experience p{max-width:calc(100% - 50px);min-height:39px;color:#d6e1e9}
-.module-deck .experience-open{position:absolute;right:24px;bottom:25px;display:grid;place-items:center;width:36px;height:36px;border:1px solid #b0c6d26b;border-radius:50%;padding:0;margin:0;background:#ffffff09;color:#f3f6f8;font-size:20px;font-weight:400;transition:background .25s,color .25s,border-color .25s}
+.module-deck .experience-open{position:absolute;right:24px;bottom:25px;display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:0;padding:0;margin:0;background:transparent;color:#f3f6f8;font-size:20px;font-weight:400;transition:color .25s}
 .module-deck .experience-open>span{transition:transform .25s}
 .module-deck .experience:focus-visible{border-color:#f1f6fa;transform:translateY(-5px);box-shadow:0 14px 20px -8px #000b,0 34px 48px -18px #000d}
 @media(hover:hover){
   .module-deck .experience:hover{transform:translateY(-8px);border-color:#d3e3ee;box-shadow:0 14px 20px -8px #000b,0 34px 48px -18px #000d}
   .module-deck .experience:hover .experience-visual img{transform:scale(1.045)}
-  .module-deck .experience:hover .experience-open{background:#eef2f4;border-color:#eef2f4;color:#101b27}
+  .module-deck .experience:hover .experience-open{background:transparent;color:#fff}
   .module-deck .experience:hover .experience-open>span{transform:translate(2px,-2px)}
 }
 @keyframes module-enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
