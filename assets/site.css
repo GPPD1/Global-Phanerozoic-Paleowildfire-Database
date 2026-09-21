@@ -130,7 +130,7 @@
 #home-page main{background:var(--paper)}
 .hero-bottom{position:relative;left:auto;right:auto;bottom:auto;width:87.6%;min-height:50px;margin:24px auto 0}
 .module-deck{position:relative;z-index:4;width:min(1320px,87.6%);margin:auto auto 0;gap:22px;scroll-margin-top:calc(var(--header) + 24px)}
-.module-deck .experience{height:330px;min-height:0;padding:0;display:flex;justify-content:flex-end;border:1px solid #ffffff35;background:#101b27;box-shadow:0 18px 40px #04101b2e;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;animation:module-enter .7s cubic-bezier(.2,.7,.2,1) backwards}
+.module-deck .experience{height:330px;min-height:0;padding:0;display:flex;justify-content:flex-end;border:1px solid #ffffff35;background:#101b27;box-shadow:0 10px 16px -8px #000a,0 26px 40px -18px #000c;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;animation:module-enter .7s cubic-bezier(.2,.7,.2,1) backwards}
 .module-deck .experience:nth-child(2){animation-delay:.1s}
 .module-deck .experience:nth-child(3){animation-delay:.2s}
 .module-deck .experience:before{display:none}
@@ -147,9 +147,9 @@
 .module-deck .experience p{max-width:calc(100% - 50px);min-height:39px;color:#d6e1e9}
 .module-deck .experience-open{position:absolute;right:24px;bottom:25px;display:grid;place-items:center;width:36px;height:36px;border:1px solid #b0c6d26b;border-radius:50%;padding:0;margin:0;background:#ffffff09;color:#f3f6f8;font-size:20px;font-weight:400;transition:background .25s,color .25s,border-color .25s}
 .module-deck .experience-open>span{transition:transform .25s}
-.module-deck .experience:focus-visible{border-color:#f1f6fa;transform:translateY(-5px)}
+.module-deck .experience:focus-visible{border-color:#f1f6fa;transform:translateY(-5px);box-shadow:0 14px 20px -8px #000b,0 34px 48px -18px #000d}
 @media(hover:hover){
-  .module-deck .experience:hover{transform:translateY(-8px);border-color:#d3e3ee;box-shadow:0 24px 48px #04101b40}
+  .module-deck .experience:hover{transform:translateY(-8px);border-color:#d3e3ee;box-shadow:0 14px 20px -8px #000b,0 34px 48px -18px #000d}
   .module-deck .experience:hover .experience-visual img{transform:scale(1.045)}
   .module-deck .experience:hover .experience-open{background:#eef2f4;border-color:#eef2f4;color:#101b27}
   .module-deck .experience:hover .experience-open>span{transform:translate(2px,-2px)}
