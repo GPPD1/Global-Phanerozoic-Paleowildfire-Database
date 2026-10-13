@@ -428,7 +428,7 @@
         "lat": 45.10444444444445,
         "lng": 89.9263888888889,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025a",
+        "Reference": "Li et al., 2025b",
         "lithostratigraphicUnit": "Shiqiantan Formation"
       },
       {
@@ -668,7 +668,7 @@
         "lat": 38.89333333333333,
         "lng": 111.1125,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025",
+        "Reference": "Li et al., 2025a",
         "lithostratigraphicUnit": "Benxi Formation"
       },
       {
@@ -684,7 +684,7 @@
         "lat": 38.91277777777778,
         "lng": 116.43916666666667,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025d",
+        "Reference": "Li et al., 2025e",
         "lithostratigraphicUnit": "Taiyuan Formation"
       },
       {
@@ -988,7 +988,7 @@
         "lat": 24.303611111111113,
         "lng": 109.41361111111112,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025c",
+        "Reference": "Li et al., 2025d",
         "lithostratigraphicUnit": "Taiyuan Formation"
       },
       {
@@ -2916,7 +2916,7 @@
         "lat": 44.255,
         "lng": 93.35472222222222,
         "Wildfire evidence type": "Inert",
-        "Reference": "Feng et al., 2019b",
+        "Reference": "Feng et al., 2019",
         "lithostratigraphicUnit": "Xishanyao Formation"
       },
       {
@@ -3292,7 +3292,7 @@
         "lat": 35.06361111111111,
         "lng": 107.995,
         "Wildfire evidence type": "Inert",
-        "Reference": "Wang et al., 2019",
+        "Reference": "Wang et al., 2019a",
         "lithostratigraphicUnit": "Yan'an Formation"
       },
       {
@@ -4014,7 +4014,7 @@
         "lat": 41.72,
         "lng": 125.94,
         "Wildfire evidence type": "Inert",
-        "Reference": "Wang et al., 2019a",
+        "Reference": "Wang et al., 2019b",
         "lithostratigraphicUnit": "Hengtongshan Formation"
       },
       {
@@ -4022,7 +4022,7 @@
         "lat": 41.72,
         "lng": 125.94,
         "Wildfire evidence type": "Inert",
-        "Reference": "Wang et al., 2019a",
+        "Reference": "Wang et al., 2019b",
         "lithostratigraphicUnit": "Xiahuapidianzi Formation"
       },
       {
@@ -4030,7 +4030,7 @@
         "lat": 41.72,
         "lng": 125.94,
         "Wildfire evidence type": "Inert",
-        "Reference": "Wang et al., 2019a",
+        "Reference": "Wang et al., 2019b",
         "lithostratigraphicUnit": "Yingzuilazi Formation"
       },
       {
@@ -4563,7 +4563,7 @@
         "lat": 45.83638888888889,
         "lng": 125.00638888888889,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025b",
+        "Reference": "Li et al., 2025c",
         "lithostratigraphicUnit": "Qingshankou Formation"
       },
       {
@@ -4747,7 +4747,7 @@
         "lat": 28.464444444444442,
         "lng": 28.924444444444447,
         "Wildfire evidence type": "FC",
-        "Reference": "El Atfy et al., 2023c;\nEl Atfy et al., 2019",
+        "Reference": "El Atfy et al., 2023b;\nEl Atfy et al., 2019",
         "lithostratigraphicUnit": "Bahariya Formation"
       },
       {
@@ -5136,7 +5136,7 @@
         "lat": 47.3125,
         "lng": 132.20833333333331,
         "Wildfire evidence type": "Inert",
-        "Reference": "Yu et al., 2008a",
+        "Reference": "Yu et al., 2008",
         "lithostratigraphicUnit": "Fujin Formation"
       },
       {
@@ -5493,7 +5493,7 @@
         "lat": 47.3125,
         "lng": 132.20833333333331,
         "Wildfire evidence type": "Inert",
-        "Reference": "Yu et al., 2008a",
+        "Reference": "Yu et al., 2008",
         "lithostratigraphicUnit": "Fujin Formation"
       },
       {
@@ -5858,7 +5858,7 @@
         "lat": 38.98305555555556,
         "lng": 111.09083333333332,
         "Wildfire evidence type": "Inert",
-        "Reference": "Wang et al., 2019b",
+        "Reference": "Wang et al., 2019c",
         "lithostratigraphicUnit": "Shanxi Formation"
       },
       {
@@ -5874,7 +5874,7 @@
         "lat": 38.91277777777778,
         "lng": 116.43916666666667,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025d",
+        "Reference": "Li et al., 2025e",
         "lithostratigraphicUnit": "Shanxi Formation"
       },
       {
@@ -6178,7 +6178,7 @@
         "lat": 24.303611111111113,
         "lng": 109.41361111111112,
         "Wildfire evidence type": "Inert",
-        "Reference": "Li et al., 2025c",
+        "Reference": "Li et al., 2025d",
         "lithostratigraphicUnit": "Shanxi Formation"
       },
       {
@@ -6234,7 +6234,7 @@
         "lat": 21.41611111111111,
         "lng": 76.16638888888889,
         "Wildfire evidence type": "FC",
-        "Reference": "Murthy et al., 2023",
+        "Reference": "Murthy et al., 2023c",
         "lithostratigraphicUnit": null
       },
       {
@@ -6735,7 +6735,7 @@
         "lat": 21.41611111111111,
         "lng": 76.16638888888889,
         "Wildfire evidence type": "FC",
-        "Reference": "Murthy et al., 2023",
+        "Reference": "Murthy et al., 2023c",
         "lithostratigraphicUnit": null
       },
       {
@@ -7204,7 +7204,7 @@
         "lat": 27.836388888888887,
         "lng": 111.75555555555556,
         "Wildfire evidence type": "Inert/PAHs",
-        "Reference": "Wu et al., 2025b",
+        "Reference": "Wu et al., 2025",
         "lithostratigraphicUnit": "Longtan Formation"
       },
       {
@@ -7212,7 +7212,7 @@
         "lat": 27.82027777777778,
         "lng": 111.76861111111111,
         "Wildfire evidence type": "PAHs",
-        "Reference": "Wu et al., 2025b",
+        "Reference": "Wu et al., 2025",
         "lithostratigraphicUnit": "Dalong Formation"
       },
       {
@@ -8051,7 +8051,7 @@
         "lng": 87.215,
         "Wildfire evidence type": "Inert",
         "Reference": "Wei, 2018",
-        "lithostratigraphicUnit": "Huangshanjie formation"
+        "lithostratigraphicUnit": "Huangshanjie formation "
       },
       {
         "id": 472,
@@ -8091,7 +8091,7 @@
         "lng": 84.76,
         "Wildfire evidence type": "Inert",
         "Reference": "Wei, 2018",
-        "lithostratigraphicUnit": "Huangshanjie formation"
+        "lithostratigraphicUnit": "Huangshanjie formation "
       },
       {
         "id": 477,
